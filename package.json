@@ -1,0 +1,21 @@
+{
+  "name": "from-a-bit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "eleventy --serve --port=8080 --output=work/preview/",
+    "build": "node scripts/build.mjs",
+    "check:generated": "node scripts/build.mjs --check",
+    "test": "node --test",
+    "check": "npm test && npm run check:generated && node --check public/assets/script.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "esbuild": "^0.28.2",
+    "yaml": "^2.9.1"
+  }
+}

@@ -1,0 +1,20 @@
+name: From a Bit
+origin: https://from-a-bit.otchy.net
+themeColor: "#f6f4ed"
+locales:
+  ja:
+    name: 日本語
+    title: From a Bit — データの大きさを旅する
+    description: >-
+      ひとつのビットから、データの大きさと記憶媒体の歴史を旅する。スクロールで容量の違いを体感するインフォグラフィックス、From a Bit。
+    skipLink: 本文へ移動
+    languageLabel: 表示言語
+    backToStart: はじまりに戻る
+  en:
+    name: English
+    title: From a Bit — A journey through the scale of data
+    description: >-
+      Start with a single bit and explore the scale of digital data and the history of data storage. From a Bit is a scroll-driven infographic about data capacity.
+    skipLink: Skip to content
+    languageLabel: Language
+    backToStart: Back to the beginning

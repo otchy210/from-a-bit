@@ -1,78 +1,54 @@
-# Capacity values are quoted integer strings; only these fields become BigInt.
-# This list defines the reading order in both languages.
+# Exact capacities are quoted decimal strings. Both languages share this order.
 - id: bit
   kind: capacity
   capacityBits: "1"
   graphic:
-    type: dots
-    count: 1
+    src: graphics/bit.svg
   sources: []
   text:
     ja:
-      eyebrow: 01 / はじまり
       heading:
         - すべては、
         - ひとつのビットから。
       description:
-        - 写真も、音楽も、このページも。
-        - データの大きさをたどる旅は、ここから始まります。
-      figure:
-        label: 1 bit
-        caption: 0 か 1。二つの状態の、どちらか一つ。
-      nextLabel: 8 個集めると
+        - 1 bit は、0 と 1。
+        - 二つの状態の、どちらか一つを表します。
     en:
-      eyebrow: 01 / The beginning
       heading:
         - It all starts
         - with a single bit.
       description:
-        - Every photo. Every song. Even this page.
-        - Our journey through the scale of data starts here.
-      figure:
-        label: 1 bit
-        caption: 0 or 1. One of two possible states.
-      nextLabel: Bring eight together
+        - One bit represents one of two states.
+        - 0 or 1. This is where our journey begins.
 
 - id: byte
   kind: capacity
   capacityBits: "8"
   graphic:
-    type: dots
-    count: 8
+    src: graphics/byte.svg
   sources: []
   text:
     ja:
-      eyebrow: 02 / 最初のまとまり
       heading:
-        - 8 bit で、1 byte。
+        - 8 bit で、
+        - 1 byte。
       description:
-        - ビットが八つ集まると、1 バイト。
+        - 八つのビットをひとまとまりにした単位です。
         - このサイトでは、1 byte = 8 bit として進みます。
-      figure:
-        label: 1 byte
-        equation: = 8 bit
-        caption: ここから、さらに大きな容量へ。
-      nextLabel: 記憶媒体の世界へ
     en:
-      eyebrow: 02 / The first group
       heading:
-        - 8 bits. 1 byte.
+        - 8 bits.
+        - 1 byte.
       description:
         - Eight bits together make one byte.
         - Throughout this journey, 1 byte means 8 bits.
-      figure:
-        label: 1 byte
-        equation: = 8 bits
-        caption: And this is only the beginning.
-      nextLabel: Explore the world of storage
 
-# This is a narrative placeholder, not a storage medium with a capacity.
+# A narrative placeholder, not a storage medium with a capacity.
 - id: storage
   kind: outlook
   sources: []
   text:
     ja:
-      eyebrow: 03 / この先の旅
       heading:
         - 記憶は、
         - どこまで広がるだろう。
@@ -80,9 +56,8 @@
         - パンチカードから、大容量のストレージへ。
         - 媒体の歴史をたどりながら、容量の違いを同じ尺度で眺めていきます。
       note: >-
-        ただいま制作中。記憶媒体の紹介と、スクロールに合わせた縮尺の変化は、これから実装します。
+        ただいま制作中。記憶媒体の紹介は、これから追加します。
     en:
-      eyebrow: 03 / The journey ahead
       heading:
         - How far
         - can memory grow?
@@ -90,4 +65,4 @@
         - From punched cards to vast data stores.
         - Follow the history of storage and compare its capacity on a shared scale.
       note: >-
-        A work in progress. Storage milestones and scroll-driven changes in scale are coming next.
+        A work in progress. Storage milestones are coming next.

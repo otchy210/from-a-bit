@@ -3,7 +3,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
 import { parseCapacityBits } from "../lib/capacity.mjs";
-import { loadSite, validateSite } from "../lib/site.mjs";
+import { loadSite, validateSite, validateGraphics } from "../lib/site.mjs";
+import { areaScale, cameraLog2, capacityLog2 } from "../lib/scale.mjs";
 import Page from "../src/index.11ty.mjs";
 
 async function fixture() {
@@ -26,8 +27,8 @@ test("invalid metadata fails before it can be rendered", async () => {
     [({ items }) => { items[1].id = items[0].id; }, /Duplicate item ID/],
     [({ items }) => { delete items[0].text.en; }, /Missing item translation/],
     [({ items }) => { items[0].capacityBits = 9007199254740992; }, /integer string/],
-    [({ items }) => { items[0].graphic.count = 1000000000; }, /from 1 to 64/],
-    [({ items }) => { items[0].graphic.type = "missing-image"; }, /graphic.type/],
+    [({ items }) => { items[0].graphic.src = "graphics/dots.png"; }, /graphic.src/],
+    [({ items }) => { items[0].graphic.src = "graphics/../other.svg"; }, /graphic.src/],
     [({ items }) => { items[0].text.en.heading = []; }, /non-empty list/],
     [({ items }) => { items[0].sources = [{ label: "Source", url: "javascript:alert(1)" }]; }, /HTTPS/],
     [({ config }) => { config.origin += "/wrong-path"; }, /without a path/],
@@ -52,7 +53,9 @@ test("one page template renders both languages and exact capacity attributes", a
     assert.equal((html.match(/<section\b/g) || []).length, site.items.length);
     assert.equal((html.match(/<script\b/g) || []).length, 1);
     assert.equal((html.match(/rel="stylesheet"/g) || []).length, 1);
-    assert.ok(html.includes(site.items[0].text[language].figure.caption));
+    assert.ok(html.includes(site.items[0].text[language].description[0]));
+    assert.ok(html.includes('src="../assets/graphics/bit.svg"'));
+    assert.doesNotMatch(html, /figcaption|eyebrow|next-chapter/);
   }
 });
 
@@ -68,7 +71,7 @@ test("text and attribute values are escaped without losing the original content"
   assert.ok(!html.includes(text));
 });
 
-test("a new item participates in both pages and in next-section links", async () => {
+test("a new item participates in both pages without separate label or navigation metadata", async () => {
   const { config, items } = await fixture();
   const item = structuredClone(items[1]);
   item.id = "another-capacity";
@@ -77,13 +80,43 @@ test("a new item participates in both pages and in next-section links", async ()
   for (const language of site.languages) {
     const html = new Page().render({ site, language });
     assert.ok(html.includes('id="another-capacity"'));
-    assert.ok(html.includes('href="#another-capacity"'));
+    assert.ok(html.includes('id="another-capacity-title"'));
   }
 });
 
-test("the checked-in metadata loads as BigInt without changing the bounded graphic count", async () => {
+test("the checked-in metadata loads exact capacities and SVG references", async () => {
   const site = await loadSite();
   assert.equal(site.items[0].capacityBits, 1n);
   assert.equal(site.items[1].capacityBits, 8n);
-  assert.equal(typeof site.items[1].graphic.count, "number");
+  assert.equal(site.items[1].graphic.src, "graphics/byte.svg");
+});
+
+test("missing SVG files are rejected during the build", async () => {
+  const site = await loadSite();
+  site.items[0].graphic = { src: "graphics/not-present.svg" };
+  await assert.rejects(validateGraphics(site), /Missing SVG graphic/);
+});
+
+test("the camera preserves capacity area ratios throughout the transition", () => {
+  const logs = [capacityLog2(1n), capacityLog2(8n)];
+  assert.equal(areaScale(logs[0], cameraLog2(logs, 0)), 1);
+  assert.equal(areaScale(logs[1], cameraLog2(logs, 1)), 1);
+  for (const position of [0, 0.2, 0.5, 0.8, 1]) {
+    const camera = cameraLog2(logs, position);
+    const ratio = areaScale(logs[1], camera) / areaScale(logs[0], camera);
+    assert.ok(Math.abs(ratio ** 2 - 8) < 1e-12);
+  }
+  const huge = capacityLog2(10n ** 1000n);
+  assert.ok(Number.isFinite(huge));
+  assert.ok(Math.abs(huge - 1000 * Math.log2(10)) < 1e-10);
+  assert.equal(areaScale(huge, huge), 1);
+});
+
+test("bit and byte SVGs have equal reference ink areas", async () => {
+  const areas = await Promise.all(["bit", "byte"].map(async (name) => {
+    const svg = await readFile(new URL(`../src/assets/graphics/${name}.svg`, import.meta.url), "utf8");
+    return [...svg.matchAll(/\br="([\d.]+)"/g)].reduce((sum, match) => sum + Math.PI * Number(match[1]) ** 2, 0);
+  }));
+  assert.ok(areas[0] > 0);
+  assert.ok(Math.abs(areas[0] / areas[1] - 1) < 1e-10);
 });

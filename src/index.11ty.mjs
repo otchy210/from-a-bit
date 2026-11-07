@@ -41,20 +41,18 @@ ${site.languages.map((code) => code === language
 ${site.items.map((item, index) => {
     const text = item.text[language];
     const heading = index === 0 ? "h1" : "h2";
-    const next = site.items[index + 1];
-    return `      <section class="chapter chapter-${item.kind === "outlook" ? "storage" : escape(item.id)}" id="${escape(item.id)}" aria-labelledby="${escape(item.id)}-title"${item.capacityBits !== null ? ` data-capacity-bits="${item.capacityBits}"` : ""}>
-        <div class="chapter-copy">
-          <p class="eyebrow">${escape(text.eyebrow)}</p>
-          <${heading} id="${escape(item.id)}-title">${lines(text.heading)}</${heading}>
-          <p class="intro">${lines(text.description)}</p>${text.note ? `
-          <p class="development-note">${escape(text.note)}</p>` : ""}
-        </div>${item.graphic ? `
-        <figure class="data-figure">
-          <div class="${item.graphic.count === 1 ? "bit" : "byte"}-visual" aria-hidden="true">${'<span class="bit-dot"></span>'.repeat(item.graphic.count)}</div>
-          <figcaption><strong>${escape(text.figure.label)}${text.figure.equation ? ` <span class="equation">${escape(text.figure.equation)}</span>` : ""}</strong> <span>${escape(text.figure.caption)}</span></figcaption>
-        </figure>` : ""}${item.sources.length ? `
-        <ul class="sources">${item.sources.map((source) => `<li><a href="${escape(source.url)}">${escape(source.label)}</a></li>`).join("")}</ul>` : ""}${next ? `
-        <a class="next-chapter" href="#${escape(next.id)}">${escape(text.nextLabel)} <span aria-hidden="true">↓</span></a>` : ""}
+    return `      <section class="chapter chapter-${item.kind}" id="${escape(item.id)}" aria-labelledby="${escape(item.id)}-title"${item.capacityBits !== null ? ` data-capacity-bits="${item.capacityBits}"` : ""}>
+        <div class="chapter-content">${item.graphic ? `
+          <div class="chapter-graphic" aria-hidden="true">
+            <img src="../assets/${escape(item.graphic.src)}" width="72" height="72" alt="">
+          </div>` : ""}
+          <div class="chapter-copy">
+            <${heading} id="${escape(item.id)}-title">${lines(text.heading)}</${heading}>
+            <p class="intro">${lines(text.description)}</p>${text.note ? `
+            <p class="development-note">${escape(text.note)}</p>` : ""}${item.sources.length ? `
+            <ul class="sources">${item.sources.map((source) => `<li><a href="${escape(source.url)}">${escape(source.label)}</a></li>`).join("")}</ul>` : ""}
+          </div>
+        </div>
       </section>`;
   }).join("\n")}
     </main>

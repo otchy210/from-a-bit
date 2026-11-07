@@ -6,7 +6,7 @@ From a Bit は、スクロールしながらデータ容量の違いを体感す
 
 A scroll-driven infographic exploring the scale of digital data and the history of data storage, starting with a single bit.
 
-現在制作中です。日英の導入ページを用意しており、媒体の紹介と容量に応じたズームはこれから実装します。
+現在制作中です。日英の導入ページで、1 bit から 1 byte への縮尺の変化を試せます。記憶媒体の紹介はこれから追加します。
 
 公開予定：
 

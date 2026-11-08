@@ -25,11 +25,11 @@ test("capacity parsing preserves integers beyond Number's range", () => {
 test("invalid metadata fails before it can be rendered", async () => {
   for (const [mutate, message] of [
     [({ items }) => { items[1].id = items[0].id; }, /Duplicate item ID/],
-    [({ items }) => { delete items[0].text.en; }, /Missing item translation/],
+    [({ items }) => { delete items[0].text; }, /text is required/],
     [({ items }) => { items[0].capacityBits = 9007199254740992; }, /integer string/],
     [({ items }) => { items[0].graphic.src = "graphics/dots.png"; }, /graphic.src/],
     [({ items }) => { items[0].graphic.src = "graphics/../other.svg"; }, /graphic.src/],
-    [({ items }) => { items[0].text.en.heading = []; }, /non-empty list/],
+    [({ items }) => { items[0].text.heading = []; }, /non-empty list/],
     [({ items }) => { items[0].sources = [{ label: "Source", url: "javascript:alert(1)" }]; }, /HTTPS/],
     [({ config }) => { config.origin += "/wrong-path"; }, /without a path/],
   ]) {
@@ -39,49 +39,48 @@ test("invalid metadata fails before it can be rendered", async () => {
   }
 });
 
-test("one page template renders both languages and exact capacity attributes", async () => {
+test("the Japanese root page has canonical assets and exact capacity attributes", async () => {
   const { config, items } = await fixture();
   const exact = "123456789012345678901234567890";
   items[0].capacityBits = exact;
   const site = validateSite(config, items);
-  for (const language of site.languages) {
-    const html = new Page().render({ site, language });
-    assert.ok(html.includes(`<html lang="${language}">`));
-    assert.ok(html.includes(`rel="canonical" href="${site.origin}/${language}/"`));
-    assert.ok(html.includes(`data-capacity-bits="${exact}"`));
-    assert.equal((html.match(/<h1\b/g) || []).length, 1);
-    assert.equal((html.match(/<section\b/g) || []).length, site.items.length);
-    assert.equal((html.match(/<script\b/g) || []).length, 1);
-    assert.equal((html.match(/rel="stylesheet"/g) || []).length, 1);
-    assert.ok(html.includes(site.items[0].text[language].description[0]));
-    assert.ok(html.includes('src="../assets/graphics/bit.svg"'));
-    assert.doesNotMatch(html, /figcaption|eyebrow|next-chapter/);
-  }
+  const html = new Page().render({ site });
+  assert.ok(html.includes('<html lang="ja">'));
+  assert.ok(html.includes(`rel="canonical" href="${site.origin}/"`));
+  assert.ok(html.includes(`data-capacity-bits="${exact}"`));
+  assert.equal((html.match(/<h1\b/g) || []).length, 1);
+  assert.equal((html.match(/<section\b/g) || []).length, site.items.length);
+  assert.equal((html.match(/<script\b/g) || []).length, 1);
+  assert.equal((html.match(/rel="stylesheet"/g) || []).length, 1);
+  assert.ok(html.includes(site.items[0].text.description[0]));
+  assert.ok(html.includes('src="assets/graphics/bit.svg"'));
+  assert.ok(html.includes('href="assets/style.css"'));
+  assert.ok(html.includes('src="assets/script.js"'));
+  assert.equal(new Page().data().permalink, "index.html");
+  assert.doesNotMatch(html, /figcaption|eyebrow|next-chapter|hreflang|language-nav|data-language-link/);
 });
 
 test("text and attribute values are escaped without losing the original content", async () => {
   const { config, items } = await fixture();
   const text = '<em title="quoted">A & B\'s</em>';
   const escaped = "&lt;em title=&quot;quoted&quot;&gt;A &amp; B&#39;s&lt;/em&gt;";
-  config.locales.en.description = text;
-  items[0].text.en.heading = [text];
-  const html = new Page().render({ site: validateSite(config, items), language: "en" });
+  config.description = text;
+  items[0].text.heading = [text];
+  const html = new Page().render({ site: validateSite(config, items) });
   assert.ok(html.includes(`content="${escaped}"`));
   assert.ok(html.includes(`>${escaped}</h1>`));
   assert.ok(!html.includes(text));
 });
 
-test("a new item participates in both pages without separate label or navigation metadata", async () => {
+test("a new item participates in the page without separate label or navigation metadata", async () => {
   const { config, items } = await fixture();
   const item = structuredClone(items[1]);
   item.id = "another-capacity";
   items.splice(2, 0, item);
   const site = validateSite(config, items);
-  for (const language of site.languages) {
-    const html = new Page().render({ site, language });
-    assert.ok(html.includes('id="another-capacity"'));
-    assert.ok(html.includes('id="another-capacity-title"'));
-  }
+  const html = new Page().render({ site });
+  assert.ok(html.includes('id="another-capacity"'));
+  assert.ok(html.includes('id="another-capacity-title"'));
 });
 
 test("the checked-in metadata loads exact capacities and SVG references", async () => {

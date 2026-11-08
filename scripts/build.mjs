@@ -21,15 +21,14 @@ async function filesIn(directory, prefix = "") {
 }
 
 const expected = await filesIn(staging);
-for (const path of [".nojekyll", "assets/script.js", "assets/style.css", "en/index.html", "ja/index.html"]) {
+for (const path of [".nojekyll", "assets/script.js", "assets/style.css", "index.html"]) {
   if (!expected.includes(path)) throw new Error(`Missing generated file: ${path}`);
 }
-for (const [extension, count] of [[".html", 2], [".css", 1], [".js", 1]]) {
+for (const [extension, count] of [[".html", 1], [".css", 1], [".js", 1]]) {
   if (expected.filter((path) => path.endsWith(extension)).length !== count) {
     throw new Error(`Expected ${count} generated ${extension} file(s).`);
   }
 }
-if (expected.includes("index.html")) throw new Error("The root page has not been specified yet.");
 
 if (checkOnly) {
   const actual = await filesIn("public");

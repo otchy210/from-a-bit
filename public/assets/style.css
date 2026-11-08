@@ -62,9 +62,6 @@ main:focus { outline: none; }
   text-decoration: none;
 }
 .brand-dot { width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--accent); }
-.language-nav { display: flex; align-items: center; gap: 1.25rem; font-size: 0.85rem; }
-.language-nav [aria-current] { font-weight: 700; }
-.language-nav a { color: var(--muted); }
 .chapter { padding: 3.5rem var(--gutter) 6rem; }
 .chapter-content {
   display: grid;
@@ -105,7 +102,6 @@ h1, h2 {
 
 @media (max-width: 480px) {
   :root { --graphic-size: 3.25rem; --graphic-gap: 1rem; }
-  .language-nav { gap: 0.8rem; }
   .intro { font-size: 0.9rem; }
   .intro br { display: none; }
 }

@@ -4,8 +4,6 @@ const main = document.querySelector("main");
 const chapters = [...document.querySelectorAll("[data-capacity-bits]")];
 const contents = chapters.map((chapter) => chapter.querySelector(".chapter-content"));
 const capacities = chapters.map((chapter) => capacityLog2(BigInt(chapter.dataset.capacityBits)));
-const languageLinks = document.querySelectorAll("[data-language-link]");
-const outlook = document.querySelector(".chapter-outlook");
 const progressBar = document.querySelector(".reading-progress");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 let framePending = false;
@@ -13,14 +11,6 @@ let sceneStart = 0;
 let stride = 1;
 let viewportHeight = window.innerHeight;
 let anchorY = 0;
-let activeId = null;
-
-function updateLanguageLinks() {
-  const hash = activeId ? `#${activeId}` : window.location.hash;
-  for (const link of languageLinks) {
-    link.setAttribute("href", `${link.getAttribute("href").split("#")[0]}${hash}`);
-  }
-}
 
 function measure() {
   const enabled = chapters.length > 1 && !reducedMotion.matches;
@@ -33,7 +23,6 @@ function measure() {
     if (!enabled) contents[index].removeAttribute("style");
   });
   sceneStart = chapters[0] ? chapters[0].getBoundingClientRect().top + window.scrollY : 0;
-  if (!enabled) activeId = null;
   scheduleFrame();
 }
 
@@ -41,7 +30,6 @@ function update() {
   framePending = false;
   const scrollY = window.scrollY;
   if (main?.classList.contains("is-zooming")) {
-    const outlookIsActive = outlook && outlook.getBoundingClientRect().top < viewportHeight / 2;
     const position = Math.max(0, Math.min(chapters.length - 1, (scrollY - sceneStart) / stride));
     const camera = cameraLog2(capacities, position);
     const entry = Math.max(0, sceneStart - scrollY);
@@ -57,12 +45,6 @@ function update() {
         ? `translate3d(0, ${y}px, 0) scale(${scale})`
         : "scale(0)";
     });
-    const nextId = outlookIsActive
-      ? outlook.id : chapters[Math.round(position)].id;
-    if (nextId !== activeId) {
-      activeId = nextId;
-      updateLanguageLinks();
-    }
   }
   const scrollable = document.documentElement.scrollHeight - viewportHeight;
   if (progressBar && !reducedMotion.matches) {
@@ -81,7 +63,6 @@ function followAnchor() {
   if (index !== -1 && main?.classList.contains("is-zooming")) {
     window.scrollTo({ top: sceneStart + index * stride, behavior: "instant" });
   }
-  if (!main?.classList.contains("is-zooming")) updateLanguageLinks();
   scheduleFrame();
 }
 
@@ -89,6 +70,5 @@ window.addEventListener("scroll", scheduleFrame, { passive: true });
 window.addEventListener("resize", measure);
 window.addEventListener("hashchange", followAnchor);
 window.addEventListener("load", () => { measure(); followAnchor(); });
-reducedMotion.addEventListener("change", () => { measure(); updateLanguageLinks(); });
+reducedMotion.addEventListener("change", measure);
 measure();
-updateLanguageLinks();

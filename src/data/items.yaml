@@ -1,4 +1,5 @@
-# Exact capacities are quoted decimal strings. Both languages share this order.
+# 正確な容量は十進の整数文字列で記述し、容量の小さい順に並べる。
+
 - id: bit
   kind: capacity
   capacityBits: "1"
@@ -6,20 +7,12 @@
     src: graphics/bit.svg
   sources: []
   text:
-    ja:
-      heading:
-        - すべては、
-        - ひとつのビットから。
-      description:
-        - 1 bit は、0 と 1。
-        - 二つの状態の、どちらか一つを表します。
-    en:
-      heading:
-        - It all starts
-        - with a single bit.
-      description:
-        - One bit represents one of two states.
-        - 0 or 1. This is where our journey begins.
+    heading:
+      - すべては、
+      - ひとつのビットから。
+    description:
+      - 1 bit は、0 と 1。
+      - 二つの状態の、どちらか一つを表します。
 
 - id: byte
   kind: capacity
@@ -28,41 +21,24 @@
     src: graphics/byte.svg
   sources: []
   text:
-    ja:
-      heading:
-        - 8 bit で、
-        - 1 byte。
-      description:
-        - 八つのビットをひとまとまりにした単位です。
-        - このサイトでは、1 byte = 8 bit として進みます。
-    en:
-      heading:
-        - 8 bits.
-        - 1 byte.
-      description:
-        - Eight bits together make one byte.
-        - Throughout this journey, 1 byte means 8 bits.
+    heading:
+      - 8 bit で、
+      - 1 byte。
+    description:
+      - 八つのビットをひとまとまりにした単位です。
+      - このサイトでは、1 byte = 8 bit として進みます。
 
 # A narrative placeholder, not a storage medium with a capacity.
+
 - id: storage
   kind: outlook
   sources: []
   text:
-    ja:
-      heading:
-        - 記憶は、
-        - どこまで広がるだろう。
-      description:
-        - パンチカードから、大容量のストレージへ。
-        - 媒体の歴史をたどりながら、容量の違いを同じ尺度で眺めていきます。
-      note: >-
-        ただいま制作中。記憶媒体の紹介は、これから追加します。
-    en:
-      heading:
-        - How far
-        - can memory grow?
-      description:
-        - From punched cards to vast data stores.
-        - Follow the history of storage and compare its capacity on a shared scale.
-      note: >-
-        A work in progress. Storage milestones are coming next.
+    heading:
+      - 記憶は、
+      - どこまで広がるだろう。
+    description:
+      - パンチカードから、大容量のストレージへ。
+      - 媒体の歴史をたどりながら、容量の違いを同じ尺度で眺めていきます。
+    note: >-
+      ただいま制作中。記憶媒体の紹介は、これから追加します。

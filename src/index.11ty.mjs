@@ -80,7 +80,7 @@ export default class Page {
     });
     return `<!doctype html>
 <!-- Generated from src/index.11ty.mjs and src/data/*.yaml. Do not edit. -->
-<html lang="ja">
+<html lang="ja"${site.analyticsId ? ` data-analytics-id="${escape(site.analyticsId)}"` : ""}>
   <head prefix="og: https://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -149,7 +149,12 @@ ${notes.entries.map((entry) => `            <div>
 ${site.authorLinks.map(({ url, label }) => `          <a href="${escape(url)}" target="_blank" rel="noopener" aria-describedby="new-window">${escape(label)}</a>`).join("\n")}
         </nav>
         ${backToStart}
-      </div>
+      </div>${site.analyticsId ? `
+      <details class="footer-analytics">
+        <summary>アクセス解析について</summary>
+        <p>このサイトでは、閲覧状況を把握してサイトを改善するため、Google アナリティクスを利用しています。計測には Cookie が使われ、閲覧に関する情報が Google に送信されます。</p>
+        <p><a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google によるデータの取り扱い</a> · <a href="https://tools.google.com/dlpage/gaoptout?hl=ja">計測を無効にする方法</a></p>
+      </details>` : ""}
     </footer>
     <script async src="https://b.st-hatena.com/js/bookmark_button.js"></script>
     <script async src="https://platform.x.com/widgets.js"></script>

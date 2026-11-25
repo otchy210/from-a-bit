@@ -1,6 +1,7 @@
 import { capacityBoundaries, capacityFill, visibleCapacityBands } from "../../lib/capacity.mjs";
 import { capacityLog2 } from "../../lib/scale.mjs";
 import { layoutScene, visibleLayers } from "../../lib/scene.mjs";
+import { enableAnalytics } from "./analytics.js";
 import { enableBackToStart } from "./back-to-start.js";
 
 const main = document.querySelector("main");
@@ -150,3 +151,4 @@ window.addEventListener("load", followAnchor);
 reducedMotion.addEventListener("change", measure);
 enableBackToStart(reducedMotion);
 measure();
+enableAnalytics();

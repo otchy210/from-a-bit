@@ -73,7 +73,7 @@ test("the Japanese root page has canonical assets and exact capacity attributes"
   items.at(-1).capacityBits = exact;
   const site = validateSite(config, items);
   const html = new Page().render({ site });
-  assert.ok(html.includes('<html lang="ja">'));
+  assert.match(html, /<html lang="ja"(?:\s|>)/);
   assert.ok(html.includes(`rel="canonical" href="${site.origin}/"`));
   assert.ok(html.includes(`data-capacity-bits="${exact}"`));
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
@@ -101,6 +101,17 @@ test("the home page identifies the site and its canonical URL to search engines"
     url: `${site.origin}/`,
   });
   assert.ok(html.includes('<link rel="icon" href="favicon.png" type="image/png" sizes="96x96">'));
+});
+
+test("analytics metadata and notice are rendered only with a valid GA4 ID", () => {
+  const { config, items } = structuredClone(metadata);
+  const render = () => new Page().render({ site: validateSite(config, items) });
+  assert.ok(render().includes(`data-analytics-id="${config.analyticsId}"`));
+  assert.ok(render().includes("アクセス解析について"));
+  delete config.analyticsId;
+  assert.doesNotMatch(render(), /data-analytics-id|アクセス解析について/);
+  config.analyticsId = 'G-INVALID"';
+  assert.throws(render, /GA4 measurement ID/);
 });
 
 test("the footer links to the author and to the start without a fragment", () => {

@@ -4,7 +4,7 @@ import { join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 process.chdir(fileURLToPath(new URL("../", import.meta.url)));
-const output = "public";
+const output = "docs";
 const checkOnly = process.argv.includes("--check");
 
 async function filesIn(directory) {
@@ -16,7 +16,7 @@ async function filesIn(directory) {
 
 function checkStructure(files) {
   const pagesAndBundles = ["index.html", "assets/style.css", "assets/script.js"];
-  for (const path of [".nojekyll", "favicon.png", "robots.txt", "sitemap.xml", "assets/social-card.png", "assets/bluesky-wordmark.svg", ...pagesAndBundles]) {
+  for (const path of [".nojekyll", "CNAME", "favicon.png", "robots.txt", "sitemap.xml", "assets/social-card.png", "assets/bluesky-wordmark.svg", ...pagesAndBundles]) {
     if (!files.includes(path)) throw new Error(`Missing generated file: ${path}`);
   }
   for (const path of files) {
@@ -29,7 +29,7 @@ function checkStructure(files) {
 async function checkGenerated(staging, expected) {
   const actual = await filesIn(output);
   if (actual.length !== expected.length || expected.some((path, index) => actual[index] !== path)) {
-    throw new Error("Generated file list differs from public/. Run npm run build.");
+    throw new Error(`Generated file list differs from ${output}/. Run npm run build.`);
   }
   await Promise.all(expected.map(async (path) => {
     const [fresh, published] = await Promise.all([readFile(join(staging, path)), readFile(join(output, path))]);
@@ -61,10 +61,10 @@ try {
   checkStructure(files);
   if (checkOnly) {
     await checkGenerated(staging, files);
-    console.log("public/ matches a fresh production build.");
+    console.log(`${output}/ matches a fresh production build.`);
   } else {
     await replaceOutput(staging, `${temporary}-previous`);
-    console.log("Production files generated in public/.");
+    console.log(`Production files generated in ${output}/.`);
   }
 } finally {
   await rm(temporary, { recursive: true, force: true });

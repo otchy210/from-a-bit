@@ -11,7 +11,7 @@
     "build": "node scripts/build.mjs",
     "check:generated": "node scripts/build.mjs --check",
     "test": "node --test",
-    "check": "npm test && npm run check:generated && node --check public/assets/script.js"
+    "check": "npm test && npm run check:generated && node --check docs/assets/script.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.8",

@@ -5,4 +5,28 @@ title: From a Bit — データの大きさを旅する
 description: >-
   ひとつのビットから、データの大きさと記憶媒体の歴史を旅する。スクロールで容量の違いを体感するインフォグラフィックス、From a Bit。
 skipLink: 本文へ移動
-backToStart: はじまりに戻る
+backToStart: 始まりに戻る
+capacityNotes:
+  heading: 容量の注記
+  entries:
+    - heading: 単位と容量の基準
+      description: >-
+        1 Bは8 bitです。KB、MB、GB、TB、PBは1,000倍ずつ、KiB、MiB、GiBは1,024倍ずつ増えます。製品の容量は原則としてメーカーや資料の公称値を使い、ST-506の5 MBはフォーマット後の値を採用しています。
+    - heading: パンチカードと初期の記憶装置
+      description: >-
+        IBMのパンチカードは1文字を1 Bと置いて80 B、磁気ドラムはComputer History Museumの資料にある50万bitで描いています。アポロのコアロープROMはパリティを除いた1語15 bit、IBM 350は1文字6 bitで換算しています。
+    - heading: フロッピーとCD
+      description: >-
+        IBM 23FDの公称80 KBは80,000 Bとして扱います。Sonyの初期3.5型の322.5 KBは資料上の「322.5 Kbytes」です。「1.44 MB」は1,440 KiBの3.5型2HDの通称です。74分のCD-ROMはMode 1の1セクターを2 KiBとして数えます。同じ長さの音楽CDのPCM音声は約783 MBです。
+    - heading: NANDフラッシュの容量
+      description: >-
+        初代NANDの4 Mbitは1991年の製品の公称値です。縮尺の計算では4 Mbitを512 KiB、Samsung初代V-NANDの128 Gbitを16 GiBとして扱います。
+    - heading: 小説・新聞・図書館の文字量
+      description: >-
+        『こころ』は青空文庫のルビ・注記付きテキストをUTF-8に変換したサイズです。新聞は1日15.5万字、1年365日、国立国会図書館は2025年度末の図書12,631,196点を1点30万字とし、それぞれ1文字3 Bで概算しました。写真や紙面のレイアウトは計算の対象外です。
+    - heading: 円周率の数字列
+      description: >-
+        314兆桁をASCIIの数字1桁につき1 Bで換算しました。小数点と改行は含めていません。
+    - heading: テープと大容量システム
+      description: >-
+        IBM 3480とLTOは非圧縮容量を使っています。HPEの432 TBはLTO-9の18 TBを24巻、Quantumの80.64 PBはLTO-10の40 TBを最大2,016巻並べた構成です。Dellの616 TBと9.8304 PBは搭載ドライブの公称値の合計、Seagateの2.5 PBもデータ保護に使う領域を差し引く前の容量です。

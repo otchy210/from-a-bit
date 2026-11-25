@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<g fill="none" stroke="#202a25" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M24 17h56v60H30a9 9 0 0 1-9-9V27z" fill="#dbe3d5"/>
+<path d="M24 27H14v43a9 9 0 0 0 9 9h57M30 35h42m-19 10h19m-19 7h19m-19 7h19M32 67h40" fill="none"/>
+<rect x="31" y="43" width="15" height="16" rx="1" fill="#a5b7a3"/>
+<text x="50" y="29" fill="#202a25" stroke="none" text-anchor="middle" font-family="monospace" font-size="9" font-weight="700">NEWS</text>
+</g>
+</svg>

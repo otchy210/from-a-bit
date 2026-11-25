@@ -13,46 +13,600 @@
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
+    <svg class="icon-definitions" width="0" height="0" aria-hidden="true" focusable="false">
+      <symbol id="external-link" viewBox="0 0 16 16">
+        <path d="M9 2.5h4.5V7m0-4.5L7 9m.5-5H3.5v8.5H12V8.5" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </svg>
+    <span id="new-window" hidden>新しいタブまたはウィンドウで開く</span>
     <div class="reading-progress" aria-hidden="true"></div>
-    <header class="site-header">
+    <header class="site-header" id="top" tabindex="-1">
       <a class="wordmark" href="#bit">From a Bit<span class="brand-dot" aria-hidden="true"></span></a>
     </header>
     <main id="main" tabindex="-1">
       <section class="chapter chapter-capacity" id="bit" aria-labelledby="bit-title" data-capacity-bits="1">
         <div class="chapter-content">
-          <div class="chapter-graphic" aria-hidden="true">
-            <img src="assets/graphics/bit.svg" width="72" height="72" alt="">
-          </div>
+          <img class="chapter-graphic" src="assets/graphics/bit.svg" width="72" height="72" alt="">
           <div class="chapter-copy">
             <h1 id="bit-title">すべては、<br>ひとつのビットから。</h1>
-            <p class="intro">1 bit は、0 と 1。<br>二つの状態の、どちらか一つを表します。</p>
+            <p class="chapter-measure">1 bit</p>
+            <p class="chapter-era">1946年 · CRTを使った記憶実験</p>
+            <p class="intro">1 bit は、0 と 1 のどちらか一つを表します。1946年、ウィリアムズはブラウン管の画面に電荷を残し、1 bitを記憶する実験を行いました。</p>
+            <ul class="sources"><li><a href="https://curation.cs.manchester.ac.uk/computer50/www.computer50.org/mark1/new.baby.html" target="_blank" rel="noopener" aria-describedby="new-window">Manchester：Baby開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.computerhistory.org/storageengine/williams-demonstrates-crt-storage/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：CRT記憶<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
       <section class="chapter chapter-capacity" id="byte" aria-labelledby="byte-title" data-capacity-bits="8">
         <div class="chapter-content">
-          <div class="chapter-graphic" aria-hidden="true">
-            <img src="assets/graphics/byte.svg" width="72" height="72" alt="">
-          </div>
+          <img class="chapter-graphic" src="assets/graphics/byte.svg" width="72" height="72" alt="">
           <div class="chapter-copy">
             <h2 id="byte-title">8 bit で、<br>1 byte。</h2>
-            <p class="intro">八つのビットをひとまとまりにした単位です。<br>このサイトでは、1 byte = 8 bit として進みます。</p>
+            <p class="chapter-measure">1 B（8 bit）</p>
+            <p class="chapter-era">単位の定義</p>
+            <p class="intro">八つのビットをひとまとまりにすると1バイトです。例えば、「あ」の1文字はUTF-8で3バイト。文字を保存するときの大きさは、文字と符号化の方式で決まります。</p>
+            <ul class="sources"><li><a href="https://www.unicode.org/faq/utf_bom.html" target="_blank" rel="noopener" aria-describedby="new-window">Unicode公式FAQ<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
-      <section class="chapter chapter-outlook" id="storage" aria-labelledby="storage-title">
+      <section class="chapter chapter-capacity" id="intel-3101" aria-labelledby="intel-3101-title" data-capacity-bits="64">
         <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/intel-3101.svg" width="72" height="72" alt="">
           <div class="chapter-copy">
-            <h2 id="storage-title">記憶は、<br>どこまで広がるだろう。</h2>
-            <p class="intro">パンチカードから、大容量のストレージへ。<br>媒体の歴史をたどりながら、容量の違いを同じ尺度で眺めていきます。</p>
-            <p class="development-note">ただいま制作中。記憶媒体の紹介は、これから追加します。</p>
+            <h2 id="intel-3101-title">Intelの最初のメモリ</h2>
+            <p class="chapter-measure">8 B（64 bit）／チップ</p>
+            <p class="chapter-era">1969年4月 · Intel 3101発売</p>
+            <p class="intro">Intelが最初に売り出した製品は、64 bitのSRAMでした。4 bitのデータを16組記憶し、電源を切ると中身は失われます。</p>
+            <ul class="sources"><li><a href="https://www.intel.com/content/www/us/en/history/virtual-vault/articles/intels-first-product-3101.html" target="_blank" rel="noopener" aria-describedby="new-window">Intel：3101<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://bitsavers.trailing-edge.com/components/intel/_dataBooks/1978_Intel_Component_Data_Catalog.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Intel：3101データシート<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="early-rom" aria-labelledby="early-rom-title" data-capacity-bits="256">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/early-rom.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="early-rom-title">半導体に固定した32バイト</h2>
+            <p class="chapter-measure">32 B（256 bit）／チップ</p>
+            <p class="chapter-era">1965年 · Sylvaniaの初期半導体ROM</p>
+            <p class="intro">Sylvaniaが製作した256 bitの初期の半導体ROM。読み出し専用のデータをチップに組み込む方式です。初期の半導体ROMには、その後に登場したMOS方式など複数の系譜があります。</p>
+            <ul class="sources"><li><a href="https://www.computerhistory.org/siliconengine/semiconductor-read-only-memory-chips-appear/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：半導体ROM<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="punch-card" aria-labelledby="punch-card-title" data-capacity-bits="640">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/punch-card.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="punch-card-title">穴で読む80文字</h2>
+            <p class="chapter-measure">80文字／カード1枚</p>
+            <p class="chapter-era">1928年 · IBMの80欄形式</p>
+            <p class="intro">IBMのパンチカードは、縦に並ぶ穴の組み合わせで、1欄に1文字を表しました。1890年の米国国勢調査にも、別形式のパンチカードが使われています。</p>
+            <ul class="sources"><li><a href="https://www.ibm.com/history/punched-card" target="_blank" rel="noopener" aria-describedby="new-window">IBM：パンチカード<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.census.gov/programs-surveys/decennial-census/decade/1890/about-1890.html" target="_blank" rel="noopener" aria-describedby="new-window">米国国勢調査局<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="manchester-baby" aria-labelledby="manchester-baby-title" data-capacity-bits="1024">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/manchester-baby.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="manchester-baby-title">ブラウン管が主記憶だった</h2>
+            <p class="chapter-measure">128 B（1,024 bit）／主記憶</p>
+            <p class="chapter-era">1948年 · Manchester Babyがプログラムを実行</p>
+            <p class="intro">Babyはブラウン管に32 bitの語を32個記憶できました。同じ1,024 bitでも、1953年の磁気コアはコア面1枚、1970年のIntel 1103はDRAMチップ1個。コアは電源を切っても磁化を保ち、DRAMは定期的な再書き込みを必要とします。</p>
+            <ul class="sources"><li><a href="https://curation.cs.manchester.ac.uk/computer50/www.computer50.org/mark1/new.baby.html" target="_blank" rel="noopener" aria-describedby="new-window">Manchester：Baby開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.computerhistory.org/storageengine/whirlwind-computer-debuts-core-memory/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：Whirlwind<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.computerhistory.org/siliconengine/mos-dynamic-ram-competes-with-magnetic-core-memory-on-price/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：SRAMからDRAMへ<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="eprom-1702" aria-labelledby="eprom-1702-title" data-capacity-bits="2048">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/eprom-1702.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="eprom-1702-title">窓から光を当てて消すROM</h2>
+            <p class="chapter-measure">256 B（2,048 bit）／チップ</p>
+            <p class="chapter-era">1971年 · Intel 1702発表</p>
+            <p class="intro">Intel 1702には、紫外線を通す窓がありました。書き込んだ内容を紫外線で消去し、プログラムを入れ直せます。後のEEPROMでは、消去も電気的に行えるようになります。</p>
+            <ul class="sources"><li><a href="https://www.computerhistory.org/siliconengine/reusable-programmable-rom-introduces-iterative-design-flexibility/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：プログラマブルROM<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.bitsavers.org/components/intel/_dataBooks/1983_Memory_Component_Handbook.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Intel 1983 Memory Component Handbook<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="magnetic-drum" aria-labelledby="magnetic-drum-title" data-capacity-bits="500000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/magnetic-drum.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="magnetic-drum-title">回転する磁気ドラム</h2>
+            <p class="chapter-measure">62.5 KB／試作機</p>
+            <p class="chapter-era">1932年 · Tauschekが実演／1933年 · 特許出願</p>
+            <p class="intro">磁性体で覆った円筒を回し、ヘッドで記録を読み取る装置です。</p>
+            <ul class="sources"><li><a href="https://www.computerhistory.org/storageengine/tauschek-patents-magnetic-drum-storage/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：磁気ドラム<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="apollo-rope" aria-labelledby="apollo-rope-title" data-capacity-bits="552960">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/apollo-rope.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="apollo-rope-title">月へ行ったコアロープROM</h2>
+            <p class="chapter-measure">69.12 KB／ROM</p>
+            <p class="chapter-era">1966年 · 設計資料／1969年 · 月着陸で使用</p>
+            <p class="intro">アポロ誘導コンピューターの固定メモリでは、磁気コアを通る線の配線でプログラムを表しました。Block IIのROMには36,864語を記憶できました。</p>
+            <ul class="sources"><li><a href="https://ntrs.nasa.gov/api/citations/19660019469/downloads/19660019469.pdf" target="_blank" rel="noopener" aria-describedby="new-window">NASA NTRS：1966年設計資料<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="early-floppy" aria-labelledby="early-floppy-title" data-capacity-bits="640000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/early-floppy.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="early-floppy-title">最初期のフロッピー</h2>
+            <p class="chapter-measure">80 KB／8インチディスク</p>
+            <p class="chapter-era">1971年 · IBM 23FD／1976年 · Shugart SA400</p>
+            <p class="intro">最初期のIBM 23FDは読み出し専用の8インチフロッピーで、装置にデータを読み込ませるために使われました。後に登場した5.25インチのSA400は、約89.6 KBを収めました。</p>
+            <ul class="sources"><li><a href="https://www.computerhistory.org/storageengine/floppy-disk-loads-mainframe-computer-data/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：最初のFD<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.ibm.com/history/floppy-disk" target="_blank" rel="noopener" aria-describedby="new-window">IBM：開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.computerhistory.org/storageengine/minicomputers-stimulate-floppy-disk-sales/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：minifloppy<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="pc-floppy" aria-labelledby="pc-floppy-title" data-capacity-bits="2949120">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/pc-floppy.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="pc-floppy-title">PCで使われたフロッピー</h2>
+            <p class="chapter-measure">360 KiB／両面</p>
+            <p class="chapter-era">1981年 · ECMA-70初版、Sony 3.5型発売／1984年 · Mac採用</p>
+            <p class="intro">PC向けの5.25インチフロッピーには、両面で360 KiBを収める形式がありました。国内の2Dは320 KiB、Sonyの初期3.5型は322.5 KB、初期Macは400 KiBでした。</p>
+            <ul class="sources"><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-70/" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-70<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ne-winioctl-media_type" target="_blank" rel="noopener" aria-describedby="new-window">Microsoft：媒体形式<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://bitsavers.org/pdf/sony/floppy/Sony_Micro_Floppy_Disk_Drive_Model_0A-D30V_OEM_Manual_Mar82.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Sony OEM manual<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://support.apple.com/en-us/112187" target="_blank" rel="noopener" aria-describedby="new-window">Apple：Macintosh 512K仕様<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="first-nand" aria-labelledby="first-nand-title" data-capacity-bits="4194304">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/first-nand.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="first-nand-title">初代NANDフラッシュ</h2>
+            <p class="chapter-measure">4 Mbit／チップ</p>
+            <p class="chapter-era">1987年 · 東芝が研究発表／1991年 · 4 Mbit製品化</p>
+            <p class="intro">電源を切ってもデータが残るNANDフラッシュは、まとめて読み書きするデータの記憶に向きます。読み出しの自由度を重視するNORとは用途が分かれ、のちにメモリーカードやSSDの土台になりました。</p>
+            <ul class="sources"><li><a href="https://www.kioxia.com/ja-jp/rd/technology/history.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：技術開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://archive.computerhistory.org/resources/access/text/2012/04/102658199-05-01-acc.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Intel開発者の口述記録<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/en-jp/rd/technology/history.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：4 Mbit NANDの製品化（英語版年表）<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="kokoro" aria-labelledby="kokoro-title" data-capacity-bits="4476096">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/kokoro.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="kokoro-title">小説1冊、あるいは新聞1日</h2>
+            <p class="chapter-measure">559.512 KB／『こころ』の電子版</p>
+            <p class="chapter-era">1914年 · 『こころ』連載／2026年 · 電子版を計測</p>
+            <p class="intro">夏目漱石の『こころ』の電子版は、新聞1日分の文字データとおおよそ同じ大きさです。新聞1日分の目安は約465 KBです。</p>
+            <ul class="sources"><li><a href="https://www.aozora.gr.jp/cards/000148/card773.html" target="_blank" rel="noopener" aria-describedby="new-window">図書カード・初出年<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://oshihaku.jp/teacher/classreport/14754625" target="_blank" rel="noopener" aria-describedby="new-window">授業リポート<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="floppy-2dd" aria-labelledby="floppy-2dd-title" data-capacity-bits="5898240">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/floppy-2dd.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="floppy-2dd-title">2DDのフロッピー</h2>
+            <p class="chapter-measure">720 KiB／両面</p>
+            <p class="chapter-era">1985年 · ECMA-100初版／1986年 · Macintosh Plus発売</p>
+            <p class="intro">両面倍密度の3.5型フロッピーでは、PC向けの720 KiBが一つの代表例。国内の640 KiB形式やMacの800 KiB形式もあり、見た目が同じでもドライブや書式によって読み書きできる形式が変わります。</p>
+            <ul class="sources"><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-100/" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-100<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ne-winioctl-media_type" target="_blank" rel="noopener" aria-describedby="new-window">Microsoft：媒体形式<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://support.apple.com/en-ae/112183" target="_blank" rel="noopener" aria-describedby="new-window">Apple：Macintosh Plus仕様<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="floppy-2hd" aria-labelledby="floppy-2hd-title" data-capacity-bits="11796480">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/floppy-2hd.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="floppy-2hd-title">2HDのフロッピー</h2>
+            <p class="chapter-measure">1,440 KiB／両面</p>
+            <p class="chapter-era">1984年 · PC/ATで高密度形式採用／1987年 · ECMA-125初版</p>
+            <p class="intro">3.5型の「1.44 MB」フロッピーは1,440 KiBを収めました。5.25型のPC/ATでは1,200 KiB、国内PCで使われた3.5型の別形式では1,232 KiBでした。</p>
+            <ul class="sources"><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-125/" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-125<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.manualslib.com/manual/1015063/Ibm-6151.html?page=511" target="_blank" rel="noopener" aria-describedby="new-window">IBMサービスマニュアル<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ne-winioctl-media_type" target="_blank" rel="noopener" aria-describedby="new-window">Microsoft：媒体形式<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="ibm-350" aria-labelledby="ibm-350-title" data-capacity-bits="30000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/ibm-350.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="ibm-350-title">世界初の商用ハードディスク</h2>
+            <p class="chapter-measure">3.75 MB相当／ドライブ</p>
+            <p class="chapter-era">1956年 · IBM 350初出荷</p>
+            <p class="intro">IBM 350は、IBM 305 RAMACのためのハードディスクでした。回転する円盤に500万文字を記憶できました。</p>
+            <ul class="sources"><li><a href="https://www.computerhistory.org/storageengine/first-commercial-hard-disk-drive-shipped/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：RAMAC<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.ibm.com/history/ramac" target="_blank" rel="noopener" aria-describedby="new-window">IBM：RAMAC<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="st-506" aria-labelledby="st-506-title" data-capacity-bits="40000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/st-506.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="st-506-title">PCに入るハードディスク</h2>
+            <p class="chapter-measure">5 MB／ドライブ</p>
+            <p class="chapter-era">1980年 · Seagate ST-506／1983年 · Rodimeの3.5型</p>
+            <p class="intro">SeagateのST-506は、5.25インチのドライブに5 MBを収めました。Rodimeはさらに小さい3.5型を導入し、デスクトップPCで馴染みのある形へとつながります。</p>
+            <ul class="sources"><li><a href="https://s3.computerhistory.org/groups/ds-seagate-st-506.pdf" target="_blank" rel="noopener" aria-describedby="new-window">CHM：ST-506研究ノート<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://s3.computerhistory.org/groups/rodime-ro352.pdf" target="_blank" rel="noopener" aria-describedby="new-window">CHM：Rodime研究ノート<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="sd-card" aria-labelledby="sd-card-title" data-capacity-bits="64000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/sd-card.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="sd-card-title">指先に載るメモリーカード</h2>
+            <p class="chapter-measure">8 MB／カード1枚</p>
+            <p class="chapter-era">1998年 · Memory Stick発売／2000年 · 初期SD登場</p>
+            <p class="intro">初期のSDカードは8 MB。ソニーのMemory Stickも4 MBと8 MBで登場しました。カード型のフラッシュ記憶はデジタルカメラなどに広がり、後にmicroSDのような小型規格も生まれました。</p>
+            <ul class="sources"><li><a href="https://www.sdcard.org/press/thoughtleadership/anatomy-of-an-sd-memory-card-what-matters-most-for-photography-and-videography/" target="_blank" rel="noopener" aria-describedby="new-window">SD Association：初期カードの説明<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sony.com/en/SonyInfo/News/Press/199807/98-067/" target="_blank" rel="noopener" aria-describedby="new-window">Sony：発売発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.olympus.co.jp/jp/news/2002b/nr020822xdcardj.html" target="_blank" rel="noopener" aria-describedby="new-window">Olympus：当時の発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sdcard.org/pdf/SDA20thAnniversary_Infographic.pdf" target="_blank" rel="noopener" aria-describedby="new-window">公式20年史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="prairietek-220" aria-labelledby="prairietek-220-title" data-capacity-bits="160000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/prairietek-220.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="prairietek-220-title">ノートPCへの2.5型HDD</h2>
+            <p class="chapter-measure">20 MB／ドライブ</p>
+            <p class="chapter-era">1988年 · PrairieTek 220登場</p>
+            <p class="intro">PrairieTek 220は2.5インチのハードディスク。20 MBの記憶装置を小さく、軽くすることで、ハードディスクを持ち運ぶパソコンに収めやすくしました。</p>
+            <ul class="sources"><li><a href="https://www.computerhistory.org/storageengine/miniature-disk-drives-enable-mobile-computing/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：小型HDD<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="sundisk-ssd" aria-labelledby="sundisk-ssd-title" data-capacity-bits="160000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/sundisk-ssd.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="sundisk-ssd-title">回転しない20 MB</h2>
+            <p class="chapter-measure">20 MB／ドライブ</p>
+            <p class="chapter-era">1991年 · SunDiskがIBM向けに納入</p>
+            <p class="intro">SunDiskはIBM向けに20 MBのフラッシュSSDを納入しました。前の2.5型HDDと容量は同じ。磁気ディスクとヘッドを半導体に置き換えた例です。</p>
+            <ul class="sources"><li><a href="https://ethw-images.s3.us-east-va.perf.cloud.ovh.us/ethw/2/29/Ref7-IMW-2011.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Eli Harari：2011年IMW論文<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.computerhistory.org/storageengine/solid-state-drive-module-demonstrated/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：SSD<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="winchester" aria-labelledby="winchester-title" data-capacity-bits="280000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/winchester.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="winchester-title">密閉型HDDへの転換点</h2>
+            <p class="chapter-measure">35 MB／モジュール</p>
+            <p class="chapter-era">1973年 · IBM 3340／3348導入</p>
+            <p class="intro">IBMのWinchester方式は、ディスクとヘッドをまとめたモジュールを採用。35 MB版と70 MB版がありました。小さな間隔でヘッドを動かす技術は、後のHDDにつながります。</p>
+            <ul class="sources"><li><a href="https://www.computerhistory.org/storageengine/winchester-pioneers-key-hdd-technology/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：Winchester<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.computerhistory.org/storageengine/disk-packs-offer-portability-security/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：ディスクパック<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="zip-100" aria-labelledby="zip-100-title" data-capacity-bits="800000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/zip-100.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="zip-100-title">フロッピーの先にあったZip</h2>
+            <p class="chapter-measure">100 MB／ディスク</p>
+            <p class="chapter-era">1994年 · Iomega Zip発表</p>
+            <p class="intro">Zipは厚みのある交換式メディアに100 MBを収めました。複数枚のフロッピーに分けていたファイルをまとめて持ち運ぶ用途に使われました。</p>
+            <ul class="sources"><li><a href="https://www.computerhistory.org/storageengine/minicomputers-stimulate-floppy-disk-sales/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：minifloppy<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="newspaper-year" aria-labelledby="newspaper-year-title" data-capacity-bits="1357800000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/newspaper-year.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="newspaper-year-title">新聞1年分を文字だけに</h2>
+            <p class="chapter-measure">約170 MB／1年分の文字</p>
+            <p class="chapter-era">2022年 · 新聞紙面の文字数の資料</p>
+            <p class="intro">毎日の新聞の文字を1年分ためると、約170 MBになります。</p>
+            <ul class="sources"><li><a href="https://oshihaku.jp/teacher/classreport/14754625" target="_blank" rel="noopener" aria-describedby="new-window">授業リポート<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="ibm-3480" aria-labelledby="ibm-3480-title" data-capacity-bits="1600000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/ibm-3480.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="ibm-3480-title">リールからカートリッジへ</h2>
+            <p class="chapter-measure">200 MB／巻</p>
+            <p class="chapter-era">1984年3月 · IBM 3480一般提供</p>
+            <p class="intro">初期の商用コンピューターでは、大きなリールに巻いた磁気テープも記憶装置でした。IBM 3480は1巻200 MBのテープを片手で扱えるカートリッジに収めました。</p>
+            <ul class="sources"><li><a href="https://www.ibm.com/support/pages/node/7093315" target="_blank" rel="noopener" aria-describedby="new-window">IBM：ライフサイクル<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.ibm.com/support/pages/node/641919" target="_blank" rel="noopener" aria-describedby="new-window">IBM：仕様一覧<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.computerhistory.org/storageengine/tape-unit-developed-for-data-storage/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：UNISERVO<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="mo-640" aria-labelledby="mo-640-title" data-capacity-bits="5120000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/mo-640.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="mo-640-title">光と磁気で書き換えるMO</h2>
+            <p class="chapter-measure">640 MB／3.5型ディスク</p>
+            <p class="chapter-era">1988年 · 初期5.25型／1991年 · 3.5型／1997年 · 640 MBのISO規格</p>
+            <p class="intro">MOはレーザーで記録面を熱し、磁気でデータを書き込みます。3.5型640 MBの前後には128・230・540 MBがあり、大きい5.25型にも650 MB級、後のGIGAMOには1 GBを超える製品がありました。</p>
+            <ul class="sources"><li><a href="https://www.fujitsu.com/downloads/HK/mce_mcf3064ss.pdf" target="_blank" rel="noopener" aria-describedby="new-window">富士通：仕様<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sony.com/en/SonyInfo/IR/library/ar/8ido18000005flxn-att/1991-E.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Sony 1991年報<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://info.archives.global.fujitsu/jp/news/1998/Nov/5-e.html" target="_blank" rel="noopener" aria-describedby="new-window">富士通・Sony：回顧付き発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="cd-rom" aria-labelledby="cd-rom-title" data-capacity-bits="5455872000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/cd-rom.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="cd-rom-title">CDで配るソフトウェア</h2>
+            <p class="chapter-measure">681.984 MB／74分のCD-ROM</p>
+            <p class="chapter-era">1982年 · 音楽CD／1985年 · CD-ROM研究発表／1988年 · ECMA初版</p>
+            <p class="intro">音楽のために広まったCDは、ソフトウェアの配布にも使われました。追記型のCD-Rと書き換え型のCD-RWも普及しました。</p>
+            <ul class="sources"><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-130/" target="_blank" rel="noopener" aria-describedby="new-window">CD-ROM規格<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sony.com/en/SonyInfo/CorporateInfo/History/SonyHistory/2-07.html" target="_blank" rel="noopener" aria-describedby="new-window">Sony：CD開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.yuden.co.jp/en/company/history/" target="_blank" rel="noopener" aria-describedby="new-window">太陽誘電の沿革<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.ricoh.com/about/history/1985_1999" target="_blank" rel="noopener" aria-describedby="new-window">Ricoh：沿革<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="ibm-3380" aria-labelledby="ibm-3380-title" data-capacity-bits="20160000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/ibm-3380.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="ibm-3380-title">GBに届いた業務用HDD</h2>
+            <p class="chapter-measure">2.52 GB／ユニット</p>
+            <p class="chapter-era">1980年 · IBM 3380発表</p>
+            <p class="intro">IBM 3380は大型コンピューター向けのディスク装置。ディスクとヘッドを組み合わせた装置を2基搭載し、1ユニットで2.52 GBを収めました。</p>
+            <ul class="sources"><li><a href="https://bitsavers.trailing-edge.com/pdf/ibm/dasd/3380/GA26-1664-3_3380_Description_and_Users_Guide_198412.pdf" target="_blank" rel="noopener" aria-describedby="new-window">IBM：Description and User&#39;s Guide<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="dvd-single" aria-labelledby="dvd-single-title" data-capacity-bits="37600000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/dvd-single.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="dvd-single-title">片面1層のDVD</h2>
+            <p class="chapter-measure">4.7 GB／片面1層</p>
+            <p class="chapter-era">1997年 · DVD-ROMのECMA規格初版</p>
+            <p class="intro">DVDはCDと似た外形のまま、より細かくデータを記録します。DVD-R・DVD+Rの追記型、RWやDVD-RAMの書き換え型にも、DVD-ROMと同じ容量帯の規格がありました。</p>
+            <ul class="sources"><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-267/" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-267<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.ecma-international.org/wp-content/uploads/ECMA-349_1st_edition_december_2003.pdf" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-349初版PDF<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-330/" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-330<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="dvd-dual" aria-labelledby="dvd-dual-title" data-capacity-bits="68000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/dvd-dual.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="dvd-dual-title">DVDの記録層を重ねる</h2>
+            <p class="chapter-measure">8.5 GB／片面2層</p>
+            <p class="chapter-era">1997年 · DVD-ROMのECMA規格初版</p>
+            <p class="intro">片面に二つの記録層を重ねたDVD-9は約8.5 GB。後にDVD±Rにも2層の記録型が登場しました。両面に1層ずつ持つ約9.4 GBのDVDでは、裏面の読み取りに向きを変えます。</p>
+            <ul class="sources"><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-267/" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-267<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-364/" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-364<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-382/" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-382<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-330/" target="_blank" rel="noopener" aria-describedby="new-window">ECMA-330<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="v-nand" aria-labelledby="v-nand-title" data-capacity-bits="137438953472">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/v-nand.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="v-nand-title">記憶セルを積み上げる</h2>
+            <p class="chapter-measure">128 Gbit／チップ</p>
+            <p class="chapter-era">2013年 · Samsung初代V-NAND量産発表</p>
+            <p class="intro">Samsungの初代V-NANDは、記憶セルを24層に積み重ねて密度を上げました。東芝は2007年に3D技術を発表し、2015年には48層のBiCSを発表しています。</p>
+            <ul class="sources"><li><a href="https://semiconductor.samsung.com/news-events/news/samsung-electronics-takes-3d-memory-to-new-heights-with-sixth-generation-v-nand-ssds-for-client-computing/" target="_blank" rel="noopener" aria-describedby="new-window">Samsung：V-NAND世代表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/ja-jp/rd/technology/history.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：技術開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/ja-jp/about/news/2015/20150804-1.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA／当時東芝：発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://news.samsung.com/global/samsung-starts-mass-producing-industrys-first-3d-vertical-nand-flash" target="_blank" rel="noopener" aria-describedby="new-window">Samsung：2013年の量産発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="blu-ray" aria-labelledby="blu-ray-title" data-capacity-bits="200000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/blu-ray.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="blu-ray-title">青紫色のレーザーで25 GB</h2>
+            <p class="chapter-measure">25 GB／片面1層</p>
+            <p class="chapter-era">2002年 · 基本仕様発表／2006年 · BD-ROM米国量産発表</p>
+            <p class="intro">Blu-ray Discは、DVDより波長の短い青紫色のレーザーで細かい記録を読み取ります。25 GBは1層の代表容量で、BD-ROMのほかBD-R・BD-REにもあり、2層の50 GBへと広がりました。</p>
+            <ul class="sources"><li><a href="https://www.sony.com/en/SonyInfo/News/Press/200202/02-0219E/" target="_blank" rel="noopener" aria-describedby="new-window">9社共同発表／Sony<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sony.com/SonyInfo/IR/news/20060516.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Sony DADC：2006年発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sony.com/electronics/support/audio-video-accessories-other-av-accessories/dlc-hd50g/articles/00029645" target="_blank" rel="noopener" aria-describedby="new-window">Sony：媒体容量<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="bdxl" aria-labelledby="bdxl-title" data-capacity-bits="800000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/bdxl.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="bdxl-title">100 GBを超える光ディスク</h2>
+            <p class="chapter-measure">100 GB／3層BD-R</p>
+            <p class="chapter-era">2010年6月 · BDXL仕様確定</p>
+            <p class="intro">BDXLでは記録層をさらに増やし、3層のBD-RとBD-REで100 GB、4層のBD-Rで128 GBに達しました。</p>
+            <ul class="sources"><li><a href="https://us.blu-raydisc.com/wp-content/uploads/sites/2/2019/09/20100628-BDXL-Specification-Approved.pdf" target="_blank" rel="noopener" aria-describedby="new-window">BDA：仕様確定発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="lto-1" aria-labelledby="lto-1-title" data-capacity-bits="800000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/lto-1.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="lto-1-title">LTOの始まり</h2>
+            <p class="chapter-measure">100 GB／巻</p>
+            <p class="chapter-era">2000年 · LTO Ultrium 1登場</p>
+            <p class="intro">LTOの最初の世代は、カートリッジ1巻に100 GBを収めました。テープはデータを順に読み書きするため、まとまったデータのバックアップや長期保管に利用されます。</p>
+            <ul class="sources"><li><a href="https://www.lto.org/pr-archive/" target="_blank" rel="noopener" aria-describedby="new-window">LTO公式沿革<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.ibm.com/docs/en/t-tt-and-t?topic=media-data-cartridges" target="_blank" rel="noopener" aria-describedby="new-window">IBM：容量一覧<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="hdd-1tb" aria-labelledby="hdd-1tb-title" data-capacity-bits="8000000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/hdd-1tb.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="hdd-1tb-title">ハードディスクが1 TBに</h2>
+            <p class="chapter-measure">1 TB／ドライブ</p>
+            <p class="chapter-era">2007年1月 · Hitachi Deskstar 7K1000発表</p>
+            <p class="intro">Hitachiは3.5型のDeskstar 7K1000を発表しました。1台で1 TBを収めるHDDが、家庭用PCにも広がっていきます。</p>
+            <ul class="sources"><li><a href="https://www.hitachi.com/en-us/press/archive/01052007/" target="_blank" rel="noopener" aria-describedby="new-window">Hitachi：当時の発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="lto-5" aria-labelledby="lto-5-title" data-capacity-bits="12000000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/lto-5.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="lto-5-title">テープもTB級へ</h2>
+            <p class="chapter-measure">1.5 TB／巻</p>
+            <p class="chapter-era">2010年 · LTO Ultrium 5の規格・互換認証</p>
+            <p class="intro">第5世代のLTOではテープを区画に分ける機能が入り、LTFSによってファイル名を使ってテープ上のデータを扱えるようになりました。</p>
+            <ul class="sources"><li><a href="https://www.lto.org/pr-archive/" target="_blank" rel="noopener" aria-describedby="new-window">LTO公式沿革<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.fujifilm.com/in/en/business/data-management/datastorage/ltotape/specifications" target="_blank" rel="noopener" aria-describedby="new-window">Fujifilm：仕様<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="national-diet-library" aria-labelledby="national-diet-library-title" data-capacity-bits="90944611200000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/national-diet-library.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="national-diet-library-title">国立国会図書館の図書を文字に</h2>
+            <p class="chapter-measure">約11.37 TB／図書の文字</p>
+            <p class="chapter-era">2025年度末 · 国立国会図書館の蔵書統計</p>
+            <p class="intro">国立国会図書館の図書は約1,263万点。収められた文字をすべてテキストにすると、約11.37 TBに相当します。</p>
+            <ul class="sources"><li><a href="https://www.ndl.go.jp/aboutus/outline/numerically" target="_blank" rel="noopener" aria-describedby="new-window">NDL公式統計<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="pm1633a" aria-labelledby="pm1633a-title" data-capacity-bits="122880000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/pm1633a.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="pm1633a-title">2.5型のSSDに15 TB超</h2>
+            <p class="chapter-measure">15.36 TB／ドライブ</p>
+            <p class="chapter-era">2016年3月 · Samsung PM1633a出荷発表</p>
+            <p class="intro">Samsungの業務用SSD、PM1633aは3D NANDを使い、2.5型に15.36 TBを収めました。初期のフラッシュSSDの20 MBと比べると、容量は76万倍以上です。</p>
+            <ul class="sources"><li><a href="https://news.samsung.com/us/samsung-introduces-worlds-largest-capacity-15-36tb-ssd-enterprise-storage-systems/" target="_blank" rel="noopener" aria-describedby="new-window">Samsung：出荷発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="hamr-hdd" aria-labelledby="hamr-hdd-title" data-capacity-bits="240000000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/hamr-hdd.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="hamr-hdd-title">熱で記録密度を上げるHDD</h2>
+            <p class="chapter-measure">30 TB／ドライブ</p>
+            <p class="chapter-era">2024年1月 · SeagateがHAMR量産拡大を発表</p>
+            <p class="intro">HAMRはレーザーで記録面のごく小さな点を加熱して磁気を書き込みます。SeagateのExos Mには、1台で30 TBを収めるモデルがあります。</p>
+            <ul class="sources"><li><a href="https://www.seagate.com/stories/articles/seagates-breakthrough-30tb-plus-hard-drives-ramp-volume-marking-an-inflection-point-in-the-storage-industry-pr/" target="_blank" rel="noopener" aria-describedby="new-window">Seagate：当時の発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.seagate.com/content/dam/seagate/assets/support/internal-hard-drives/enterprise-hard-drives/exos-m/_shared/files/seagate-exos-m-sata-product-manual-210048100c.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Seagate：Exos M製品マニュアル<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="lto-10" aria-labelledby="lto-10-title" data-capacity-bits="320000000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/lto-10.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="lto-10-title">1巻に40 TBのテープ</h2>
+            <p class="chapter-measure">40 TB／巻</p>
+            <p class="chapter-era">2025年 · LTO-10仕様／2026年 · 40 TB媒体の発売告知</p>
+            <p class="intro">LTO-10には30 TBと40 TBのカートリッジがあります。1巻の容量は、LTOが登場した頃の100 GBから最大400倍になりました。</p>
+            <ul class="sources"><li><a href="https://www.lto.org/2025/08/the-lto-program-introduces-generation-10-of-leading-tape-technology-delivering-unparalled-media-density/" target="_blank" rel="noopener" aria-describedby="new-window">LTO：2025年発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.fujifilm.com/in/en/news/fujifilm-expands-lto-portfolio-with-lto-10-40tb" target="_blank" rel="noopener" aria-describedby="new-window">Fujifilm：40 TB発売発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.lto.org/lto-generation-compatibility/" target="_blank" rel="noopener" aria-describedby="new-window">LTO：互換性<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="lc9" aria-labelledby="lc9-title" data-capacity-bits="1966080000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/lc9.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="lc9-title">SSD1台に245.76 TB</h2>
+            <p class="chapter-measure">245.76 TB／E3.Lドライブ</p>
+            <p class="chapter-era">2025年7月 · KIOXIA LC9開発発表</p>
+            <p class="intro">KIOXIA LC9の245.76 TBモデルは、サーバー向けのE3.L形状に大容量のフラッシュを収めます。後に登場する9.83 PBのサーバーには、このドライブが40台入っています。</p>
+            <ul class="sources"><li><a href="https://www.kioxia.com/ja-jp/business/news/2025/20250722-1.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：2025年発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/ja-jp/business/news/2026/20260515-1.html" target="_blank" rel="noopener" aria-describedby="new-window">2026年構成<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="pi-digits" aria-labelledby="pi-digits-title" data-capacity-bits="2512000000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/pi-digits.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="pi-digits-title">円周率314兆桁を文字で保存</h2>
+            <p class="chapter-measure">314 TB／数字列</p>
+            <p class="chapter-era">2025年 · 314兆桁を計算・発表</p>
+            <p class="intro">円周率を314兆桁まで計算した記録があります。その数字をテキストに並べるだけで314 TBになります。</p>
+            <ul class="sources"><li><a href="https://www.numberworld.org/y-cruncher/records.html" target="_blank" rel="noopener" aria-describedby="new-window">開発者記録表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.storagereview.com/review/storagereview-sets-new-pi-record-314-trillion-digits-on-a-dell-poweredge-r7725" target="_blank" rel="noopener" aria-describedby="new-window">StorageReviewの一次報告<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="hdd-server" aria-labelledby="hdd-server-title" data-capacity-bits="4928000000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/hdd-server.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="hdd-server-title">2UのHDDサーバー</h2>
+            <p class="chapter-measure">616 TB／2Uサーバー</p>
+            <p class="chapter-era">2023年 · Dell仕様書／2026年 · HPE構成資料</p>
+            <p class="intro">Dell PowerEdge R760xd2は、22 TBのHDDを最大28台搭載できます。同じ高さの2UにLTO-9を24巻収めるHPE MSL2024 Gen4は、432 TBです。</p>
+            <ul class="sources"><li><a href="https://cdn.blueally.com/sanstorageworks/datasheets/poweredge/poweredge-r760xd2-spec-sheet.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Dell仕様書<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://h50146.www5.hpe.com/directplus_ent/library/pdfs_storage/pl_tape.pdf" target="_blank" rel="noopener" aria-describedby="new-window">HPE日本語構成図<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="corvault" aria-labelledby="corvault-title" data-capacity-bits="20000000000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/corvault.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="corvault-title">4UのHDDに2.5 PB</h2>
+            <p class="chapter-measure">2.5 PB／4Uの1筐体</p>
+            <p class="chapter-era">2023年11月 · Seagateが2.5 PB構成を発表</p>
+            <p class="intro">Seagate Exos CORVAULT 4U106は、高さ4Uの1筐体に磁気ディスクと冗長コントローラーを収めます。</p>
+            <ul class="sources"><li><a href="https://www.seagate.com/stories/articles/seagate-takes-its-high-performing-multi-petabyte-capacity-block-storage-system-to-new-heights-reaching-2-5-pb-pr/" target="_blank" rel="noopener" aria-describedby="new-window">Seagate発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/exos-pods/corvault-self-healing-storage-DS2058-4-2309US-en_US.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Seagate仕様書<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="ssd-server" aria-labelledby="ssd-server-title" data-capacity-bits="78643200000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/ssd-server.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="ssd-server-title">40台のSSDで約9.8 PB</h2>
+            <p class="chapter-measure">9.8304 PB／2Uサーバー</p>
+            <p class="chapter-era">2026年5月 · DellとKIOXIAが構成の実現を発表</p>
+            <p class="intro">Dell PowerEdge R7725xdの2U筐体に245.76 TBのSSDを40台搭載。616 TBのHDD機とラック内で占める高さは同じで、容量は約16倍になります。</p>
+            <ul class="sources"><li><a href="https://www.kioxia.com/ja-jp/business/news/2026/20260515-1.html" target="_blank" rel="noopener" aria-describedby="new-window">2026年構成<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="tape-library" aria-labelledby="tape-library-title" data-capacity-bits="645120000000000000">
+        <div class="chapter-content">
+          <img class="chapter-graphic" src="assets/graphics/tape-library.svg" width="72" height="72" alt="">
+          <div class="chapter-copy">
+            <h2 id="tape-library-title">1筐体に80.64 PB</h2>
+            <p class="chapter-measure">最大80.64 PB／48Uの1筐体</p>
+            <p class="chapter-era">2024年 · 製品の一般提供／2026年 · LTO-10構成を確認</p>
+            <p class="intro">Quantum Scalar i7 RAPTORは、専用の48Uキャビネットに最大2,016巻を収めるテープライブラリーです。必要な巻をロボットが選び、ドライブに装填します。</p>
+            <ul class="sources"><li><a href="https://cdn.allbound.com/iq-ab/2021/11/Scalar-Tape-DS00559A.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Quantum仕様書<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://qsupport.quantum.com/kb/flare/content/Scalar_i7_RAPTOR/docCenter/Site_Planning_i7.htm" target="_blank" rel="noopener" aria-describedby="new-window">Quantum設置ガイド<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://d1io3yog0oux5.cloudfront.net/_1f880a8a07b7adc6058553eac190da16/quantum/news/2024-12-04_Quantum_Scalar_i7_RAPTOR_Now_209.pdf" target="_blank" rel="noopener" aria-describedby="new-window">一般提供の発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
     </main>
     <footer class="site-footer">
-      <span>From a Bit</span>
-      <a href="#bit">はじまりに戻る <span aria-hidden="true">↑</span></a>
+      <div class="footer-notes" id="capacity-notes">
+        <div class="footer-notes-nav"><a href="#top" data-back-to-start>始まりに戻る<span aria-hidden="true">↑</span></a></div>
+        <div class="footer-notes-content">
+          <h2>容量の注記</h2>
+          <dl>
+            <div>
+              <dt>単位と容量の基準</dt>
+              <dd>1 Bは8 bitです。KB、MB、GB、TB、PBは1,000倍ずつ、KiB、MiB、GiBは1,024倍ずつ増えます。製品の容量は原則としてメーカーや資料の公称値を使い、ST-506の5 MBはフォーマット後の値を採用しています。</dd>
+            </div>
+            <div>
+              <dt>パンチカードと初期の記憶装置</dt>
+              <dd>IBMのパンチカードは1文字を1 Bと置いて80 B、磁気ドラムはComputer History Museumの資料にある50万bitで描いています。アポロのコアロープROMはパリティを除いた1語15 bit、IBM 350は1文字6 bitで換算しています。</dd>
+            </div>
+            <div>
+              <dt>フロッピーとCD</dt>
+              <dd>IBM 23FDの公称80 KBは80,000 Bとして扱います。Sonyの初期3.5型の322.5 KBは資料上の「322.5 Kbytes」です。「1.44 MB」は1,440 KiBの3.5型2HDの通称です。74分のCD-ROMはMode 1の1セクターを2 KiBとして数えます。同じ長さの音楽CDのPCM音声は約783 MBです。</dd>
+            </div>
+            <div>
+              <dt>NANDフラッシュの容量</dt>
+              <dd>初代NANDの4 Mbitは1991年の製品の公称値です。縮尺の計算では4 Mbitを512 KiB、Samsung初代V-NANDの128 Gbitを16 GiBとして扱います。</dd>
+            </div>
+            <div>
+              <dt>小説・新聞・図書館の文字量</dt>
+              <dd>『こころ』は青空文庫のルビ・注記付きテキストをUTF-8に変換したサイズです。新聞は1日15.5万字、1年365日、国立国会図書館は2025年度末の図書12,631,196点を1点30万字とし、それぞれ1文字3 Bで概算しました。写真や紙面のレイアウトは計算の対象外です。</dd>
+            </div>
+            <div>
+              <dt>円周率の数字列</dt>
+              <dd>314兆桁をASCIIの数字1桁につき1 Bで換算しました。小数点と改行は含めていません。</dd>
+            </div>
+            <div>
+              <dt>テープと大容量システム</dt>
+              <dd>IBM 3480とLTOは非圧縮容量を使っています。HPEの432 TBはLTO-9の18 TBを24巻、Quantumの80.64 PBはLTO-10の40 TBを最大2,016巻並べた構成です。Dellの616 TBと9.8304 PBは搭載ドライブの公称値の合計、Seagateの2.5 PBもデータ保護に使う領域を差し引く前の容量です。</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <span>From a Bit</span>
+        <a href="#top" data-back-to-start>始まりに戻る<span aria-hidden="true">↑</span></a>
+      </div>
     </footer>
   </body>
 </html>

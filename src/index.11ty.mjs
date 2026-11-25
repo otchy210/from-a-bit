@@ -46,6 +46,18 @@ export default class Page {
   render({ site }) {
     const firstId = site.items[0].id;
     const notes = site.capacityNotes;
+    const homeUrl = `${site.origin}/`;
+    const canonical = escape(homeUrl);
+    const siteMetadata = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: site.name,
+      url: homeUrl,
+    }).replaceAll("<", "\\u003c");
+    const socialImage = escape(new URL("assets/social-card.png", site.origin).href);
+    const title = escape(site.title);
+    const description = escape(site.description);
+    const socialImageAlt = escape(site.socialImageAlt);
     const backToStart = `<a href="#top" data-back-to-start>${escape(site.backToStart)}<span aria-hidden="true">↑</span></a>`;
     let previousBits = 0n;
     const chapters = site.items.map((item, index) => {
@@ -56,13 +68,31 @@ export default class Page {
     return `<!doctype html>
 <!-- Generated from src/index.11ty.mjs and src/data/*.yaml. Do not edit. -->
 <html lang="ja">
-  <head>
+  <head prefix="og: https://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="${escape(site.description)}">
+    <meta name="description" content="${description}">
     <meta name="theme-color" content="${escape(site.themeColor)}">
-    <title>${escape(site.title)}</title>
-    <link rel="canonical" href="${escape(site.origin)}/">
+    <title>${title}</title>
+    <link rel="canonical" href="${canonical}">
+    <link rel="icon" href="favicon.png" type="image/png" sizes="96x96">
+    <script type="application/ld+json">${siteMetadata}</script>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="${escape(site.name)}">
+    <meta property="og:url" content="${canonical}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:image" content="${socialImage}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="${socialImageAlt}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${description}">
+    <meta name="twitter:image" content="${socialImage}">
+    <meta name="twitter:image:alt" content="${socialImageAlt}">
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/script.js" defer></script>
   </head>

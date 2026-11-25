@@ -8,8 +8,7 @@
     src: graphics/bit.svg
   text:
     heading:
-      - "すべては、"
-      - "ひとつのビットから。"
+      - "すべてはひとつのビットから"
     era: "1946年 · CRTを使った記憶実験"
     capacity: "1 bit"
     description:
@@ -28,8 +27,7 @@
     src: graphics/byte.svg
   text:
     heading:
-      - "8 bit で、"
-      - "1 byte。"
+      - "8 bit で 1 byte"
     era: "単位の定義"
     capacity: "1 B（8 bit）"
     description:

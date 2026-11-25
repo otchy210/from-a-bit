@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
 import { capacityBoundaries, capacityFill, parseCapacityBits, visibleCapacityBands } from "../lib/capacity.mjs";
+import { escapeHtml } from "../lib/html.mjs";
 import { loadSite, validateSite, validateGraphics } from "../lib/site.mjs";
 import Page from "../src/index.11ty.mjs";
 
@@ -21,9 +22,10 @@ test("capacity parsing preserves integers beyond Number's range", () => {
 
 test("decimal capacity marks use exact bit thresholds and proportional positions", () => {
   assert.deepEqual(capacityBoundaries(7_999n, 1n), []);
-  assert.deepEqual(capacityBoundaries(8_000n, 7_999n), [{ unit: "KB", percent: 100, crossed: true }]);
+  assert.deepEqual(capacityBoundaries(8_000n, 7_999n), [{ unit: "KB", percent: 100, crossed: false }]);
+  assert.deepEqual(capacityBoundaries(8_008n, 8_000n), [{ unit: "KB", percent: 99.9000999, crossed: true }]);
   assert.deepEqual(capacityBoundaries(500_000n, 2_048n), [{ unit: "KB", percent: 1.6, crossed: true }]);
-  assert.deepEqual(capacityBoundaries(16_000_000n, 8_000_000n), [
+  assert.deepEqual(capacityBoundaries(16_000_000n, 8_000_001n), [
     { unit: "KB", percent: 0.05, crossed: false },
     { unit: "MB", percent: 50, crossed: false },
   ]);
@@ -76,7 +78,7 @@ test("the Japanese root page has canonical assets and exact capacity attributes"
   assert.ok(html.includes(`data-capacity-bits="${exact}"`));
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.equal((html.match(/<section\b/g) || []).length, site.items.length);
-  assert.equal((html.match(/<script\b/g) || []).length, 1);
+  assert.equal((html.match(/<script\b[^>]*\bsrc=/g) || []).length, 1);
   assert.equal((html.match(/rel="stylesheet"/g) || []).length, 1);
   assert.ok(html.includes(site.items[0].text.description[0]));
   assert.ok(html.includes(site.items.at(-1).text.era));
@@ -88,6 +90,19 @@ test("the Japanese root page has canonical assets and exact capacity attributes"
   assert.doesNotMatch(html, /figcaption|eyebrow|next-chapter|hreflang|language-nav|data-language-link/);
 });
 
+test("the home page identifies the site and its canonical URL to search engines", () => {
+  const site = validateSite(metadata.config, metadata.items);
+  const html = new Page().render({ site });
+  const data = html.match(/<script type="application\/ld\+json">([^<]*)<\/script>/)[1];
+  assert.deepEqual(JSON.parse(data), {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.name,
+    url: `${site.origin}/`,
+  });
+  assert.ok(html.includes('<link rel="icon" href="favicon.png" type="image/png" sizes="96x96">'));
+});
+
 test("all citations share an icon and an accessible new-window description", () => {
   const site = validateSite(metadata.config, metadata.items);
   const html = new Page().render({ site });
@@ -96,6 +111,23 @@ test("all citations share an icon and an accessible new-window description", () 
   assert.equal((html.match(/<use href="#external-link"/g) ?? []).length, count);
   assert.equal((html.match(/id="external-link"/g) ?? []).length, 1);
   assert.equal((html.match(/id="new-window"/g) ?? []).length, 1);
+});
+
+test("the page advertises the same sized, accessible image on Open Graph and X", async () => {
+  const site = validateSite(metadata.config, metadata.items);
+  const html = new Page().render({ site });
+  const imageUrl = `${site.origin}/assets/social-card.png`;
+  const png = await readFile(new URL("../src/static/social-card.png", import.meta.url));
+  assert.equal(png.subarray(1, 4).toString(), "PNG");
+  assert.ok(html.includes(`<meta property="og:url" content="${site.origin}/">`));
+  assert.ok(html.includes(`<meta property="og:image" content="${imageUrl}">`));
+  assert.ok(html.includes(`<meta name="twitter:image" content="${imageUrl}">`));
+  assert.ok(html.includes('<meta name="twitter:card" content="summary_large_image">'));
+  assert.ok(html.includes(`<meta property="og:image:width" content="${png.readUInt32BE(16)}">`));
+  assert.ok(html.includes(`<meta property="og:image:height" content="${png.readUInt32BE(20)}">`));
+  const alt = escapeHtml(site.socialImageAlt);
+  assert.ok(html.includes(`<meta property="og:image:alt" content="${alt}">`));
+  assert.ok(html.includes(`<meta name="twitter:image:alt" content="${alt}">`));
 });
 
 test("an outlook can provide prose without taking part in the capacity scale", () => {
@@ -113,11 +145,14 @@ test("text and attribute values are escaped without losing the original content"
   const text = '<em title="quoted">A & B\'s</em>';
   const escaped = "&lt;em title=&quot;quoted&quot;&gt;A &amp; B&#39;s&lt;/em&gt;";
   config.description = text;
+  config.name = "Name </script>";
   items[0].text.heading = [text];
   const html = new Page().render({ site: validateSite(config, items) });
   assert.ok(html.includes(`content="${escaped}"`));
   assert.ok(html.includes(`>${escaped}</h1>`));
   assert.ok(!html.includes(text));
+  const data = html.match(/<script type="application\/ld\+json">([^<]*)<\/script>/)[1];
+  assert.equal(JSON.parse(data).name, config.name);
 });
 
 test("a new item participates in the page without separate label or navigation metadata", () => {

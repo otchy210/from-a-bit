@@ -7,6 +7,8 @@ export default function (eleventyConfig) {
   }
   eleventyConfig.addPassthroughCopy({ "src/assets/graphics/": "assets/graphics/" });
   eleventyConfig.addPassthroughCopy({ "src/static/.nojekyll": ".nojekyll" });
+  eleventyConfig.addPassthroughCopy({ "src/static/favicon.png": "favicon.png" });
+  eleventyConfig.addPassthroughCopy({ "src/static/social-card.png": "assets/social-card.png" });
 
   eleventyConfig.on("eleventy.before", async ({ directories, runMode }) => {
     await build({

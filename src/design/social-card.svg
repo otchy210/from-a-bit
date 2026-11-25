@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Export at 1200 × 630 to src/static/social-card.png. -->
+  <rect width="1200" height="630" fill="#f6f4ed"/>
+  <circle cx="600" cy="170" r="11" fill="#af421f"/>
+  <g fill="#202a25" text-anchor="middle" font-family="system-ui, 'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    <text x="600" y="341" font-size="150" font-weight="750" letter-spacing="-5">From a Bit</text>
+    <text x="600" y="451" font-size="60" font-weight="650" letter-spacing="1">1 bit からたどるデータの歴史</text>
+  </g>
+</svg>

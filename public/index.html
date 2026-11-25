@@ -1,13 +1,31 @@
 <!doctype html>
 <!-- Generated from src/index.11ty.mjs and src/data/*.yaml. Do not edit. -->
 <html lang="ja">
-  <head>
+  <head prefix="og: https://ogp.me/ns#">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="ひとつのビットから、データの大きさと記憶媒体の歴史を旅する。スクロールで容量の違いを体感するインフォグラフィックス、From a Bit。">
     <meta name="theme-color" content="#f6f4ed">
-    <title>From a Bit — データの大きさを旅する</title>
+    <title>From a Bit — 1 bit からたどるデータの歴史</title>
     <link rel="canonical" href="https://from-a-bit.otchy.net/">
+    <link rel="icon" href="favicon.png" type="image/png" sizes="96x96">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"From a Bit","url":"https://from-a-bit.otchy.net/"}</script>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="From a Bit">
+    <meta property="og:url" content="https://from-a-bit.otchy.net/">
+    <meta property="og:title" content="From a Bit — 1 bit からたどるデータの歴史">
+    <meta property="og:description" content="ひとつのビットから、データの大きさと記憶媒体の歴史を旅する。スクロールで容量の違いを体感するインフォグラフィックス、From a Bit。">
+    <meta property="og:image" content="https://from-a-bit.otchy.net/assets/social-card.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="From a Bit。1 bit からたどるデータの歴史。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="From a Bit — 1 bit からたどるデータの歴史">
+    <meta name="twitter:description" content="ひとつのビットから、データの大きさと記憶媒体の歴史を旅する。スクロールで容量の違いを体感するインフォグラフィックス、From a Bit。">
+    <meta name="twitter:image" content="https://from-a-bit.otchy.net/assets/social-card.png">
+    <meta name="twitter:image:alt" content="From a Bit。1 bit からたどるデータの歴史。">
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/script.js" defer></script>
   </head>
@@ -31,7 +49,7 @@
             <span class="capacity-line"></span></div>
           <img class="chapter-graphic" src="assets/graphics/bit.svg" width="72" height="72" alt="">
           <div class="chapter-copy">
-            <h1 id="bit-title">すべては、<br>ひとつのビットから。</h1>
+            <h1 id="bit-title">すべてはひとつのビットから</h1>
             <p class="chapter-measure">1 bit</p>
             <p class="chapter-era">1946年 · CRTを使った記憶実験</p>
             <p class="intro">1 bit は、0 と 1 のどちらか一つを表します。1946年、ウィリアムズはブラウン管の画面に電荷を残し、1 bitを記憶する実験を行いました。</p>
@@ -45,7 +63,7 @@
             <span class="capacity-line"></span></div>
           <img class="chapter-graphic" src="assets/graphics/byte.svg" width="72" height="72" alt="">
           <div class="chapter-copy">
-            <h2 id="byte-title">8 bit で、<br>1 byte。</h2>
+            <h2 id="byte-title">8 bit で 1 byte</h2>
             <p class="chapter-measure">1 B（8 bit）</p>
             <p class="chapter-era">単位の定義</p>
             <p class="intro">8ビットをひとまとまりにすると1バイトです。例えば、「あ」の1文字はUTF-8で3バイト。文字を保存するときの大きさは、文字と符号化の方式で決まります。</p>
@@ -537,10 +555,8 @@
       </section>
       <section class="chapter chapter-capacity" id="hdd-1tb" aria-labelledby="hdd-1tb-title" data-capacity-bits="8000000000000">
         <div class="chapter-content">
-          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
-            <span class="capacity-line"></span>
-            <span class="capacity-mark mark-at-end" data-position="100" style="--mark-color:var(--capacity-tb)"><span>1 TB</span></span>
-          </div>
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
           <img class="chapter-graphic" src="assets/graphics/hdd-1tb.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="hdd-1tb-title">ハードディスクが1 TBに</h2>
@@ -567,8 +583,10 @@
       </section>
       <section class="chapter chapter-capacity" id="lto-5" aria-labelledby="lto-5-title" data-capacity-bits="12000000000000">
         <div class="chapter-content">
-          <div class="capacity-scale" aria-hidden="true" hidden>
-            <span class="capacity-line"></span></div>
+          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>
+            <span class="capacity-mark" data-position="66.66666667" style="--mark-color:var(--capacity-tb)"><span>1 TB</span></span>
+          </div>
           <img class="chapter-graphic" src="assets/graphics/lto-5.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="lto-5-title">テープもTB級へ</h2>
@@ -765,10 +783,8 @@
       </section>
       <section class="chapter chapter-capacity" id="cern-lhc" aria-labelledby="cern-lhc-title" data-capacity-bits="8000000000000000000">
         <div class="chapter-content">
-          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
-            <span class="capacity-line"></span>
-            <span class="capacity-mark mark-at-end" data-position="100" style="--mark-color:var(--capacity-eb)"><span>1 EB</span></span>
-          </div>
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
           <img class="chapter-graphic" src="assets/graphics/cern-lhc.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="cern-lhc-title">粒子の衝突実験を1 EB分保存</h2>
@@ -781,8 +797,10 @@
       </section>
       <section class="chapter chapter-capacity" id="tfinity-plus" aria-labelledby="tfinity-plus-title" data-capacity-bits="17600000000000000000">
         <div class="chapter-content">
-          <div class="capacity-scale" aria-hidden="true" hidden>
-            <span class="capacity-line"></span></div>
+          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>
+            <span class="capacity-mark" data-position="45.45454545" style="--mark-color:var(--capacity-eb)"><span>1 EB</span></span>
+          </div>
           <img class="chapter-graphic" src="assets/graphics/tfinity-plus.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="tfinity-plus-title">45フレームを連ねるテープライブラリー</h2>

@@ -1,9 +1,11 @@
 name: From a Bit
 origin: https://from-a-bit.otchy.net
 themeColor: "#f6f4ed"
-title: From a Bit — データの大きさを旅する
+title: From a Bit — 1 bit からたどるデータの歴史
 description: >-
   ひとつのビットから、データの大きさと記憶媒体の歴史を旅する。スクロールで容量の違いを体感するインフォグラフィックス、From a Bit。
+socialImageAlt: >-
+  From a Bit。1 bit からたどるデータの歴史。
 skipLink: 本文へ移動
 backToStart: 始まりに戻る
 capacityNotes:

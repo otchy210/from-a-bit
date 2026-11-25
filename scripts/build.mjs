@@ -16,7 +16,7 @@ async function filesIn(directory) {
 
 function checkStructure(files) {
   const pagesAndBundles = ["index.html", "assets/style.css", "assets/script.js"];
-  for (const path of [".nojekyll", "favicon.png", "robots.txt", "sitemap.xml", "assets/social-card.png", ...pagesAndBundles]) {
+  for (const path of [".nojekyll", "favicon.png", "robots.txt", "sitemap.xml", "assets/social-card.png", "assets/bluesky-wordmark.svg", ...pagesAndBundles]) {
     if (!files.includes(path)) throw new Error(`Missing generated file: ${path}`);
   }
   for (const path of files) {

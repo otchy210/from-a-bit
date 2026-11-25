@@ -8,6 +8,17 @@ function renderSource({ url, label }) {
   return `<li><a href="${escape(url)}" target="_blank" rel="noopener" aria-describedby="new-window">${escape(label)}${icon}</a></li>`;
 }
 
+function renderShareLinks(homeUrl, title) {
+  const hatena = escape(`https://b.hatena.ne.jp/entry/s/${new URL(homeUrl).host}/`);
+  const x = escape(`https://x.com/share?${new URLSearchParams({ url: homeUrl, text: title })}`);
+  const bluesky = `https://bsky.app/intent/compose?text=${encodeURIComponent(`${title}\n${homeUrl}`)}`;
+  return `<nav class="share-links" aria-label="サイトを共有">
+        <span class="share-hatena"><a href="${hatena}" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" data-hatena-bookmark-lang="ja" target="_blank" rel="noopener" aria-describedby="new-window"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" width="20" height="20" alt="はてなブックマークに追加"></a></span>
+        <span class="share-x"><a href="${x}" class="twitter-share-button" data-url="${escape(homeUrl)}" data-text="${escape(title)}" data-lang="ja" data-dnt="true" data-show-count="false" target="_blank" rel="noopener" aria-describedby="new-window">Xに投稿</a></span>
+        <a class="share-bluesky" href="${escape(bluesky)}" target="_blank" rel="noopener" aria-describedby="new-window"><img src="assets/bluesky-wordmark.svg" width="73" height="16" alt="Blueskyに投稿"></a>
+      </nav>`;
+}
+
 function renderCapacityScale(bits, previousBits) {
   if (bits === null) return "";
   const mark = capacityBoundaries(bits, previousBits).findLast(({ crossed }) => crossed);
@@ -59,6 +70,7 @@ export default class Page {
     const description = escape(site.description);
     const socialImageAlt = escape(site.socialImageAlt);
     const authorName = escape(site.authorName);
+    const shareLinks = renderShareLinks(homeUrl, site.title);
     const backToStart = `<a href="./" data-back-to-start>${escape(site.backToStart)}<span aria-hidden="true">↑</span></a>`;
     let previousBits = 0n;
     const chapters = site.items.map((item, index) => {
@@ -109,13 +121,17 @@ export default class Page {
     <div class="reading-progress" aria-hidden="true"></div>
     <header class="site-header" id="top" tabindex="-1">
       <a class="wordmark" href="#${escape(firstId)}">${escape(site.name)}<span class="brand-dot" aria-hidden="true"></span></a>
+      ${shareLinks}
     </header>
     <main id="main" tabindex="-1">
 ${chapters.join("\n")}
     </main>
     <footer class="site-footer">${notes ? `
       <div class="footer-notes" id="capacity-notes">
-        <div class="footer-notes-nav">${backToStart}</div>
+        <div class="footer-notes-nav">
+          ${shareLinks}
+          ${backToStart}
+        </div>
         <div class="footer-notes-content">
           <h2>${escape(notes.heading)}</h2>
           <dl>
@@ -135,6 +151,8 @@ ${site.authorLinks.map(({ url, label }) => `          <a href="${escape(url)}" t
         ${backToStart}
       </div>
     </footer>
+    <script async src="https://b.st-hatena.com/js/bookmark_button.js"></script>
+    <script async src="https://platform.x.com/widgets.js"></script>
   </body>
 </html>
 `;

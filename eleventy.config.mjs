@@ -9,6 +9,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/static/.nojekyll": ".nojekyll" });
   eleventyConfig.addPassthroughCopy({ "src/static/favicon.png": "favicon.png" });
   eleventyConfig.addPassthroughCopy({ "src/static/social-card.png": "assets/social-card.png" });
+  eleventyConfig.addPassthroughCopy({ "src/static/bluesky-wordmark.svg": "assets/bluesky-wordmark.svg" });
 
   eleventyConfig.on("eleventy.before", async ({ directories, runMode }) => {
     await build({

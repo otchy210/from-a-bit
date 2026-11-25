@@ -78,7 +78,7 @@ test("the Japanese root page has canonical assets and exact capacity attributes"
   assert.ok(html.includes(`data-capacity-bits="${exact}"`));
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.equal((html.match(/<section\b/g) || []).length, site.items.length);
-  assert.equal((html.match(/<script\b[^>]*\bsrc=/g) || []).length, 1);
+  assert.equal((html.match(/<script\b[^>]*\bsrc="assets\//g) || []).length, 1);
   assert.equal((html.match(/rel="stylesheet"/g) || []).length, 1);
   assert.ok(html.includes(site.items[0].text.description[0]));
   assert.ok(html.includes(site.items.at(-1).text.era));
@@ -113,6 +113,24 @@ test("the footer links to the author and to the start without a fragment", () =>
   for (const { url, label } of site.authorLinks) {
     assert.ok(footer.includes(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener" aria-describedby="new-window">${escapeHtml(label)}</a>`));
   }
+});
+
+test("the header and notes share the canonical URL with one script per official widget", () => {
+  const site = validateSite(metadata.config, metadata.items);
+  const html = new Page().render({ site });
+  const header = html.match(/<header\b.*?<\/header>/s)[0];
+  const notes = html.match(/<div class="footer-notes-nav">.*?<\/div>/s)[0];
+  for (const section of [header, notes]) {
+    assert.ok(section.includes(`href="https://b.hatena.ne.jp/entry/s/${new URL(site.origin).host}/"`));
+    assert.ok(section.includes('data-hatena-bookmark-layout="basic-counter"'));
+    assert.ok(section.includes(`data-url="${site.origin}/" data-text="${escapeHtml(site.title)}"`));
+    const url = new URL(section.match(/class="share-bluesky" href="([^"]+)"/)[1]);
+    assert.equal(url.origin + url.pathname, "https://bsky.app/intent/compose");
+    assert.equal(url.searchParams.get("text"), `${site.title}\n${site.origin}/`);
+  }
+  assert.equal((html.match(/src="https:\/\/b\.st-hatena\.com\/js\/bookmark_button\.js"/g) ?? []).length, 1);
+  assert.equal((html.match(/src="https:\/\/platform\.x\.com\/widgets\.js"/g) ?? []).length, 1);
+  assert.ok(notes.indexOf("</nav>") < notes.indexOf("data-back-to-start"));
 });
 
 test("all citations share an icon and an accessible new-window description", () => {

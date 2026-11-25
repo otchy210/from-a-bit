@@ -51,7 +51,7 @@ main:focus { outline: none; }
   gap: 1rem 2rem;
   padding: 1.5rem var(--gutter);
 }
-.site-header { position: relative; z-index: 2; background: var(--paper); }
+.site-header { position: relative; z-index: 2; background: var(--paper); column-gap: 0.75rem; }
 .wordmark {
   display: inline-flex;
   align-items: center;
@@ -62,6 +62,22 @@ main:focus { outline: none; }
   text-decoration: none;
 }
 .brand-dot { width: 0.45rem; height: 0.45rem; border-radius: 50%; background: var(--accent); }
+.share-links { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.site-header .share-links { margin-inline-start: auto; }
+.share-hatena, .share-x { display: flex; align-items: center; }
+.share-hatena { min-inline-size: 47px; }
+.share-hatena img, .share-bluesky img { display: block; }
+.share-x { min-inline-size: 5rem; font-size: 0.75rem; }
+.share-bluesky {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 24px;
+  padding-inline: 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+.share-bluesky:hover { border-color: var(--muted); }
 .chapter { padding: 1.5rem var(--gutter) 2rem; }
 .chapter-content {
   display: grid;
@@ -109,11 +125,14 @@ h1, h2 {
 }
 .footer-notes h2 { color: var(--ink); font-size: clamp(1.25rem, 3vw, 1.75rem); }
 .footer-notes-nav {
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  align-items: center;
+  column-gap: 1rem;
   margin-bottom: 1rem;
   font-size: 0.875rem;
 }
+.footer-notes-nav > a { white-space: nowrap; }
 .site-footer [data-back-to-start] span { margin-inline-start: 0.22em; }
 .footer-notes dl {
   display: grid;

@@ -1,4 +1,5 @@
 # 容量順。capacityBits は縮尺に用いる十進の整数文字列。
+# heading の配列は、見出しが折り返せる文節や単語の境目を示す。
 # 公称値や換算の条件は site.yaml のフッター注記に記載する。
 
 - id: bit
@@ -7,8 +8,7 @@
   graphic:
     src: graphics/bit.svg
   text:
-    heading:
-      - "すべてはひとつのビットから"
+    heading: ["すべては", "ひとつの", "ビットから"]
     era: "1946年 · CRTを使った記憶実験"
     capacity: "1 bit"
     description:
@@ -26,8 +26,7 @@
   graphic:
     src: graphics/byte.svg
   text:
-    heading:
-      - "8 bit で 1 byte"
+    heading: ["8 bit で ", "1 byte"]
     era: "単位の定義"
     capacity: "1 B（8 bit）"
     description:
@@ -43,8 +42,7 @@
   graphic:
     src: graphics/intel-3101.svg
   text:
-    heading:
-      - "Intelの最初のメモリ"
+    heading: ["Intelの", "最初の", "メモリ"]
     era: "1969年4月 · Intel 3101発売"
     capacity: "8 B／チップ"
     description:
@@ -62,8 +60,7 @@
   graphic:
     src: graphics/early-rom.svg
   text:
-    heading:
-      - "半導体に固定した32バイト"
+    heading: ["半導体に", "固定した", "32バイト"]
     era: "1965年 · Sylvaniaの初期半導体ROM"
     capacity: "32 B／チップ"
     description:
@@ -79,8 +76,7 @@
   graphic:
     src: graphics/punch-card.svg
   text:
-    heading:
-      - "穴で読む80文字"
+    heading: ["穴で読む", "80文字"]
     era: "1928年 · IBMの80欄形式"
     capacity: "80 B相当／カード1枚"
     description:
@@ -98,8 +94,7 @@
   graphic:
     src: graphics/manchester-baby.svg
   text:
-    heading:
-      - "ブラウン管が主記憶だった"
+    heading: ["ブラウン管が", "主記憶だった"]
     era: "1948年 · Manchester Babyがプログラムを実行"
     capacity: "128 B／主記憶"
     description:
@@ -119,8 +114,7 @@
   graphic:
     src: graphics/eprom-1702.svg
   text:
-    heading:
-      - "窓から光を当てて消すROM"
+    heading: ["窓から", "光を当てて", "消すROM"]
     era: "1971年 · Intel 1702発表"
     capacity: "256 B／チップ"
     description:
@@ -138,8 +132,7 @@
   graphic:
     src: graphics/magnetic-drum.svg
   text:
-    heading:
-      - "回転する磁気ドラム"
+    heading: ["回転する", "磁気ドラム"]
     era: "1932年 · Tauschekが実演／1933年 · 特許出願"
     capacity: "62.5 KB／試作機"
     description:
@@ -155,8 +148,7 @@
   graphic:
     src: graphics/apollo-rope.svg
   text:
-    heading:
-      - "月へ行ったコアロープROM"
+    heading: ["月へ行った", "コアロープROM"]
     era: "1966年 · 設計資料／1969年 · 月着陸で使用"
     capacity: "69.12 KB／ROM"
     description:
@@ -172,8 +164,7 @@
   graphic:
     src: graphics/early-floppy.svg
   text:
-    heading:
-      - "最初期のフロッピー"
+    heading: ["最初期の", "フロッピー"]
     era: "1971年 · IBM 23FD／1976年 · Shugart SA400"
     capacity: "80 KB／8インチディスク"
     description:
@@ -193,8 +184,7 @@
   graphic:
     src: graphics/pc-floppy.svg
   text:
-    heading:
-      - "PCで使われたフロッピー"
+    heading: ["PCで使われた", "フロッピー"]
     era: "1981年 · ECMA-70初版、Sony 3.5型発売／1984年 · Mac採用"
     capacity: "360 KiB／両面"
     description:
@@ -216,8 +206,7 @@
   graphic:
     src: graphics/first-nand.svg
   text:
-    heading:
-      - "初代NANDフラッシュ"
+    heading: ["初代", "NANDフラッシュ"]
     era: "1987年 · 東芝が研究発表／1991年 · 製品化"
     capacity: "512 KiB／チップ"
     description:
@@ -237,8 +226,7 @@
   graphic:
     src: graphics/kokoro.svg
   text:
-    heading:
-      - "小説1冊、あるいは新聞1日"
+    heading: ["小説1冊、", "あるいは", "新聞1日"]
     era: "1914年 · 『こころ』連載／2026年 · 電子版を計測"
     capacity: "559.512 KB／『こころ』の電子版"
     description:
@@ -256,8 +244,7 @@
   graphic:
     src: graphics/floppy-2dd.svg
   text:
-    heading:
-      - "2DDのフロッピー"
+    heading: ["2DDの", "フロッピー"]
     era: "1985年 · ECMA-100初版／1986年 · Macintosh Plus発売"
     capacity: "720 KiB／両面"
     description:
@@ -277,8 +264,7 @@
   graphic:
     src: graphics/floppy-2hd.svg
   text:
-    heading:
-      - "2HDのフロッピー"
+    heading: ["2HDの", "フロッピー"]
     era: "1984年 · PC/ATで高密度形式採用／1987年 · ECMA-125初版"
     capacity: "1,440 KiB／両面"
     description:
@@ -298,8 +284,7 @@
   graphic:
     src: graphics/ibm-350.svg
   text:
-    heading:
-      - "世界初の商用ハードディスク"
+    heading: ["世界初の", "商用", "ハードディスク"]
     era: "1956年 · IBM 350初出荷"
     capacity: "3.75 MB相当／ドライブ"
     description:
@@ -317,8 +302,7 @@
   graphic:
     src: graphics/st-506.svg
   text:
-    heading:
-      - "PCに入るハードディスク"
+    heading: ["PCに入る", "ハードディスク"]
     era: "1980年 · Seagate ST-506／1983年 · Rodimeの3.5型"
     capacity: "5 MB／ドライブ"
     description:
@@ -336,8 +320,7 @@
   graphic:
     src: graphics/sd-card.svg
   text:
-    heading:
-      - "指先に載るメモリーカード"
+    heading: ["指先に載る", "メモリーカード"]
     era: "1998年 · Memory Stick発売／2000年 · 初期SD登場"
     capacity: "8 MB／カード1枚"
     description:
@@ -357,8 +340,7 @@
   graphic:
     src: graphics/prairietek-220.svg
   text:
-    heading:
-      - "ノートPCへの2.5型HDD"
+    heading: ["ノートPCへの", "2.5型HDD"]
     era: "1988年 · PrairieTek 220登場"
     capacity: "20 MB／ドライブ"
     description:
@@ -374,8 +356,7 @@
   graphic:
     src: graphics/sundisk-ssd.svg
   text:
-    heading:
-      - "回転しない20 MB"
+    heading: ["回転しない", "20 MB"]
     era: "1991年 · SunDiskがIBM向けに納入"
     capacity: "20 MB／ドライブ"
     description:
@@ -393,8 +374,7 @@
   graphic:
     src: graphics/winchester.svg
   text:
-    heading:
-      - "密閉型HDDへの転換点"
+    heading: ["密閉型HDDへの", "転換点"]
     era: "1973年 · IBM 3340／3348導入"
     capacity: "35 MB／モジュール"
     description:
@@ -412,8 +392,7 @@
   graphic:
     src: graphics/zip-100.svg
   text:
-    heading:
-      - "フロッピーの先にあったZip"
+    heading: ["フロッピーの", "先にあった", "Zip"]
     era: "1994年 · Iomega Zip発表"
     capacity: "100 MB／ディスク"
     description:
@@ -429,8 +408,7 @@
   graphic:
     src: graphics/sd-card-128mb.svg
   text:
-    heading:
-      - "デジカメのカードが競った128 MB"
+    heading: ["デジカメの", "カードが", "競った", "128 MB"]
     era: "2001年 · 128 MBのSDとスマートメディア／2002年 · xD登場"
     capacity: "128 MB／カード1枚"
     description:
@@ -452,8 +430,7 @@
   graphic:
     src: graphics/newspaper-year.svg
   text:
-    heading:
-      - "新聞1年分を文字だけに"
+    heading: ["新聞1年分を", "文字だけに"]
     era: "2022年 · 新聞紙面の文字数の資料"
     capacity: "約170 MB／1年分の文字"
     description:
@@ -469,8 +446,7 @@
   graphic:
     src: graphics/ibm-3480.svg
   text:
-    heading:
-      - "リールからカートリッジへ"
+    heading: ["リールから", "カートリッジへ"]
     era: "1984年3月 · IBM 3480一般提供"
     capacity: "200 MB／巻"
     description:
@@ -490,8 +466,7 @@
   graphic:
     src: graphics/mo-640.svg
   text:
-    heading:
-      - "光と磁気で書き換えるMO"
+    heading: ["光と磁気で", "書き換えるMO"]
     era: "1988年 · 初期5.25型／1991年 · 3.5型／1997年 · 640 MBのISO規格"
     capacity: "640 MB／3.5型ディスク"
     description:
@@ -511,8 +486,7 @@
   graphic:
     src: graphics/cd-rom.svg
   text:
-    heading:
-      - "CDで配るソフトウェア"
+    heading: ["CDで配る", "ソフトウェア"]
     era: "1982年 · 音楽CD／1985年 · CD-ROM研究発表／1988年 · ECMA初版"
     capacity: "681.984 MB／74分のCD-ROM"
     description:
@@ -534,8 +508,7 @@
   graphic:
     src: graphics/ibm-3380.svg
   text:
-    heading:
-      - "GBに届いた業務用HDD"
+    heading: ["GBに届いた", "業務用HDD"]
     era: "1980年 · IBM 3380発表"
     capacity: "2.52 GB／ユニット"
     description:
@@ -551,8 +524,7 @@
   graphic:
     src: graphics/sdhc.svg
   text:
-    heading:
-      - "2 GBの壁を越えたSDHC"
+    heading: ["2 GBの", "壁を越えた", "SDHC"]
     era: "2006年 · SDHC規格登場／2007年 · 東芝の4 GB製品発表"
     capacity: "4 GB／カード1枚"
     description:
@@ -572,8 +544,7 @@
   graphic:
     src: graphics/dvd-single.svg
   text:
-    heading:
-      - "片面1層のDVD"
+    heading: ["片面1層の", "DVD"]
     era: "1997年 · DVD-ROMのECMA規格初版"
     capacity: "4.7 GB／片面1層"
     description:
@@ -593,8 +564,7 @@
   graphic:
     src: graphics/dvd-dual.svg
   text:
-    heading:
-      - "DVDの記録層を重ねる"
+    heading: ["DVDの", "記録層を", "重ねる"]
     era: "1997年 · DVD-ROMのECMA規格初版"
     capacity: "8.5 GB／片面2層"
     description:
@@ -616,8 +586,7 @@
   graphic:
     src: graphics/v-nand.svg
   text:
-    heading:
-      - "記憶セルを積み上げる"
+    heading: ["記憶セルを", "積み上げる"]
     era: "2013年 · Samsung初代V-NAND量産発表"
     capacity: "16 GiB／チップ"
     description:
@@ -639,8 +608,7 @@
   graphic:
     src: graphics/blu-ray.svg
   text:
-    heading:
-      - "青紫色のレーザーで25 GB"
+    heading: ["青紫色の", "レーザーで", "25 GB"]
     era: "2002年 · 基本仕様発表／2006年 · BD-ROM米国量産発表"
     capacity: "25 GB／片面1層"
     description:
@@ -660,8 +628,7 @@
   graphic:
     src: graphics/sdxc.svg
   text:
-    heading:
-      - "SDXCのカードに64 GB"
+    heading: ["SDXCの", "カードに", "64 GB"]
     era: "2009年 · SDXC規格策定／2010年 · 東芝の64 GB製品発売"
     capacity: "64 GB／カード1枚"
     description:
@@ -681,8 +648,7 @@
   graphic:
     src: graphics/bdxl.svg
   text:
-    heading:
-      - "100 GBを超える光ディスク"
+    heading: ["100 GBを", "超える", "光ディスク"]
     era: "2010年6月 · BDXL仕様確定"
     capacity: "100 GB／3層BD-R"
     description:
@@ -698,8 +664,7 @@
   graphic:
     src: graphics/lto-1.svg
   text:
-    heading:
-      - "LTOの始まり"
+    heading: ["LTOの", "始まり"]
     era: "2000年 · LTO Ultrium 1登場"
     capacity: "100 GB／巻"
     description:
@@ -717,8 +682,7 @@
   graphic:
     src: graphics/hdd-1tb.svg
   text:
-    heading:
-      - "ハードディスクが1 TBに"
+    heading: ["ハードディスクが", "1 TBに"]
     era: "2007年1月 · Hitachi Deskstar 7K1000発表"
     capacity: "1 TB／ドライブ"
     description:
@@ -734,8 +698,7 @@
   graphic:
     src: graphics/microsdxc-1tb.svg
   text:
-    heading:
-      - "爪ほどのカードに1 TB"
+    heading: ["爪ほどの", "カードに", "1 TB"]
     era: "2005年 · microSD規格登場／2019年 · SanDiskの1 TB製品発表"
     capacity: "1 TB／カード1枚"
     description:
@@ -753,8 +716,7 @@
   graphic:
     src: graphics/lto-5.svg
   text:
-    heading:
-      - "テープもTB級へ"
+    heading: ["テープも", "TB級へ"]
     era: "2010年 · LTO Ultrium 5の規格・互換認証"
     capacity: "1.5 TB／巻"
     description:
@@ -772,8 +734,7 @@
   graphic:
     src: graphics/national-diet-library.svg
   text:
-    heading:
-      - "国立国会図書館の図書を文字に"
+    heading: ["国立国会図書館の", "図書を", "文字に"]
     era: "2025年度末 · 国立国会図書館の蔵書統計"
     capacity: "約11.37 TB／図書の文字"
     description:
@@ -789,8 +750,7 @@
   graphic:
     src: graphics/pm1633a.svg
   text:
-    heading:
-      - "2.5型のSSDに15 TB超"
+    heading: ["2.5型の", "SSDに", "15 TB超"]
     era: "2016年3月 · Samsung PM1633a出荷発表"
     capacity: "15.36 TB／ドライブ"
     description:
@@ -806,8 +766,7 @@
   graphic:
     src: graphics/hamr-hdd.svg
   text:
-    heading:
-      - "熱で記録密度を上げるHDD"
+    heading: ["熱で", "記録密度を", "上げるHDD"]
     era: "2024年1月 · SeagateがHAMR量産拡大を発表"
     capacity: "30 TB／ドライブ"
     description:
@@ -825,8 +784,7 @@
   graphic:
     src: graphics/lto-10.svg
   text:
-    heading:
-      - "1巻に40 TBのテープ"
+    heading: ["1巻に", "40 TBの", "テープ"]
     era: "2025年 · LTO-10仕様／2026年 · 40 TB媒体の発売告知"
     capacity: "40 TB／巻"
     description:
@@ -846,8 +804,7 @@
   graphic:
     src: graphics/lc9.svg
   text:
-    heading:
-      - "SSD1台に245.76 TB"
+    heading: ["SSD1台に", "245.76 TB"]
     era: "2025年7月 · KIOXIA LC9開発発表"
     capacity: "245.76 TB／E3.Lドライブ"
     description:
@@ -863,8 +820,7 @@
   graphic:
     src: graphics/pi-digits.svg
   text:
-    heading:
-      - "円周率314兆桁を文字で保存"
+    heading: ["円周率", "314兆桁を", "文字で保存"]
     era: "2025年 · 314兆桁を計算・発表"
     capacity: "314 TB／数字列"
     description:
@@ -882,8 +838,7 @@
   graphic:
     src: graphics/hdd-server.svg
   text:
-    heading:
-      - "2UのHDDサーバー"
+    heading: ["2Uの", "HDDサーバー"]
     era: "2023年 · Dell仕様書／2026年 · HPE構成資料"
     capacity: "616 TB／2Uサーバー"
     description:
@@ -901,8 +856,7 @@
   graphic:
     src: graphics/corvault.svg
   text:
-    heading:
-      - "4UのHDDに2.5 PB"
+    heading: ["4Uの", "HDDに", "2.5 PB"]
     era: "2023年11月 · Seagateが2.5 PB構成を発表"
     capacity: "2.5 PB／4Uの1筐体"
     description:
@@ -920,8 +874,7 @@
   graphic:
     src: graphics/ssd-server.svg
   text:
-    heading:
-      - "40台のSSDで約9.8 PB"
+    heading: ["40台の", "SSDで", "約9.8 PB"]
     era: "2026年5月 · DellとKIOXIAが構成の実現を発表"
     capacity: "9.8304 PB／2Uサーバー"
     description:
@@ -937,8 +890,7 @@
   graphic:
     src: graphics/tape-library.svg
   text:
-    heading:
-      - "1筐体に80.64 PB"
+    heading: ["1筐体に", "80.64 PB"]
     era: "2024年 · 製品の一般提供／2026年 · LTO-10構成を確認"
     capacity: "最大80.64 PB／48Uの1筐体"
     description:
@@ -958,8 +910,7 @@
   graphic:
     src: graphics/google-search-index.svg
   text:
-    heading:
-      - "Google検索の巨大な索引"
+    heading: ["Google検索の", "巨大な索引"]
     era: "2026年11月 · Googleの公式解説を確認"
     capacity: "100 PB超／検索索引"
     description:
@@ -975,8 +926,7 @@
   graphic:
     src: graphics/nasa-earthdata.svg
   text:
-    heading:
-      - "NASAが蓄える地球の観測記録"
+    heading: ["NASAが蓄える", "地球の", "観測記録"]
     era: "2024年9月末 · NASAの2024会計年度末"
     capacity: "128.56 PB／地球科学データの保存量"
     description:
@@ -992,8 +942,7 @@
   graphic:
     src: graphics/internet-archive.svg
   text:
-    heading:
-      - "昔のウェブを開けるデジタル図書館"
+    heading: ["昔のウェブを", "開ける", "デジタル図書館"]
     era: "2025年 · Internet Archiveの保存実績"
     capacity: "210 PB超／コレクションの保存量"
     description:
@@ -1011,8 +960,7 @@
   graphic:
     src: graphics/cern-lhc.svg
   text:
-    heading:
-      - "粒子の衝突実験を1 EB分保存"
+    heading: ["粒子の", "衝突実験を", "1 EB分", "保存"]
     era: "2025年12月 · CERNが到達を発表"
     capacity: "1 EB／LHC実験データの保存量"
     description:
@@ -1028,8 +976,7 @@
   graphic:
     src: graphics/tfinity-plus.svg
   text:
-    heading:
-      - "45フレームを連ねるテープライブラリー"
+    heading: ["45フレームを", "連ねる", "テープ", "ライブラリー"]
     era: "2026年 · LTO-10構成をメーカー仕様で確認"
     capacity: "最大約2.2 EB／45フレーム"
     description:
@@ -1047,8 +994,7 @@
   graphic:
     src: graphics/internet-traffic-day.svg
   text:
-    heading:
-      - "世界のインターネット通信、1日分"
+    heading: ["世界の", "インターネット", "通信、", "1日分"]
     era: "2026年 · 国際電気通信連合（ITU）の推計"
     capacity: "約25 EB／平均1日の通信量"
     description:
@@ -1066,8 +1012,7 @@
   graphic:
     src: graphics/seagate-hdd-shipments-year.svg
   text:
-    heading:
-      - "Seagateが1年に出荷したHDD"
+    heading: ["Seagateが", "1年に", "出荷した", "HDD"]
     era: "2026会計年度 · 2026年7月3日終了"
     capacity: "789 EB／1会計年度の出荷容量"
     description:
@@ -1083,8 +1028,7 @@
   graphic:
     src: graphics/seagate-storage-shipments.svg
   text:
-    heading:
-      - "出荷の累計がゼタバイト級に"
+    heading: ["出荷の", "累計が", "ゼタバイト級に"]
     era: "2025年7月 · Seagateの累計出荷発表"
     capacity: "4 ZB超／創業以来の出荷容量"
     description:
@@ -1100,8 +1044,7 @@
   graphic:
     src: graphics/global-installed-storage.svg
   text:
-    heading:
-      - "世界に設置された記憶容量"
+    heading: ["世界に", "設置された", "記憶容量"]
     era: "2026年 · IDC Global StorageSphere"
     capacity: "約13 ZB／世界の設備容量"
     description:
@@ -1119,8 +1062,7 @@
   graphic:
     src: graphics/global-data-created.svg
   text:
-    heading:
-      - "世界で1年に生まれ、複製されるデータ"
+    heading: ["世界で", "1年に", "生まれ、", "複製される", "データ"]
     era: "2025年のデータ量 · IDCの2026年6月版推計"
     capacity: "約218 ZB／1年分の生成・複製など"
     description:

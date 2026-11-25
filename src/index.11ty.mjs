@@ -32,11 +32,12 @@ function renderCapacityScale(bits, previousBits) {
 function renderChapter(item, index, previousBits) {
   const { text } = item;
   const heading = index === 0 ? "h1" : "h2";
+  const headingText = text.heading.map((phrase) => `<span class="heading-phrase">${escape(phrase)}</span>`).join("<wbr>");
   return `      <section class="chapter chapter-${item.kind}" id="${escape(item.id)}" aria-labelledby="${escape(item.id)}-title"${item.capacityBits !== null ? ` data-capacity-bits="${item.capacityBits}"` : ""}>
         <div class="chapter-content">${renderCapacityScale(item.capacityBits, previousBits)}${item.graphic ? `
           <img class="chapter-graphic" src="assets/${escape(item.graphic.src)}" width="72" height="72" alt=""${index >= 2 ? ' loading="lazy"' : ""}>` : ""}
           <div class="chapter-copy">
-            <${heading} id="${escape(item.id)}-title">${lines(text.heading)}</${heading}>${text.capacity ? `
+            <${heading} id="${escape(item.id)}-title">${headingText}</${heading}>${text.capacity ? `
             <p class="chapter-measure">${escape(text.capacity)}</p>
             <p class="chapter-era">${escape(text.era)}</p>` : ""}
             <p class="intro">${lines(text.description)}</p>${text.note ? `
@@ -147,14 +148,14 @@ ${notes.entries.map((entry) => `            <div>
         <nav class="footer-author" aria-label="作者 ${authorName}">
           <span aria-hidden="true">作者 ${authorName}:</span>
 ${site.authorLinks.map(({ url, label }) => `          <a href="${escape(url)}" target="_blank" rel="noopener" aria-describedby="new-window">${escape(label)}</a>`).join("\n")}
-        </nav>
+        </nav>${site.analyticsId ? `
+        <details class="footer-analytics">
+          <summary>アクセス解析について</summary>
+          <p>このサイトでは、閲覧状況を把握してサイトを改善するため、Google アナリティクスを利用しています。計測には Cookie が使われ、閲覧に関する情報が Google に送信されます。</p>
+          <p><a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google によるデータの取り扱い</a> · <a href="https://tools.google.com/dlpage/gaoptout?hl=ja">計測を無効にする方法</a></p>
+        </details>` : ""}
         ${backToStart}
-      </div>${site.analyticsId ? `
-      <details class="footer-analytics">
-        <summary>アクセス解析について</summary>
-        <p>このサイトでは、閲覧状況を把握してサイトを改善するため、Google アナリティクスを利用しています。計測には Cookie が使われ、閲覧に関する情報が Google に送信されます。</p>
-        <p><a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google によるデータの取り扱い</a> · <a href="https://tools.google.com/dlpage/gaoptout?hl=ja">計測を無効にする方法</a></p>
-      </details>` : ""}
+      </div>
     </footer>
     <script async src="https://b.st-hatena.com/js/bookmark_button.js"></script>
     <script async src="https://platform.x.com/widgets.js"></script>

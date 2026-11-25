@@ -90,6 +90,18 @@ test("the Japanese root page has canonical assets and exact capacity attributes"
   assert.doesNotMatch(html, /figcaption|eyebrow|next-chapter|hreflang|language-nav|data-language-link/);
 });
 
+test("chapter headings offer optional breaks without changing their text", () => {
+  const site = validateSite(metadata.config, metadata.items);
+  const html = new Page().render({ site });
+  const headings = [...html.matchAll(/<h[12] id="[^"]+-title">(.*?)<\/h[12]>/g)];
+  assert.equal(headings.length, site.items.length);
+  for (const [index, [, heading]] of headings.entries()) {
+    const phrases = heading.split("<wbr>");
+    assert.deepEqual(phrases, site.items[index].text.heading.map((phrase) =>
+      `<span class="heading-phrase">${escapeHtml(phrase)}</span>`));
+  }
+});
+
 test("the home page identifies the site and its canonical URL to search engines", () => {
   const site = validateSite(metadata.config, metadata.items);
   const html = new Page().render({ site });
@@ -179,7 +191,7 @@ test("an outlook can provide prose without taking part in the capacity scale", (
   assert.equal(site.items.at(-1).capacityBits, null);
   const html = new Page().render({ site });
   assert.match(html, /id="outlook" aria-labelledby="outlook-title">/);
-  assert.match(html, /<h2 id="outlook-title">展望<\/h2>/);
+  assert.match(html, /<h2 id="outlook-title"><span class="heading-phrase">展望<\/span><\/h2>/);
 });
 
 test("text and attribute values are escaped without losing the original content", () => {
@@ -191,7 +203,7 @@ test("text and attribute values are escaped without losing the original content"
   items[0].text.heading = [text];
   const html = new Page().render({ site: validateSite(config, items) });
   assert.ok(html.includes(`content="${escaped}"`));
-  assert.ok(html.includes(`>${escaped}</h1>`));
+  assert.ok(html.includes(`>${escaped}</span></h1>`));
   assert.ok(!html.includes(text));
   const data = html.match(/<script type="application\/ld\+json">([^<]*)<\/script>/)[1];
   assert.equal(JSON.parse(data).name, config.name);

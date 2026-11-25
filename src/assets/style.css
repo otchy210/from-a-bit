@@ -43,13 +43,17 @@ main:focus { outline: none; }
   transform-origin: left;
 }
 .site-header,
+.site-footer {
+  padding-inline: max(var(--gutter), calc((100% - var(--content-width)) / 2));
+}
+.site-header,
 .footer-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem 2rem;
-  padding: 1.5rem var(--gutter);
+  padding-block: 1.5rem;
 }
 .site-header { position: relative; z-index: 2; background: var(--paper); column-gap: 0.75rem; }
 .wordmark {
@@ -97,6 +101,12 @@ h1, h2 {
   letter-spacing: -0.035em;
   text-wrap: balance;
 }
+.chapter-copy :is(h1, h2) {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-wrap: wrap;
+}
+.heading-phrase { display: inline-block; max-inline-size: 100%; }
 .chapter-measure { margin: 0.6rem 0 0; color: var(--accent); font-weight: 700; line-height: 1.5; }
 .chapter-era { margin: 0.4rem 0 0; font-size: 0.875rem; line-height: 1.6; color: var(--muted); }
 .intro { margin: 1rem 0 0; font-size: 1rem; line-height: 1.8; color: var(--muted); }
@@ -114,11 +124,7 @@ h1, h2 {
 .icon-definitions { position: absolute; }
 .sources svg { margin-inline-start: 0.28em; vertical-align: -0.08em; }
 .chapter-outlook { padding-block: 4rem 6rem; }
-.site-footer { padding-inline: var(--gutter); color: var(--muted); }
-.footer-notes {
-  max-width: var(--content-width);
-  margin-inline: auto;
-}
+.site-footer { color: var(--muted); }
 .footer-notes-content {
   padding-block: clamp(1.5rem, 4vw, 3rem);
   border-block: 1px solid var(--line);
@@ -144,10 +150,10 @@ h1, h2 {
 }
 .footer-notes dt { color: var(--ink); font-weight: 700; }
 .footer-notes dd { margin: 0.3rem 0 0; }
-.footer-bar { column-gap: 1rem; padding-inline: 0; font-size: 0.8rem; }
+.footer-bar { align-items: baseline; column-gap: 1rem; font-size: 0.8rem; }
 .footer-author { display: flex; flex-wrap: wrap; gap: 0.5rem 0.75rem; }
 .footer-bar [data-back-to-start] { margin-inline-start: auto; }
-.footer-analytics { max-width: var(--content-width); margin-inline: auto; padding-bottom: 1.5rem; font-size: 0.8rem; line-height: 1.65; }
+.footer-analytics { flex: 1 1 12rem; min-width: 0; line-height: 1.65; }
 .footer-analytics summary { cursor: pointer; }
 .footer-analytics p { max-width: 40rem; margin: 0.65rem 0 0; }
 

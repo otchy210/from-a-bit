@@ -1,6 +1,7 @@
 import { capacityBoundaries, capacityFill, visibleCapacityBands } from "../../lib/capacity.mjs";
 import { capacityLog2 } from "../../lib/scale.mjs";
 import { layoutScene, visibleLayers } from "../../lib/scene.mjs";
+import { graphicSizes, graphicWidths, masterWidth } from "../../lib/graphics.mjs";
 import { enableAnalytics } from "./analytics.js";
 import { enableBackToStart } from "./back-to-start.js";
 
@@ -13,7 +14,7 @@ const nodes = chapters.map((chapter, index) => {
   const bar = content.querySelector(".capacity-scale");
   const mark = bar.querySelector(".capacity-mark");
   return {
-    content, bar, mark,
+    content, bar, mark, image: content.querySelector(".chapter-graphic"), imageWidth: 0,
     markPosition: Number(mark?.dataset.position),
     line: bar.querySelector(".capacity-line"),
     copy: content.querySelector(".chapter-copy"),
@@ -27,6 +28,7 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 let layout;
 let barWidth = 0;
+let graphicWidth = 0;
 let sceneStart = 0;
 let scrollableHeight = 0;
 let framePending = false;
@@ -66,6 +68,16 @@ function paint(layers) {
     const node = nodes[index];
     const { content, layer: previous } = node;
     node.layer = layer;
+    // HTML sizes describes the layout box, which excludes the zoom transform.
+    // Upgrade only when the image enters the viewport and outgrows its source.
+    if (scale > 1 && top + node.imageTop * scale < layout.viewportHeight) {
+      const dpr = window.devicePixelRatio;
+      const pixels = graphicWidth * scale * dpr;
+      if (pixels > node.imageWidth && node.imageWidth < masterWidth) {
+        node.imageWidth = graphicWidths.find((width) => width >= pixels) ?? masterWidth;
+        node.image.sizes = `${Math.floor(node.imageWidth / dpr)}px`;
+      }
+    }
     paintCapacityBar(node, layer, previous);
     if (!previous) content.classList.add("is-in-scene");
     if (previous?.interactive !== interactive) content.classList.toggle("has-visible-copy", interactive);
@@ -110,8 +122,14 @@ function measure() {
   // Include the bars and milestone labels in the reference height.
   main.classList.toggle("is-zooming", canZoom);
   const previousLayout = layout;
+  graphicWidth = nodes[0]?.image.offsetWidth ?? 0;
+  for (const node of nodes) {
+    if (node.imageWidth) node.image.sizes = graphicSizes;
+    node.imageWidth = 0;
+  }
   const heights = canZoom && nodes.map((node) => {
     node.barHeight = node.bar.offsetHeight;
+    node.imageTop = node.image.offsetTop;
     return node.content.offsetHeight;
   });
   layout = heights ? layoutScene(heights, viewportHeight) : null;

@@ -2,6 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
+import sharp from "sharp";
+import { graphicSizes, graphicVariant, graphicWidths } from "../lib/graphics.mjs";
 import { capacityBoundaries, capacityFill, parseCapacityBits, visibleCapacityBands } from "../lib/capacity.mjs";
 import { escapeHtml } from "../lib/html.mjs";
 import { loadSite, validateSite, validateGraphics } from "../lib/site.mjs";
@@ -53,7 +55,8 @@ test("invalid metadata fails before it can be rendered", () => {
     [({ items }) => { delete items[0].text; }, /text is required/],
     [({ items }) => { items[0].capacityBits = 9007199254740992; }, /integer string/],
     [({ items }) => { items[0].graphic.src = "graphics/dots.png"; }, /graphic.src/],
-    [({ items }) => { items[0].graphic.src = "graphics/../other.svg"; }, /graphic.src/],
+    [({ items }) => { items[0].graphic.src = "graphics/../other.webp"; }, /graphic.src/],
+    [({ items }) => { items[0].graphic.alt = 42; }, /graphic.alt/],
     [({ items }) => { items[0].text.heading = []; }, /non-empty list/],
     [({ items }) => { delete items[0].text.capacity; }, /text.capacity/],
     [({ items }) => { delete items[0].text.era; }, /text.era/],
@@ -83,7 +86,7 @@ test("the Japanese root page has canonical assets and exact capacity attributes"
   assert.ok(html.includes(site.items[0].text.description[0]));
   assert.ok(html.includes(site.items.at(-1).text.era));
   assert.ok(html.includes(site.items.at(-1).text.capacity));
-  assert.ok(html.includes('src="assets/graphics/bit.svg"'));
+  assert.ok(html.includes('src="assets/graphics/bit-256.webp"'));
   assert.ok(html.includes('href="assets/style.css"'));
   assert.ok(html.includes('src="assets/script.js"'));
   assert.equal(new Page().data().permalink, "index.html");
@@ -201,9 +204,11 @@ test("text and attribute values are escaped without losing the original content"
   config.description = text;
   config.name = "Name </script>";
   items[0].text.heading = [text];
+  items[0].graphic.alt = text;
   const html = new Page().render({ site: validateSite(config, items) });
   assert.ok(html.includes(`content="${escaped}"`));
   assert.ok(html.includes(`>${escaped}</span></h1>`));
+  assert.ok(html.includes(`alt="${escaped}"`));
   assert.ok(!html.includes(text));
   const data = html.match(/<script type="application\/ld\+json">([^<]*)<\/script>/)[1];
   assert.equal(JSON.parse(data).name, config.name);
@@ -220,27 +225,45 @@ test("a new item participates in the page without separate label or navigation m
   assert.ok(html.includes('id="another-capacity-title"'));
 });
 
-test("the checked-in metadata loads exact capacities and SVG references", async () => {
+test("the checked-in metadata loads exact capacities and raster references", async () => {
   const site = await loadSite();
   assert.equal(site.items[0].capacityBits, 1n);
   assert.equal(site.items[1].capacityBits, 8n);
-  assert.equal(site.items[1].graphic.src, "graphics/byte.svg");
+  assert.equal(site.items[1].graphic.src, "graphics/byte.webp");
   assert.equal(site.items.find(({ id }) => id === "tape-library").capacityBits, 645120000000000000n);
   assert.equal(site.items.at(-1).id, "global-data-created");
   assert.equal(site.items.at(-1).capacityBits, 1747464000000000000000000n);
 });
 
-test("missing SVG files are rejected during the build", async () => {
+test("missing graphic files are rejected during the build", async () => {
   const site = await loadSite();
-  site.items[0].graphic = { src: "graphics/not-present.svg" };
-  await assert.rejects(validateGraphics(site), /Missing SVG graphic/);
+  site.items[0].graphic = { src: "graphics/not-present.webp" };
+  await assert.rejects(validateGraphics(site), /Missing or unreadable graphic/);
 });
 
-test("bit and byte SVGs have equal reference ink areas", async () => {
+test("every chapter has a responsive WebP image in the static HTML", () => {
+  const site = validateSite(metadata.config, metadata.items);
+  const html = new Page().render({ site });
+  for (const { graphic } of site.items.filter((item) => item.graphic)) {
+    const candidates = graphicWidths.map((width) => `assets/${graphicVariant(graphic.src, width)} ${width}w`);
+    assert.ok(html.includes(`srcset="${candidates.join(", ")}" sizes="${graphicSizes}"`));
+  }
+});
+
+test("the eight byte dots have the same combined reference area as the bit dot", async () => {
   const areas = await Promise.all(["bit", "byte"].map(async (name) => {
-    const svg = await readFile(new URL(`../src/assets/graphics/${name}.svg`, import.meta.url), "utf8");
-    return [...svg.matchAll(/\br="([\d.]+)"/g)].reduce((sum, match) => sum + Math.PI * Number(match[1]) ** 2, 0);
+    const { data, info } = await sharp(`src/assets/graphics/${name}.webp`)
+      .extractChannel("alpha").raw().toBuffer({ resolveWithObject: true });
+    const area = data.reduce((sum, alpha) => sum + alpha / 255, 0);
+    if (name === "byte") {
+      for (const y of [38, 62]) {
+        for (const x of [14, 38, 62, 86]) {
+          assert.equal(data[Math.round(y * info.height / 100) * info.width + Math.round(x * info.width / 100)], 255);
+        }
+      }
+    }
+    return area;
   }));
   assert.ok(areas[0] > 0);
-  assert.ok(Math.abs(areas[0] / areas[1] - 1) < 1e-10);
+  assert.ok(Math.abs(areas[0] / areas[1] - 1) < 0.0001);
 });

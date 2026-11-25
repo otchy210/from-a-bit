@@ -1,5 +1,6 @@
 import { escapeHtml as escape } from "../lib/html.mjs";
 import { capacityBoundaries } from "../lib/capacity.mjs";
+import { graphicSizes, graphicVariant, graphicWidths } from "../lib/graphics.mjs";
 
 const lines = (values) => values.map(escape).join("<br>");
 
@@ -29,13 +30,19 @@ function renderCapacityScale(bits, previousBits) {
           ` : ""}</div>`;
 }
 
+function renderGraphic(graphic, index) {
+  const src = `assets/${escape(graphic.src)}`;
+  const srcset = graphicWidths.map((width) => `${graphicVariant(src, width)} ${width}w`).join(", ");
+  return `<img class="chapter-graphic" src="${graphicVariant(src, 256)}" srcset="${srcset}" sizes="${graphicSizes}" width="72" height="72" alt="${escape(graphic.alt ?? "")}"${index >= 2 ? ' loading="lazy"' : ""}>`;
+}
+
 function renderChapter(item, index, previousBits) {
   const { text } = item;
   const heading = index === 0 ? "h1" : "h2";
   const headingText = text.heading.map((phrase) => `<span class="heading-phrase">${escape(phrase)}</span>`).join("<wbr>");
   return `      <section class="chapter chapter-${item.kind}" id="${escape(item.id)}" aria-labelledby="${escape(item.id)}-title"${item.capacityBits !== null ? ` data-capacity-bits="${item.capacityBits}"` : ""}>
         <div class="chapter-content">${renderCapacityScale(item.capacityBits, previousBits)}${item.graphic ? `
-          <img class="chapter-graphic" src="assets/${escape(item.graphic.src)}" width="72" height="72" alt=""${index >= 2 ? ' loading="lazy"' : ""}>` : ""}
+          ${renderGraphic(item.graphic, index)}` : ""}
           <div class="chapter-copy">
             <${heading} id="${escape(item.id)}-title">${headingText}</${heading}>${text.capacity ? `
             <p class="chapter-measure">${escape(text.capacity)}</p>

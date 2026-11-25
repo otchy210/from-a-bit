@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-<g fill="none" stroke="#202a25" stroke-width="2.3" stroke-linejoin="round" stroke-linecap="round">
-<path d="M17 18h57l10 12v51H17z" fill="#202a25"/>
-<rect x="29" y="22" width="42" height="25" rx="3" fill="#59635c"/>
-<rect x="24" y="55" width="54" height="20" rx="3" fill="#dbe3d5"/>
-<text x="51" y="69" fill="#202a25" stroke="none" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700">ZIP 100</text>
-</g>
-</svg>

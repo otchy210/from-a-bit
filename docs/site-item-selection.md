@@ -1,6 +1,6 @@
 # サイト掲載アイテムの選定案：容量順
 
-改訂日：2026-11-25。**容量順に並べたサイト掲載用の59項目。**
+改訂日：2026-11-26。**容量順に並べたサイト掲載用の59項目。** 年代・容量・出典の再確認については[公開前ファクトチェック](fact-check-2026-11-25.md)を参照。
 
 最初の49項目は媒体・記憶装置43項目、導入2項目、比較4項目。続く10項目はPB級を超える設備容量やデジタルデータを扱う。M13（Intel 3101）とM20（初代NAND）は独立した必須項目として残す。調査の母集団は[媒体の調査一覧](storage-history-candidates.md)、[比較データの調査一覧](large-number-candidates.md)、[EB・ZB級の候補](exabyte-data-candidates.md)に保持する。
 
@@ -37,14 +37,14 @@
 | **1・導入:bit** | **1 bit**<br>定義／1946：CRT記憶実験 | 1 bit【定義】 | M01のWilliamsによる1 bit記憶実験をこの導入で紹介する。概念の1 bitに発明年1946を付ける意味ではない。 元ID：M01。 | [Manchester：Baby開発史][baby]、[CHM：CRT記憶][crt] |
 | **2・導入:byte** | **1 byte**<br>定義 | 8 bit＝1 B【定義】 | 日本語「あ」はUTF-8で3 Bという話もここで扱い、1文字のための独立した画面は置かない。 元ID：比較:S02。 | [Unicode公式FAQ][unicode] |
 | **3・M13** | **Intel 3101 SRAM〔必須〕**<br>1969年4月：発売 | 64 bit＝8 B／チップ【確定】 | Intel最初の製品。64 bitの小ささを単独で見せる。世界初のSRAMとはしない。 | [Intel：3101][intel-3101] |
-| **4・M08** | **初期の半導体ROM**<br>1965：Sylvania製作 | 256 bit＝32 B／チップ【研究】 | 半導体に情報を固定する入口。MOS ROM等の初期の方式差は本文へ。広義の「世界初のROM」とは断定しない。 元ID：M09。 | [CHM：半導体ROM][rom] |
+| **4・M08** | **初期の半導体ROM**<br>1965：Sylvania製作 | 256 bit＝32 B／チップ【研究】 | 半導体に情報を固定する入口。General MicroelectronicsのMOS方式も同じ1965年に開発された。広義の「世界初のROM」とは断定しない。 元ID：M09。 | [CHM：半導体ROM][rom] |
 | **5・A03** | **IBM 80欄パンチカード**<br>1928：80欄形式／1930：12行版 | 80文字→80 B相当／カード1枚【模型】 | 80文字を1文字1 Bへ転記する比較模型。Hollerithの1890年カードは前史として説明し、同じ形式・容量とは扱わない。 元ID：A02。 | [IBM：パンチカード][ibm-card]、[米国国勢調査局][census] |
 | **6・M03** | **128 B級の初期メモリ**<br>1948：Baby／1953：コア／1970：Intel 1103 | 1,024 bit＝128 B／主記憶【確定】 | 描画はBabyの主記憶128 B。コア1面（M05）とDRAM1チップ（M14）も128 Bの事例としてまとめる。比較単位と揮発性は個別に説明する。 元ID：M05・M14。 | [Manchester：Baby開発史][baby]、[CHM：Whirlwind][core]、[CHM：SRAMからDRAMへ][dram] |
-| **7・M16** | **窓のあるEPROM**<br>1971：Intel 1702発表 | 2,048 bit＝256 B／チップ【確定】 | 消去して書き直せるROMを、特徴のある窓付きチップで見せる。PROMや電気消去EEPROMへの発展は本文へ移す。 元ID：M15・M18。 | [CHM：プログラマブルROM][eprom]、[Intel 1983 Memory Component Handbook][intel-memory-book] |
-| **8・D01** | **初期の磁気ドラム**<br>1932：試作・実演／1933：特許出願 | 500,000 bit＝62,500 B／試作【研究】 | 回転する磁性体へ記録する最初期の研究例。62,500 BはCHM記載で、原特許との容量照合は残る。 | [CHM：磁気ドラム][drum] |
+| **7・M16** | **窓のあるEPROM**<br>1971：Intel 1702発表 | 2,048 bit＝256 B／チップ【確定】 | 消去して書き直せるROMを、特徴のある窓付きチップで見せる。PROMや電気消去EEPROMへの発展は本文へ移す。 元ID：M15・M18。 | [CHM：プログラマブルROM][eprom]、[Frohman-Bentchkowskyの1971年論文][intel-famos] |
+| **8・D01** | **初期の磁気ドラム**<br>1932：試作・実演／1933：ドイツで特許出願 | 500,000 bit＝62,500 B／試作【研究】 | 回転する磁性体へ記録する最初期の研究例。62,500 BはCHM記載で、原特許との容量照合は残る。 | [CHM：磁気ドラム][drum] |
 | **9・M10** | **月へ行ったコアロープROM**<br>1966：設計資料／1969：月着陸で使用 | 552,960 bit＝69,120 B／ROM【確定】 | Apollo AGC Block II。36,864語×15情報bit。parityを除いた容量を使い、RAM部分は別項目にしない。 元ID：M11。 | [NASA NTRS：1966年設計資料][apollo-design] |
 | **10・F01** | **初期のフロッピー、80～90 KB級**<br>1971：IBM 23FD／1976：Shugart SA400 | 公称80 KB／8 inchディスク【公称】 | 8 inchの読み出し専用80 KBを代表とし、5.25 inchのSA400（公称89.6 kB formatted）も同じ項目で紹介。書き込み可能化と8 inchの容量増加は沿革へ。 元ID：F04・F02・F03・F16・F17。 | [CHM：最初のFD][first-fd]、[IBM：開発史][ibm-fd]、[CHM：minifloppy][minifloppy] |
-| **11・F07** | **PC初期のフロッピー、320～400 KB級**<br>1981：ECMA-70初版／1981：Sony 3.5型発売／1984：Mac採用 | 368,640 B＝360 KiB／両面【算定】 | 描画は360 KiBの両面倍密度形式。国内2Dの320 KiB、初期Sony 3.5型の公称322.5 Kbytes、Macの400 KiBも本文にまとめ、互換形式とはしない。規格年とPC採用年は別。 元ID：Q08/320・F09・F10。 | [ECMA-70][ecma70]、[Microsoft：媒体形式][win-media-en]、[Sony OEM manual][sony-oa30]、[Apple：Macintosh 512K仕様][mac400] |
+| **11・F07** | **PC初期のフロッピー、320～400 KB級**<br>1983：IBM PC DOS 2.0が360 KiBに対応 | 368,640 B＝360 KiB／両面【算定】 | 描画は360 KiBの両面倍密度形式。国内2Dの320 KiB、初期Sony 3.5型の公称322.5 Kbytes、Macの400 KiBも本文にまとめ、互換形式とはしない。規格年とPC採用年は別。 元ID：Q08/320・F09・F10。 | [IBM：PC DOS 2.0の書式][dos2]、[Microsoft：媒体形式][win-media-en]、[Sony OEM manual][sony-oa30]、[Apple：Macintosh 128K仕様][mac400] |
 | **12・M20** | **初代NAND flash〔必須〕**<br>1987：発明・研究発表／1991：製品化 | 公称4 Mbit（仮512 KiB）／チップ【仮換算】 | 図は1991年の公称4 Mbit製品。1987年の研究発表に同じ容量を当てない。NORとの用途の違いもこの項目で説明する。 元ID：M19。 | [KIOXIA：技術開発史][kioxia-history]、[Intel開発者の口述記録][flash-oral] |
 | **13・比較:B02** | **日本語の小説1冊と新聞1日**<br>1914：『こころ』連載／2026-11-08：電子版取得 | 559,512 B／指定版、UTF-8【実測変換】 | 図は青空文庫の『こころ』をUTF-8へ変換した559,512 B（ルビ・注記込み）。新聞1日の文字模型は約465,000 Bで、ほぼ同じ規模という比較を本文に添える。 元ID：比較:N01。 | [図書カード・初出年][kokoro]、[授業リポート][newspaper] |
 | **14・F11** | **2DD世代のフロッピー**<br>1985：ECMA-100初版／1986：Mac Plus発売 | 737,280 B＝720 KiB／両面【算定】 | 描画は3.5型720 KiB。国内640 KiB、5.25型640/720 KiB、Mac 800 KiBは同じ容量帯で紹介。外形・GCR/MFM・書式の違いは本文へ。 元ID：追加:FD3-DD640・追加:FD5-DD640・追加:FD5-DD720・F12。 | [ECMA-100][ecma100]、[Microsoft：媒体形式][win-media-en]、[Apple：Macintosh Plus仕様][mac800] |
@@ -55,16 +55,16 @@
 | --- | --- | --- | --- | --- |
 | **15・F13** | **2HD世代のフロッピー**<br>1984：PC/AT導入／1987：ECMA-125初版 | 1,474,560 B＝1,440 KiB／両面【算定】 | 描画は3.5型1,474,560 B。PC/ATの5.25型1,228,800 Bと、国内PC系の1,261,568 Bもまとめる。1.2/1.44 MBという呼び名、密度と容量の違いは説明する。 元ID：F08・Q09/5hd・Q09/3hd。 | [ECMA-125][ecma125]、[IBMサービスマニュアル][ibm12-manual]、[Microsoft：媒体形式][win-media-en] |
 | **16・D02** | **世界初の商用HDD、IBM 350**<br>1956：初出荷 | 30,000,000 bit＝3,750,000 B／ドライブ【算定】 | 500万文字×6情報bit＝3,750,000 B。巨大な装置から始まるHDD史の柱。通俗的な5 MBと区別する。 | [CHM：RAMAC][ramac]、[IBM：RAMAC][ibm-ramac] |
-| **17・D06** | **PC向けの小型HDD**<br>1980：ST-506／1983：Rodime 3.5型導入 | 公称5 MB formatted／ドライブ【公称】 | 図はST-506の公称5 MB formatted。5.25型から3.5型へという変化もここで説明する。Rodimeの既知の6.38/12.75 MBはunformattedなので、同じ実容量として扱わない。 元ID：D08。 | [CHM：ST-506研究ノート][st506]、[CHM：Rodime研究ノート][rodime] |
-| **18・C04** | **初期のメモリーカード**<br>1998：Memory Stick／2000：初期SD導入 | 公称8 MB／カード【公称】 | 描画は初期SDの公称8 MB。ソニーのMemory Stickの4 MB版と8 MB版を本文で紹介。 元ID：C03・C02。 | [SD Association：初期カードの説明][sd-initial]、[Sony：発売発表][memorystick]、[公式20年史][sd-years] |
+| **17・D06** | **PC向けの小型HDD**<br>1980：ST-506／1983：Rodime 3.5型導入 | 公称5 MB formatted／ドライブ【公称】 | 図はST-506の公称5 MB formatted。5.25型から3.5型へという変化もここで説明する。Rodimeの既知の6.38/12.75 MBはunformattedなので、同じ実容量として扱わない。 元ID：D08。 | [Seagate：ST-506サービスマニュアル][st506]、[CHM：Rodime研究ノート][rodime] |
+| **18・C04** | **初期のメモリーカード**<br>1998：Memory Stick／2000：初期SD導入 | 公称8 MB／カード【公称】 | 描画は初期SDの一例である8 MB。東芝は2000年に32・64 MBの製品を発表。ソニーのMemory Stickの4 MB版と8 MB版を本文で紹介。 元ID：C03・C02。 | [SD Association：初期カードの説明][sd-initial]、[東芝：2000年の製品発表][sd-toshiba-2000]、[Sony：発売発表][memorystick]、[公式20年史][sd-years] |
 | **19・D09** | **ノートPCへつながる2.5 inch HDD**<br>1988：PrairieTek 220導入 | 公称20 MB／ドライブ【公称】 | 公称20 MB。次の初期flash SSDとは同容量でも記録原理が違うため、独立させる。 | [CHM：小型HDD][mini-hdd] |
 | **20・D10** | **初期のflash SSD**<br>1991：SunDiskのIBM向け納入 | 公称20 MB／ドライブ【公称】 | 公称20 MB。回転しないストレージへの転換点として単独で残す。「SSD全般の最初」ではなくflash SSDの節目。 | [Eli Harari：2011年IMW論文][harari-ssd]、[CHM：SSD][ssd-history] |
 | **21・D04/35** | **Winchester方式のHDD**<br>1973：IBM 3340/3348導入 | 公称35 MB／モジュール【公称】 | 図は35 MBのデータモジュール。70 MB版と交換式ディスクパックの前史は本文に移し、中間容量で画面を増やさない。 元ID：D04/70・D03。 | [CHM：Winchester][winchester]、[CHM：ディスクパック][disk-pack] |
-| **22・F15** | **Zip 100**<br>1994：発表 | 公称100 MB／ディスク【公称】 | 家庭・仕事で使われた大容量リムーバブル。公称100 MBでFDからの跳躍を見せる。厳密B数は仕様照合待ち。 | [CHM：minifloppy][minifloppy] |
+| **22・F15** | **Zip 100**<br>1994：発表／1995年3月：市場導入 | 公称100 MB／ディスク【公称】 | 家庭・仕事で使われた大容量リムーバブル。公称100 MBでFDからの跳躍を見せる。厳密B数は仕様照合待ち。 | [CHM：minifloppy][minifloppy] |
 | **23・追加:SD128** | **128 MBのSDと競合カード**<br>2001：128 MBのSDとスマートメディア／2002：xD登場 | 公称128 MB／カード【公称】 | 描画は128 MBのSD。スマートメディア、CompactFlash、xDにも同じ公称容量の製品があり、本文でまとめて紹介する。 元ID：C01・C05・Q12。 | [SD Association：容量推移][sd-history]、[東芝レビュー：SD-M128][toshiba-sd128]、[オリンパス：スマートメディア][smartmedia128]、[オリンパス：CF][cf128]、[オリンパス：xD][xd] |
 | **24・比較:N03** | **新聞1年分の文字**<br>2022：文字数説明／2026：換算模型 | 約169,725,000 B【模型】 | 約15.5万字×3 B×365日。写真や紙面を含まない。新聞100年分の独立項目は置かない。 | [授業リポート][newspaper] |
-| **25・T03** | **カートリッジ式の業務用テープ**<br>1984-03-22：IBM 3480一般提供 | 公称200 MB native／巻【公称】 | 図は3480の公称200 MB native。UNISERVOやIBM 726の初期商用テープ、オープンリールからの変化はこの本文で紹介。初期テープの「桁」をBへ置換しない。 元ID：T01・T02。 | [IBM：ライフサイクル][ibm3480-year]、[IBM：仕様一覧][ibm3480-cap]、[CHM：UNISERVO][tape-first] |
-| **26・O10** | **MO、640 MB級**<br>1988：初期5.25型／1991：3.5型／1997：640 MBのISO規格 | 公称640 MB／3.5 inch媒体【公称】 | 描画は3.5型640 MB。近い540 MB・5.25型650 MBをまとめる。128/230 MBからGIGAMO 1.3/2.3 GBまでの推移は本文の沿革へ移す。 元ID：O09・O05・O07・O08・O12・O13。 | [富士通：仕様][mo640-spec]、[Sony 1991年報][sony-ar1991]、[富士通・Sony：回顧付き発表][gigamo] |
+| **25・T03** | **カートリッジ式の業務用テープ**<br>1984-03-22：IBM 3480発表 | 公称200 MB native／巻【公称】 | 図は3480の公称200 MB native。UNISERVOやIBM 726の初期商用テープ、オープンリールからの変化はこの本文で紹介。初期テープの「桁」をBへ置換しない。 元ID：T01・T02。 | [IBM：1984年の発表原本][ibm3480-year]、[IBM：仕様一覧][ibm3480-cap]、[CHM：UNISERVO][tape-first] |
+| **26・O10** | **MO、640 MB級**<br>1988：初期5.25型／1991：3.5型／1997：640 MBのISO規格 | 公称640 MB／3.5 inch媒体【公称】 | 描画は3.5型640 MB。近い540 MB・5.25型650 MBをまとめる。128/230 MBからGIGAMO 1.3/2.3 GBまでの推移は本文の沿革へ移す。 元ID：O09・O05・O07・O08・O12・O13。 | [ISO：640 MBのMO規格][mo640-spec]、[Sony 1991年報][sony-ar1991]、[富士通・Sony：回顧付き発表][gigamo] |
 | **27・O02** | **CD、650 MB級**<br>1982：音楽CD／1985：CD-ROM研究発表／1988：ECMA初版 | 681,984,000 B／74分の構成例【算定】 | 図は74分のCD-ROM Mode 1、681,984,000 B。CD-R・CD-RWもここで説明。音楽CDは同時間でもPCM本体が約783 MBとなり、ユーザーデータ容量と同じではない。初期CD-Rの容量は未照合。 元ID：O04・O01・O03。 | [CD-ROM規格][ecma130]、[Sony：CD開発史][cd-history]、[太陽誘電の沿革][cdr-yuden]、[Ricoh：沿革][cdrw-ricoh] |
 
 ### 3. GB級の媒体とフラッシュ
@@ -75,7 +75,7 @@
 | **29・C08** | **SDHC**<br>2006：規格登場／2007-01-05：東芝が製品発表 | 公称4 GB／カード【公称】 | 描画は東芝の4 GB SDHC。同社の4 GB miniSDHCと、2006年に発表されたソニーの同容量のメモリースティック PRO デュオを本文にまとめる。32 GBはSDHCの規格上限。 元ID：C06。 | [SD Association：容量規格][sd-capacity]、[東芝：4 GB SDHC][toshiba-sdhc]、[Sony：4 GB PRO デュオ][ms-produo4] |
 | **30・O19** | **DVD、片面1層4.7 GB級**<br>1997：DVD-ROMのECMA初版／各記録型は後続 | 公称4.7 GB／片面【公称】 | DVD-ROM・DVD-R・DVD+R・DVD-RW・DVD+RW・4.7 GB DVD-RAMを1項目にする。描画はDVD-5の公称4.7 GB。+Rの正確な4,700,372,992 Bや方式・互換性の差は本文へ。 元ID：O24・O25・O26・O27・O29/single。 | [ECMA-267][ecma267]、[ECMA-349初版PDF][ecma349]、[ECMA-330][ecma330] |
 | **31・O20** | **DVDの大容量化、8.5～9.4 GB級**<br>1997：DVD-ROMのECMA初版／記録型DLは後続 | 公称8.5 GB／片面2層【公称】 | 描画は片面2層DVD-9の公称8.5 GB。DVD±R DLの8.54/8.55 GBと、両面9.4 GBの形式もまとめ、2層と両面の違いを説明する。 元ID：O30・O31・O21・O29/double。 | [ECMA-267][ecma267]、[ECMA-364][ecma364]、[ECMA-382][ecma382]、[ECMA-330][ecma330] |
-| **32・M22** | **3D NAND、積層して増やす**<br>2013：Samsung第1世代V-NAND量産 | 公称128 Gbit（仮16 GiB）／ダイ【仮換算】 | 図は128 Gbitの1ダイ（仮16 GiB）。東芝の2007年3D技術発表や2015年48層BiCS 256 Gbitは沿革へ。ダイ容量に層数を再度掛けない。 元ID：M23。 | [Samsung：V-NAND世代表][vnand]、[KIOXIA：技術開発史][kioxia-history]、[KIOXIA／当時東芝：発表][bics256] |
+| **32・M22** | **3D NAND、積層して増やす**<br>2013：Samsung第1世代V-NAND量産 | 公称128 Gbit（仮16 GiB）／ダイ【仮換算】 | 図は128 Gbitの1ダイ（仮16 GiB）。東芝の2007年3D技術発表や2015年48層BiCS 256 Gbitは沿革へ。ダイ容量に層数を再度掛けない。 元ID：M23。 | [Samsung：初代V-NANDの量産発表][vnand]、[KIOXIA：技術開発史][kioxia-history]、[KIOXIA／当時東芝：発表][bics256] |
 | **33・O33/25** | **Blu-ray Disc、25 GB級**<br>2002：基本仕様発表／2006：BD-ROM米国量産発表 | 公称25 GB／片面1層【公称】 | 描画は25 GBのBD-ROM。BD-R/REの同容量形式をまとめ、初期23.3 GB、2層50 GBは本文で扱う。全方式の初発売が2006年という意味ではない。 元ID：O34/25・O35/25・O32/23.3・O33/50・O34/50・O35/50。 | [9社共同発表／Sony][bd2002]、[Sony DADC：2006年発表][bd2006]、[Sony：媒体容量][bd-capacity] |
 | **34・C09** | **SDXC**<br>2009：SDXC規格と東芝の64 GB品発表／2010-04-17：国内発売 | 公称64 GB／カード【公称】 | 描画は東芝 THNSU064GAA2BC。SanDiskの64 GB CompactFlashも同じ容量帯のカメラ向け製品として本文に添える。2 TBはSDXCの規格上限。 | [東芝：64 GB SDXC発表][toshiba-sdxc]、[東芝：発売日][toshiba-sdxc-release]、[SanDisk：CF仕様][cf64gb] |
 | **35・O36** | **BDXL、100～128 GB級**<br>2010-06-25：仕様確定 | 公称100 GB／3層【公称】 | 図は3層BD-R 100 GB。BD-RE 100 GBと4層BD-R 128 GBをまとめる。100 GBの媒体全てが追記型・3層だとはしない。 元ID：O37・O38。 | [BDA：仕様確定発表][bdxl] |
@@ -88,7 +88,7 @@
 | **37・D12** | **1 TB HDD**<br>2007-01-05：Deskstar 7K1000発表 | 公称1 TB／ドライブ【公称】 | 家庭用PCにもつながる単体HDDの1 TB到達。発表・出荷予定と実出荷日は区別する。 | [Hitachi：当時の発表][hitachi-1tb] |
 | **38・C07** | **1 TBのmicroSDXC**<br>2005：microSD規格登場／2019-02-25：SanDiskの1 TB品発表 | 公称1 TB／カード【公称】 | 描画はSanDisk Extreme UHS-I microSDXC。初期microSDの32～128 MBを本文で紹介。3.5型HDDと同じ容量でも記録方式と外形の違いを見せるため別項目にする。 | [SD Association：microSDの歴史][microsd-history]、[Western Digital：SanDiskの1 TB品][sandisk-microsd1tb] |
 | **39・T08** | **LTOもTB級へ**<br>2010：LTO Ultrium 5規格・互換認証 | 1.5 TB native／巻【公称】 | 1.5 TB native。LTFSやパーティションの世代として残す。以後の2.5/6/12/18 TBの中間世代は本文へ。 元ID：T09・T10・T11・T12。 | [LTO公式沿革][lto-archive]、[Fujifilm：仕様][lto-fuji] |
-| **40・比較:L01** | **国立国会図書館の図書を文字に**<br>2025年度末：図書数／2026：換算模型 | 約11.368 TB／仮定した全文字【模型】 | 12,631,196点×1冊30万字×3 B。図書館が公表した実データ容量ではなく、ページ数・文字密度を仮定した約11.368 TB。 | [NDL公式統計][ndl] |
+| **40・比較:L01** | **国立国会図書館の図書を文字に**<br>2025年度末：図書数／2026：換算模型 | 約11 TB／図書の文字量【模型】 | 12,631,196点×1冊30万字×3 B。図書館の公表値は図書数。仮定による計算値11.3680764 TBを描画し、読者には約11 TBと表示する。 | [NDL公式統計][ndl] |
 | **41・D13** | **2.5 inch SSDに15 TB超**<br>2016年3月：Samsung PM1633a出荷発表 | 公称15.36 TB／2.5 inch SSD【公称】 | 公称15.36 TBの単体SSD。初期20 MB SSDとの大きな隔たりと、DCでの用途を伝える。 | [Samsung：出荷発表][samsung-1536] |
 | **42・D14** | **HDDは30 TB級へ**<br>2024-01-17：Seagate HAMR量産拡大発表 | 公称30 TB級／HDD【公称】 | 磁気記録も進化し続けることを示す。公称30 TB級とし、実装時は描く型番を固定する。 | [Seagate：当時の発表][hamr] |
 | **43・T14** | **LTOは30～40 TB級へ**<br>2025：LTO-10 30 TB仕様／2026：40 TB媒体発売告知 | 40 TB native／巻【公称】 | 描画は40 TB native。30 TB版も同じ項目へ。圧縮時の75/100 TBを記憶容量にしない。 元ID：T13。 | [LTO：2025年発表][lto10]、[Fujifilm：40 TB発売発表][lto40]、[LTO：互換性][lto-compat] |
@@ -106,14 +106,14 @@
 | 順・代表ID | 項目と年代 | 描画の基準にする容量 | 本文と注記 | 根拠 |
 | --- | --- | --- | --- | --- |
 | **50・E01** | **Google検索の索引**<br>2026年11月：公式解説を確認 | 100 PB【下限】 | Googleが示す検索索引の下限を使う。数千億のウェブページなどを検索する情報の量。 | [Google公式解説][e-google-index] |
-| **51・E02** | **NASAの地球科学データ**<br>2024年9月末：2024会計年度末 | 128.56 PB【公表】 | 保管量のうち66.69 PBがクラウド分。 | [NASA Earthdataの技術資料][e-nasa] |
+| **51・E02** | **NASAの地球科学データ**<br>2024年9月末：2024会計年度末 | 128.56 PB【公表】 | EOSDISの保管量のうち66.69 PBがクラウド分。 | [NASA Earthdataの技術資料][e-nasa] |
 | **52・E04** | **Internet Archive**<br>2025：保存実績 | 210 PB【下限】 | Wayback Machine、電子書籍、動画、音声などを含むユニークデータ。1兆件の保存記録を本文に添える。 | [運用報告][e-archive-storage]、[公式発表][e-archive-count] |
 | **53・E08** | **CERNのLHC実験データ**<br>2025年12月：到達を発表 | 1 EB【公表】 | 15年以上にわたって保存した実験データ。大半を磁気テープに保存。 | [CERN公式発表][e-cern] |
 | **54・E10** | **TFinity Plusの45フレーム構成**<br>2026：仕様確認 | 2.2 EB【公称】 | メーカーが示す非圧縮の構成上限。最大56,400巻のLTO-10。 | [Spectra Logicの仕様][e-spectra]、[40 TBのLTO-10][e-lto-40] |
 | **55・E13** | **世界のインターネット通信1日分**<br>2026：ITU推計 | 約25 EB／平均1日【推計】 | 固定回線とモバイル回線の推計を平均1日分に換算。 | [ITUの通信量統計][e-itu]、[推計方法][e-itu-method] |
 | **56・E15** | **Seagateが1年に出荷したHDD**<br>2026年7月3日：2026会計年度末 | 789 EB【公表】 | 当該会計年度に出荷したHDDの容量の合計。 | [SeagateのSEC提出資料][e-seagate-year] |
 | **57・E16** | **Seagateの累計出荷容量**<br>2025年7月：決算発表 | 4 ZB【下限】 | 創業から発表時点までの累計。ここで初めてZBを紹介する。 | [Seagateの決算発表][e-seagate-total] |
-| **58・E18** | **世界に設置された記憶容量**<br>2026：IDC推計 | 約13 ZB【推計】 | 使用領域と空き領域を含む設備容量。 | [IDCの2026年解説][e-idc-installed] |
+| **58・E18** | **世界に設置された記憶容量**<br>2026年末：IDC予測 | 約13 ZB【推計】 | 使用領域と空き領域を含む設備容量。 | [IDCの2026年解説][e-idc-installed] |
 | **59・E19** | **世界で1年に生成・取得・複製・消費されたデータ**<br>2025：対象年／2026年6月：IDC推計 | 218.433 ZB【推計】 | IDCの218,433 EBを描画の基準にし、容量欄は約218 ZB。配信やコピーによる重複、一時的なデータを含む1年の量。 | [IDCの指標定義と推計][e-idc-data] |
 
 ## 主な統合結果
@@ -180,16 +180,14 @@
 [core]: https://www.computerhistory.org/storageengine/whirlwind-computer-debuts-core-memory/
 [dram]: https://www.computerhistory.org/siliconengine/mos-dynamic-ram-competes-with-magnetic-core-memory-on-price/
 [eprom]: https://www.computerhistory.org/siliconengine/reusable-programmable-rom-introduces-iterative-design-flexibility/
-[intel-memory-book]: https://www.bitsavers.org/components/intel/_dataBooks/1983_Memory_Component_Handbook.pdf
 [drum]: https://www.computerhistory.org/storageengine/tauschek-patents-magnetic-drum-storage/
 [apollo-design]: https://ntrs.nasa.gov/api/citations/19660019469/downloads/19660019469.pdf
 [first-fd]: https://www.computerhistory.org/storageengine/floppy-disk-loads-mainframe-computer-data/
 [ibm-fd]: https://www.ibm.com/history/floppy-disk
 [minifloppy]: https://www.computerhistory.org/storageengine/minicomputers-stimulate-floppy-disk-sales/
-[ecma70]: https://ecma-international.org/publications-and-standards/standards/ecma-70/
 [win-media-en]: https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ne-winioctl-media_type
-[sony-oa30]: https://bitsavers.org/pdf/sony/floppy/Sony_Micro_Floppy_Disk_Drive_Model_0A-D30V_OEM_Manual_Mar82.pdf
-[mac400]: https://support.apple.com/en-us/112187
+[sony-oa30]: https://mirrors.meulie.net/bitsavers.org/pdf/sony/floppy/Sony_Micro_Floppy_Disk_Drive_Model_0A-D30V_OEM_Manual_Mar82.pdf
+[mac400]: https://support.apple.com/en-hk/112190
 [kioxia-history]: https://www.kioxia.com/ja-jp/rd/technology/history.html
 [flash-oral]: https://archive.computerhistory.org/resources/access/text/2012/04/102658199-05-01-acc.pdf
 [kokoro]: https://www.aozora.gr.jp/cards/000148/card773.html
@@ -197,11 +195,11 @@
 [ecma100]: https://ecma-international.org/publications-and-standards/standards/ecma-100/
 [mac800]: https://support.apple.com/en-ae/112183
 [ecma125]: https://ecma-international.org/publications-and-standards/standards/ecma-125/
-[ibm12-manual]: https://www.manualslib.com/manual/1015063/Ibm-6151.html?page=511
+[ibm12-manual]: https://bitsavers.trailing-edge.com/pdf/ibm/pc/SA38-0037-00_Personal_Computer_Family_Service_Information_Manual_Jul89.pdf
 [ramac]: https://www.computerhistory.org/storageengine/first-commercial-hard-disk-drive-shipped/
 [ibm-ramac]: https://www.ibm.com/history/ramac
-[st506]: https://s3.computerhistory.org/groups/ds-seagate-st-506.pdf
-[rodime]: https://s3.computerhistory.org/groups/rodime-ro352.pdf
+[st506]: https://computermuseum.informatik.uni-stuttgart.de/ftp/mirrors/www.minuszerodegrees.net/manuals/Seagate/Seagate%20ST506%20-%20Service%20Manual%20-%20May82.pdf
+[rodime]: https://d1yx3ys82bpsa0.cloudfront.net/groups/rodime-ro352.pdf
 [sd-initial]: https://www.sdcard.org/press/thoughtleadership/anatomy-of-an-sd-memory-card-what-matters-most-for-photography-and-videography/
 [memorystick]: https://www.sony.com/en/SonyInfo/News/Press/199807/98-067/
 [xd]: https://www.olympus.co.jp/jp/news/2002b/nr020822xdcardj.html
@@ -211,10 +209,10 @@
 [ssd-history]: https://www.computerhistory.org/storageengine/solid-state-drive-module-demonstrated/
 [winchester]: https://www.computerhistory.org/storageengine/winchester-pioneers-key-hdd-technology/
 [disk-pack]: https://www.computerhistory.org/storageengine/disk-packs-offer-portability-security/
-[ibm3480-year]: https://www.ibm.com/support/pages/node/7093315
+[ibm3480-year]: https://bitsavers.trailing-edge.com/pdf/ibm/3480/3480_Product_Annoucement_Mar84.pdf
 [ibm3480-cap]: https://www.ibm.com/support/pages/node/641919
 [tape-first]: https://www.computerhistory.org/storageengine/tape-unit-developed-for-data-storage/
-[mo640-spec]: https://www.fujitsu.com/downloads/HK/mce_mcf3064ss.pdf
+[mo640-spec]: https://www.iso.org/standard/26279.html
 [sony-ar1991]: https://www.sony.com/en/SonyInfo/IR/library/ar/8ido18000005flxn-att/1991-E.pdf
 [gigamo]: https://info.archives.global.fujitsu/jp/news/1998/Nov/5-e.html
 [ecma130]: https://ecma-international.org/publications-and-standards/standards/ecma-130/
@@ -227,7 +225,7 @@
 [ecma330]: https://ecma-international.org/publications-and-standards/standards/ecma-330/
 [ecma364]: https://ecma-international.org/publications-and-standards/standards/ecma-364/
 [ecma382]: https://ecma-international.org/publications-and-standards/standards/ecma-382/
-[vnand]: https://semiconductor.samsung.com/news-events/news/samsung-electronics-takes-3d-memory-to-new-heights-with-sixth-generation-v-nand-ssds-for-client-computing/
+[vnand]: https://news.samsung.com/global/samsung-starts-mass-producing-industrys-first-3d-vertical-nand-flash
 [bics256]: https://www.kioxia.com/ja-jp/about/news/2015/20150804-1.html
 [bd2002]: https://www.sony.com/en/SonyInfo/News/Press/200202/02-0219E/
 [bd2006]: https://www.sony.com/SonyInfo/IR/news/20060516.pdf
@@ -237,7 +235,7 @@
 [lto-cap]: https://www.ibm.com/docs/en/t-tt-and-t?topic=media-data-cartridges
 [hitachi-1tb]: https://www.hitachi.com/en-us/press/archive/01052007/
 [lto-fuji]: https://www.fujifilm.com/in/en/business/data-management/datastorage/ltotape/specifications
-[ndl]: https://www.ndl.go.jp/aboutus/outline/numerically
+[ndl]: https://dl.ndl.go.jp/view/download/digidepo_15042678_po_nen_r6.pdf?contentNo=1
 [samsung-1536]: https://news.samsung.com/us/samsung-introduces-worlds-largest-capacity-15-36tb-ssd-enterprise-storage-systems/
 [hamr]: https://www.seagate.com/stories/articles/seagates-breakthrough-30tb-plus-hard-drives-ramp-volume-marking-an-inflection-point-in-the-storage-industry-pr/
 [lto10]: https://www.lto.org/2025/08/the-lto-program-introduces-generation-10-of-leading-tape-technology-delivering-unparalled-media-density/
@@ -253,7 +251,7 @@
 [corvault-spec]: https://www.seagate.com/content/dam/seagate/en/content-fragments/products/datasheets/exos-pods/corvault-self-healing-storage-DS2058-4-2309US-en_US.pdf
 [raptor-spec]: https://cdn.allbound.com/iq-ab/2021/11/Scalar-Tape-DS00559A.pdf
 [raptor-guide]: https://qsupport.quantum.com/kb/flare/content/Scalar_i7_RAPTOR/docCenter/Site_Planning_i7.htm
-[raptor-ga]: https://d1io3yog0oux5.cloudfront.net/_1f880a8a07b7adc6058553eac190da16/quantum/news/2024-12-04_Quantum_Scalar_i7_RAPTOR_Now_209.pdf
+[raptor-ga]: https://investors.quantum.com/news-events/press-releases/detail/209/quantum-scalar-i7-raptor-now-available
 
 [sd-history]: https://www.sdcard.org/wp-content/uploads/2020/11/SD_Celebrates_10_Years_of_Innovation_at_CES_2010.pdf
 [toshiba-sd128]: https://www.global.toshiba/content/dam/toshiba/migration/corp/techReviewAssets/tech/review/2002/01/57_01pdf/b06.pdf
@@ -266,7 +264,7 @@
 [toshiba-sdxc-release]: https://www.kioxia.com/ja-jp/personal/news/2010/20100415-1.html
 [cf64gb]: https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/memory-cards/extreme-pro-compactflash/data-sheet-extreme-pro-compactflash.pdf
 [microsd-history]: https://www.sdcard.org/press/thoughtleadership/celebrating-20-years-of-microsd/
-[sandisk-microsd1tb]: https://www.westerndigital.com/company/newsroom/press-releases/2019/2019-02-25-western-digital-unveils-worlds-fastest-1tb-uhs-i-microsd-card
+[sandisk-microsd1tb]: https://www.westerndigital.com/en-sg/company/newsroom/press-releases/2019/2019-02-25-western-digital-unveils-worlds-fastest-1tb-uhs-i-microsd-card
 [e-google-index]: https://www.google.com/intl/en_uk/search/howsearchworks/how-search-works/organizing-information/
 [e-nasa]: https://wiki.earthdata.nasa.gov/download/attachments/378738424/ESDS-RFC-057v1_OFAIR-Guide.pdf?api=v2&modificationDate=1764095753357&version=1
 [e-archive-storage]: https://digitalpreservation.gov/meetings/DSA2026/0117_jonah_edwards_ia_dsa_2026.pdf
@@ -277,6 +275,9 @@
 [e-itu]: https://www.itu.int/itu-d/reports/statistics/2026/10/13/ff26-internet-traffic/
 [e-itu-method]: https://www.itu.int/itu-d/reports/statistics/2026/10/13/ff26-methodology/
 [e-seagate-year]: https://www.sec.gov/Archives/edgar/data/1137789/000113778926000207/stx-20260908.htm
-[e-seagate-total]: https://investors.seagate.com/news/news-details/2025/Seagate-Technology-Reports-Fiscal-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/
+[e-seagate-total]: https://investors.seagate.com/news/news-details/2025/Seagate-Technology-Reports-Fiscal-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/default.aspx
 [e-idc-installed]: https://www.idc.com/resource-center/blog/beyond-the-prompt-the-hidden-data-and-storage-implications-of-generative-ai/
 [e-idc-data]: https://www.idc.com/resource-center/definitions/what-are-the-global-datasphere-and-global-storagesphere/
+[dos2]: https://bitsavers.trailing-edge.com/pdf/ibm/serviceForConsultants/Service_For_Consultants_198303.pdf
+[sd-toshiba-2000]: https://www.global.toshiba/jp/news/corporate/2000/03/pr1501/doc_05.html
+[intel-famos]: https://doi.org/10.1109/JSSC.1971.1050191

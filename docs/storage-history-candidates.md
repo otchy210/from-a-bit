@@ -65,7 +65,7 @@
 | M19 | 1988年4月：発表 | Intel の256 Kbit NOR flash | 公称 **256 Kbit／チップ**。型番・厳密構成は追加照合 | NORの商用化初期。**フラッシュ全般の世界初製品とはしない**。1987年の東芝商用品との区別が必要。 | [Intel開発者の口述記録][flash-oral]（当事者証言） |
 | M20 | 1987：技術発表、1991：製品化 | 東芝の4 Mbit NAND flash | **4 Mbit／チップ**。2の累乗の厳密bit数と予備領域はデータシート照合待ち | **世界初のNAND型フラッシュ製品**の候補。発明年1987と製品年1991を分ける。 | [KIOXIA：技術開発史][kioxia-history]（当事者の回顧） |
 | M21 | 2006：商用化 | Freescale の4 Mbit MRAM | 公称 **4 Mbit／チップ** | 初期の商用MRAM。後継Everspinの一次発表資料で2006年・4Mbを確認。広い意味の不揮発RAM全般の世界初ではない。 | [Everspin：開発史スライド][mram]（一次） |
-| M22 | 2013：量産世代 | Samsung 第1世代V-NAND | 公称 **128 Gbit／ダイ、24層、MLC** | 3D NANDの商用化。積層枚数を容量にもう一度掛けない。2007年の東芝の技術発表とは別の出来事。 | [Samsung：V-NAND世代表][vnand]（一次） |
+| M22 | 2013：量産世代 | Samsung 第1世代V-NAND | 公称 **128 Gbit／ダイ、24層、MLC** | 3D NANDの商用化。積層枚数を容量にもう一度掛けない。2007年の東芝の技術発表とは別の出来事。 | [Samsung：初代V-NANDの量産発表][vnand]（一次） |
 | M23 | 2015-08-04：製品化・サンプル出荷発表 | 東芝 48層 BiCS FLASH | 公称 **256 Gbit／ダイ** | 3D NANDの別世代。「世界初の48層256Gb」のように条件を残す。最初の3D NAND量産品という意味ではない。 | [KIOXIA／当時東芝：発表][bics256]（一次） |
 | M24 | 2015-07-28：発表 | Intel／Micron 3D XPoint | 公称 **128 Gbit／ダイ** | NANDとは異なる不揮発メモリ。発表をOptane製品の発売年としない。 | [Intel／Micron：共同発表][xpoint]（一次） |
 | M25 | 2019：一般提供世代 | Intel Optane DC Persistent Memory | 公称 **128／256／512 GB／DIMM**。別容量を採るなら別行に分割 | チップとモジュールの違いが分かる例。不揮発で、通常のSSDと異なるメモリ接続。GBの正確なバイト定義はSKU資料で追加確認。 | [Intel：技術概要][optane]、[Lenovo：製品ガイド][optane-lenovo]（一次） |
@@ -76,12 +76,12 @@
 
 | ID | 年と出来事 | 候補 | 容量・比較単位 | 掲載する意味／注意点 | 根拠 |
 | --- | --- | --- | --- | --- | --- |
-| D01 | 1932：試作・実演、1933：特許出願 | Tauschek の磁気ドラム | **500,000 bit＝62,500 B／試作装置**とCHMが記載 | HDD以前の回転磁気記憶。CHMの本文は1932年の実演、文献欄は1933-07-01出願・1937年登録を記す。容量の原特許照合は継続。**研究候補**として残す。 | [CHM：磁気ドラム][drum]（研究史） |
+| D01 | 1932：試作・実演、1933：ドイツで特許出願 | Tauschek の磁気ドラム | **500,000 bit＝62,500 B／試作装置**とCHMが記載 | HDD以前の回転磁気記憶。CHMの本文は1932年の実演、文献欄は1933-07-01出願・1937年登録を記す。容量の原特許照合は継続。**研究候補**として残す。 | [CHM：磁気ドラム][drum]（研究史） |
 | D02 | 1956：初出荷 | IBM 350（IBM 305 RAMAC用） | **5,000,000文字×6情報bit＝30,000,000 bit＝3,750,000 B／ドライブ** | **世界初の商用HDD**。305は計算機、350がドライブ。parity込みの7 bit、通俗的な「5 MB」と区別する。 | [CHM：RAMAC][ramac]、[IBM：RAMAC][ibm-ramac]（研究史・当事者回顧） |
 | D03 | 1962年10月：発表 | IBM 1311＋1316取り外し式ディスクパック | 公称 **2,000,000文字／パック**。符号に依存するbit換算は保留 | 14 inchの交換式パック。計算機をまたいで持ち運ぶHDDの節目。「2 MB」への自動置換はしない。 | [CHM：ディスクパック][disk-pack]（研究史、IBMマニュアル案内あり） |
 | D04 | 1973：導入 | IBM 3340／3348 Winchester | 公称 **35 MB、70 MB／データモジュール** | ヘッドと媒体をまとめた交換モジュール。固定＋取り外しの装置全体容量と混ぜない。 | [CHM：Winchester][winchester]（研究史、1973年IBM資料案内あり） |
 | D05 | 1978：商用品 | StorageTek STC 4305 RAM SSD | 公称 **45 MB／装置** | **フラッシュ以前にもSSDがあった**ことを伝える。揮発RAMとバックアップを使う装置。最初のSSDという無限定の主張は避ける。 | [CHM：SSD][ssd-history]（研究史） |
-| D06 | 1980：導入 | Seagate ST-506、5.25 inch HDD | 公称 **5 MB（formatted）／ドライブ**。unformattedは **6.38 MB** | 最初期の5.25 inch HDD、PC向けHDDの普及につながる。寸法規格そのものが5 MBと決めているわけではない。 | [CHM：ST-506研究ノート][st506]（研究・開発関係者の記録） |
+| D06 | 1980：導入 | Seagate ST-506、5.25 inch HDD | 公称 **5 MB（formatted）／ドライブ**。unformattedは **6.38 MB** | 最初期の5.25 inch HDD、PC向けHDDの普及につながる。寸法規格そのものが5 MBと決めているわけではない。 | [Seagate：ST-506サービスマニュアル][st506]（一次資料の保存版） |
 | D07 | 1980：発表、出荷時期は追加照合 | IBM 3380 | 公称 **2.52 GB／ユニット**。HDAは2個、各約1.26 GB | GB級への節目。「1台」「1 HDA」「1アクセス機構」では容量が異なる。1980年の発表と、遅れた初出荷を分ける。 | [IBM：Description and User's Guide][ibm3380-manual]（一次資料の保存版） |
 | D08 | 1983年第3四半期：導入 | Rodime RO351／RO352、3.5 inch HDD | 公称 **6.38／12.75 MB（unformatted）／ドライブ** | **最初の商用3.5 inchフォームファクターHDD**。よく見る5／10 MBというformatted値を、ここに無条件に置き換えない。 | [CHM：Rodime研究ノート][rodime]（研究） |
 | D09 | 1988：導入 | PrairieTek 220、2.5 inch HDD | 公称 **20 MB／ドライブ** | 2.5 inch HDDの始まり。ノートPCへつながる。 | [CHM：小型HDD][mini-hdd]（研究史） |
@@ -101,13 +101,13 @@ inchは外形／媒体のクラスであり、容量規格ではない。同じ�
 | F01 | 1971：初出荷 | IBM 23FD、8 inch、読み出し専用FD | 公称 **80 KB／枚**。正確なB数は要照合 | **最初のFDD／FD**。当初はマイクロコードの配布用。「80 KiB」と先に決めない。 | [CHM：最初のFD][first-fd]、[IBM：開発史][ibm-fd]（研究史・当事者回顧） |
 | F02 | 1972：導入 | Memorex 650、8 inch、read/write | 公称 **175 KB／枚** | 初期の汎用書き込み可能FDD。IBMの1973年read/writeモデルより先行。 | [CHM：最初のFD][first-fd]（研究史、OEM manualへの案内あり） |
 | F03 | 1973：IBM 3740導入 | 8 inch、IBM 3740互換SSSD | **77×26×128＝256,256 B／枚** | 普及した交換形式。ファイル管理領域を含むデータセクタ総量で、ユーザーファイルの空き容量ではない。ECMA-54初版は1978年。 | [互換機メーカーの仕様][ibm3740-format]（一次資料の保存版）、[ECMA-54][ecma54]（規格） |
-| F04 | 1976：発表 | Shugart SA400、5.25 inch minifloppy | 公称 **89.6 kB formatted／109.4 kB unformatted** | **最初の5.25 inch FDD**の候補。よくある「110 KB」は未フォーマット値の丸め。厳密B数はメーカーdata sheetの再照合後に固定。 | [CHM：minifloppy][minifloppy]、[1976年の仕様紹介][sa400-1976]（研究史・同時代資料） |
+| F04 | 1976：発表 | Shugart SA400、5.25 inch minifloppy | 公称 **89.6 kB formatted／109.4 kB unformatted** | **最初の5.25 inch FDD**の候補。よくある「110 KB」は未フォーマット値の丸め。メーカー仕様表には書式別に80.6 kBと89.6 kBが記載されている。 | [CHM：minifloppy][minifloppy]、[Shugart：SA400仕様表][sa400-spec]（メーカー一次資料） |
 | F05 | 1978：Disk II導入期 | Apple II Disk II、13-sector形式 | **35×13×256＝116,480 B／片面** | 後の140 KB形式と分ける。初期の13-sectorという構成は同時代記事で確認。年とDOS版の対応はApple原マニュアルで最終照合。 | [Disk IIの当時の記事][disk2-13]（同時代資料） |
 | F06 | 1980：DOS 3.3形式の候補年、要原典照合 | Apple II Disk II、16-sector形式 | **35×16×256＝143,360 B＝140 KiB／片面** | 同じドライブ／媒体でも記録方式とROM・DOSで容量が変わる例。**年と構成の原典照合を残す**。 | [Apple II／Disk II関連資料の入口][chm-timeline]（所蔵・研究、追加調査） |
-| F07 | 1981：規格初版 | 5.25 inch、両面40-track MFM（ECMA-70） | PCの代表形式なら **40×2×9×512＝368,640 B＝360 KiB**。この構成の規格内対応は要照合 | 規格年とIBM PC DOSの360 KB形式の採用年は同一ではない。ECMA-70にはtrack formatがあり、「同じ5.25 inchだから互換」とは限らない。 | [ECMA-70][ecma70]（規格）、[Microsoft：媒体形式][win-media]（一次） |
+| F07 | 1983：IBM PC DOS 2.0で対応 | 5.25 inch、両面40-track MFM（PCの360 KiB形式） | PCの代表形式なら **40×2×9×512＝368,640 B＝360 KiB**。 | 1981年初版のECMA-70は異なるセクター構成を規定する。 | [IBM：PC DOS 2.0][dos2]（当時の製品資料）、[ECMA-70][ecma70]（規格）、[Microsoft：媒体形式][win-media]（一次） |
 | F08 | 1984：IBM PC/ATで導入 | 5.25 inch 2HD、PCの「1.2 MB」形式 | **80×2×15×512＝1,228,800 B＝1,200 KiB** | 普及形式として優先候補。**1.2 MiBではない**。ECMA-99は1985年、形式差は本文照合が必要。 | [IBM：FD史][ibm-fd]、[IBMサービスマニュアル][ibm12-manual]（一次資料）、[ECMA-99][ecma99]（規格） |
 | F09 | 1981：発売、1981年10月：OEMマニュアル初版、1982年3月：改訂 | Sony 初期3.5 inch microfloppy、OA-D30V | DDで公称 **322.5 Kbytes formatted／437.5 Kbytes unformatted／片面**。正確なB数・採用書式は要照合 | **最初の3.5 inch FD**の系譜。2026-11-09にSony OEM manualの表3-1（印刷p.7）を補足確認。フォーマットはホストに依存する。後の720 KB／1.44 MBを初代容量として使わない。 | [Sony：発売史][sony-fd]、[Sony OEM manual][sony-oa30]（一次資料の保存版） |
-| F10 | 1984：Macintosh採用 | 3.5 inch、Mac 400K GCR形式 | 公称 **400K＝409,600 B＝400 KiB／枚**。厳密構成はdisk format資料を追加照合 | PCのMFM形式と別物。同年Macintosh 512KのApple仕様で400Kドライブを確認。 | [Apple：Macintosh 512K仕様][mac400]（一次） |
+| F10 | 1984：Macintosh採用 | 3.5 inch、Mac 400K GCR形式 | 公称 **400K＝409,600 B＝400 KiB／枚**。厳密構成はdisk format資料を追加照合 | PCのMFM形式と別物。初代Macintosh 128KのApple仕様で400Kドライブを確認。 | [Apple：Macintosh 128K仕様][mac400]（一次） |
 | F11 | 1985年9月：規格初版 | 3.5 inch 2DD、ISO Type 301／ECMA-100 | 代表形式 **80×2×9×512＝737,280 B＝720 KiB／枚**。規格内形式の最終照合待ち | 720 KBの普及形式。初版年と個別PCの発売年を分ける。 | [ECMA-100][ecma100]（規格）、[Microsoft：媒体形式][win-media]（一次） |
 | F12 | 1986-01-16：Macintosh Plus発売 | 3.5 inch、Mac 800K GCR形式 | 公称 **800K＝819,200 B＝800 KiB／枚**。厳密構成は追加照合 | Macの400K→800K。PCの720Kとは別形式。 | [Apple：Macintosh Plus仕様][mac800]（一次） |
 | F13 | 1987年12月：規格初版 | 3.5 inch 2HD、ISO Type 302／ECMA-125 | **80×2×18×512＝1,474,560 B＝1,440 KiB／枚** | いわゆる **1.44 MB**。1.44×1,024×1,000 Bという慣用表示で、1.44 MiBでもない。 | [ECMA-125][ecma125]（規格）、[AT&Tの幾何構成表][att-fd]（一次資料の保存版） |
@@ -124,7 +124,7 @@ inchは外形／媒体のクラスであり、容量規格ではない。同じ�
 | --- | --- | --- | --- | --- | --- |
 | T01 | 1951：導入 | UNIVAC I用 UNISERVO | 公称 **1,440,000十進桁／巻**。正確な情報bit換算は保留 | **商用計算機向け最初期の磁気テープ装置**。金属テープ。巻長、文字符号、ブロック間ギャップを固定する必要がある。 | [CHM：UNISERVO][tape-first]、[CHM年表][chm-timeline]（研究史） |
 | T02 | 1952-05-21：発表、1953：販売 | IBM 726 | 公称 **2,000,000桁／巻**。bit換算は保留 | 真空コラムで高速始動停止。UNISERVOに先行する「世界初の磁気テープ」とは書かない。 | [CHM：テープ][tape-first]、[IBM：磁気テープ史][ibm-tape]（研究史・当事者回顧） |
-| T03 | 1984-03-22：一般提供 | IBM 3480 | 公称 **200 MB native／カートリッジ** | 大型オープンリールからカートリッジへの節目。 | [IBM：ライフサイクル][ibm3480-year]、[IBM：仕様一覧][ibm3480-cap]（一次） |
+| T03 | 1984-03-22：発表 | IBM 3480 | 公称 **200 MB native／カートリッジ** | 大型オープンリールからカートリッジへの節目。 | [IBM：1984年の発表原本][ibm3480-year]、[IBM：仕様一覧][ibm3480-cap]（一次） |
 | T04 | 2000：市場導入 | LTO Ultrium 1 | **100 GB native** | 開放的なマルチベンダー形式の普及開始。 | [LTO公式沿革][lto-archive]、[IBM：容量一覧][lto-cap]（一次） |
 | T05 | 2002：ライセンス展開、2003：互換認証 | LTO Ultrium 2 | **200 GB native** | 製品の登場年を2002／2003とする資料差を残す。 | [LTO公式沿革][lto-archive]、[IBM：容量一覧][lto-cap]（一次） |
 | T06 | 2004：ライセンス・媒体互換認証、2005：普及年表上の導入年 | LTO Ultrium 3 | **400 GB native** | WORMも追加。2004年と2005年の違いは規格／市場導入の出来事の違いとして扱う。 | [LTO公式沿革][lto-archive]、[IBM：容量一覧][lto-cap]、[カナダ保存研究所の年表][lto-years] |
@@ -149,10 +149,10 @@ DVDの規格制定年は、製品登場の1990年代後半とずれるものが�
 | O04 | 1997：CD-RW生産開始 | CD-RW、初期媒体 | 公称 **650 MB級／枚**。初期型番・時間・B数は要照合 | 追記型CD-Rと書き換え型CD-RWを分ける。 | [Ricoh：沿革][cdrw-ricoh]（当事者回顧）、[NIST：保存ガイド][nist-optical]（公的研究資料） |
 | O05 | 1988：製品化 | Sony 5.25 inch MO | 公称 **650 MB／枚** | 初期商用MOの主軸候補。Sony年報はこの寸法の世界初と記すが、MO全般の最初と無限定には書かない。 | [Sony 1991年報][sony-ar1991]（一次） |
 | O06 | 1988：発表・展示 | NeXT の5.25 inch MO | 公称 **256 MB／枚** | 同寸法のMOでも容量・形式が異なる例。O05と同じ媒体規格と扱わない。 | [CHM：MO][mo-history]（研究史） |
-| O07 | 1991：製品登場、同年6月：ECMA初版 | 3.5 inch MO、128 MB、ISO/IEC 10090 | 公称 **128 MB／枚**、512 B sector | 普及した小型MOの始まり。 | [富士通・Sony：回顧付き発表][gigamo]、[ECMA-154][ecma154]、[富士通：仕様][mo640-spec]（一次・規格） |
-| O08 | 1993年12月：ECMA初版 | 3.5 inch MO、230 MB、ISO/IEC 13963 | 公称 **230 MB／枚**、512 B sector | 128 MBとは別規格。1994年はEcma第2版。 | [ECMA-201][ecma201]（規格）、[富士通：仕様][mo640-spec]（一次） |
-| O09 | 1997：ISO/IEC 15041、製品の初登場は追加照合 | 3.5 inch MO、540 MB | 公称 **540 MB／枚**、512 B sector | 640 MBと同じ世代でもセクタ長が違う。制定年はISOの版情報を追加確認。 | [富士通：媒体・規格対応表][mo640-spec]（一次）、[Ecma・ISO対応年表][ecma-odc-history]（規格団体） |
-| O10 | 1997：ISO/IEC 15041、製品の初登場は追加照合 | 3.5 inch MO、640 MB | 公称 **640 MB／枚**、2,048 B sector | 540 MBと別の行。**HS-1の650 MBを640 MB規格の出典にはしない**。 | [富士通：媒体・規格対応表][mo640-spec]（一次）、[Ecma・ISO対応年表][ecma-odc-history]（規格団体） |
+| O07 | 1991：製品登場、同年6月：ECMA初版 | 3.5 inch MO、128 MB、ISO/IEC 10090 | 公称 **128 MB／枚**、512 B sector | 普及した小型MOの始まり。 | [富士通・Sony：回顧付き発表][gigamo]、[ECMA-154][ecma154]（一次・規格） |
+| O08 | 1993年12月：ECMA初版 | 3.5 inch MO、230 MB、ISO/IEC 13963 | 公称 **230 MB／枚**、512 B sector | 128 MBとは別規格。1994年はEcma第2版。 | [ECMA-201][ecma201]（規格） |
+| O09 | 1997：ISO/IEC 15041、製品の初登場は追加照合 | 3.5 inch MO、540 MB | 公称 **540 MB／枚**、512 B sector | 640 MBと同じ世代でもセクタ長が違う。ISO初版は1997年。 | [ISO/IEC 15041][mo640-spec]、[富士通・Sony：容量・セクタ長比較][gigamo]（一次）、[Ecma・ISO対応年表][ecma-odc-history]（規格団体） |
+| O10 | 1997：ISO/IEC 15041、製品の初登場は追加照合 | 3.5 inch MO、640 MB | 公称 **640 MB／枚**、2,048 B sector | 540 MBと別の行。**HS-1の650 MBを640 MB規格の出典にはしない**。 | [ISO/IEC 15041][mo640-spec]、[富士通・Sony：容量・セクタ長比較][gigamo]（一次）、[Ecma・ISO対応年表][ecma-odc-history]（規格団体） |
 | O11 | 1996年6月：ECMA初版 | 90 mm MO、HS-1形式 | 公称 **650 MB／枚** | O10との混同防止を兼ねた拡張候補。一般的な3.5 inch 640 MB MOと同一ではない。 | [ECMA-239][ecma239]（規格） |
 | O12 | 1998-11-05：試作発表、2003年12月：ECMA初版 | 3.5 inch MO、GIGAMO 1.3 GB | 公称 **1.3 GB／枚**、2,048 B sector | 世界初の1.3 GB 3.5 inch MO試作という範囲で記す。1998年を規格の国際標準化年にしない。 | [富士通・Sony：1998年発表][gigamo]、[ECMA-351][ecma351]（一次・規格） |
 | O13 | 2001：製品世代、2004年6月：ECMA初版 | 3.5 inch MO、GIGAMO 2.3 GB | 公称 **2.3 GB／枚**、2,048 B sector | 小型MOの到達点候補。製品資料の2001年と、2004年の規格を併記。 | [富士通：2001年仕様][gigamo23]、[ECMA-353][ecma353]（一次・規格） |
@@ -193,7 +193,7 @@ DVDの規格制定年は、製品登場の1990年代後半とずれるものが�
 | C01 | 1994：導入 | SanDisk CompactFlash | **容量固定の規格ではない**。初期実製品のSKU・容量は追加調査 | 普及形式として重要。後年の規格上限を1994年の製品容量にしない。 | [CHM：1994年][cf-history]、[CompactFlash Association：形式一覧][cfa]（研究史・規格団体） |
 | C02 | 1998-07-30：発表、09-10：発売予定 | Sony Memory Stick MSA-4A | 公称 **4 MB／枚** | 初期製品の型番・容量・発売予定が明確。 | [Sony：発売発表][memorystick]（一次） |
 | C03 | 1998-07-30：発表、09-10：発売予定 | Sony Memory Stick MSA-8A | 公称 **8 MB／枚** | 同じ新形式の容量違い。4 MBと8 MBを両方採るかはレビューで判断。 | [Sony：発売発表][memorystick]（一次） |
-| C04 | 2000：SD仕様・カード導入 | 初期SDメモリーカード | 公称 **8 MB／枚**が実製品の代表例。型番は追加調査 | **規格上限2 GBと初期製品8 MBを分ける**。1999年の共同発表と2000年の規格・導入を区別する。 | [SD Association：初期カードの説明][sd-initial]、[公式20年史][sd-years]（規格団体） |
+| C04 | 2000：SD仕様・カード導入 | 初期SDメモリーカード | 公称 **8 MB／枚**が実製品の代表例。型番は追加調査 | **規格上限2 GBと初期製品8 MBを分ける**。同じ2000年には東芝が32・64 MBを発表した。[東芝の製品発表][sd-toshiba-2000] | [SD Association：初期カードの説明][sd-initial]、[公式20年史][sd-years]（規格団体） |
 | C05 | 2002-08-22：発表、09-06：発売予定 | Olympus xD-Picture Card M-XD16P | 公称 **16 MB／枚** | 薄型のデジタルカメラ向けカード。同時発表の32／64／128 MBも別候補にできる。 | [Olympus：当時の発表][xd]（一次） |
 | C06 | 2003年1月：形式発表 | Memory Stick PRO | 公称 **256 MB／512 MB／1 GB／枚** | 旧Memory Stickと別規格。採用容量を選び、製品SKUと一般発売日を固定したい。 | [SanDisk・Sony：共同発表][mspro]（一次） |
 | C07 | 2005：規格導入 | microSD | **容量固定の規格ではない**。初期カードの実容量は追加調査 | 外形の小型化の節目。miniSD、TransFlash、microSDを容量上限の変更と混ぜない。 | [SD Association：公式年表][sd-years]（規格団体） |
@@ -322,7 +322,7 @@ CDは収録時間とセクタのモードで有効データ量が変わる。DVD
 [flash-oral]: https://archive.computerhistory.org/resources/access/text/2012/04/102658199-05-01-acc.pdf
 [kioxia-history]: https://www.kioxia.com/ja-jp/rd/technology/history.html
 [mram]: https://www.everspin.com/sites/default/files/Hulett%20Supper%20Club%202015_08_13.pdf
-[vnand]: https://semiconductor.samsung.com/news-events/news/samsung-electronics-takes-3d-memory-to-new-heights-with-sixth-generation-v-nand-ssds-for-client-computing/
+[vnand]: https://news.samsung.com/global/samsung-starts-mass-producing-industrys-first-3d-vertical-nand-flash
 [bics256]: https://www.kioxia.com/ja-jp/about/news/2015/20150804-1.html
 [xpoint]: https://www.intc.com/news-events/press-releases/detail/324/intel-and-micron-produce-breakthrough-memory-technology
 [optane]: https://www.intel.com/content/www/us/en/developer/articles/news/second-generation-intel-xeon-processor-scalable-family-technical-overview.html
@@ -335,9 +335,9 @@ CDは収録時間とセクタのモードで有効データ量が変わる。DVD
 [disk-pack]: https://www.computerhistory.org/storageengine/disk-packs-offer-portability-security/
 [winchester]: https://www.computerhistory.org/storageengine/winchester-pioneers-key-hdd-technology/
 [ssd-history]: https://www.computerhistory.org/storageengine/solid-state-drive-module-demonstrated/
-[st506]: https://s3.computerhistory.org/groups/ds-seagate-st-506.pdf
+[st506]: https://computermuseum.informatik.uni-stuttgart.de/ftp/mirrors/www.minuszerodegrees.net/manuals/Seagate/Seagate%20ST506%20-%20Service%20Manual%20-%20May82.pdf
 [ibm3380-manual]: https://bitsavers.trailing-edge.com/pdf/ibm/dasd/3380/GA26-1664-3_3380_Description_and_Users_Guide_198412.pdf
-[rodime]: https://s3.computerhistory.org/groups/rodime-ro352.pdf
+[rodime]: https://d1yx3ys82bpsa0.cloudfront.net/groups/rodime-ro352.pdf
 [mini-hdd]: https://www.computerhistory.org/storageengine/miniature-disk-drives-enable-mobile-computing/
 [harari-ssd]: https://ethw-images.s3.us-east-va.perf.cloud.ovh.us/ethw/2/29/Ref7-IMW-2011.pdf
 [hitachi-1tb]: https://www.hitachi.com/en-us/press/archive/01052007/
@@ -350,18 +350,17 @@ CDは収録時間とセクタのモードで有効データ量が変わる。DVD
 [ibm3740-format]: https://bitsavers.org/pdf/icom/SDC_FDS-2_Manual.pdf
 [ibm-storage-paper]: https://www.bitsavers.org/pdf/ibm/IBM_Journal_of_Research_and_Development/255/ibmrd2505ZB.pdf
 [minifloppy]: https://www.computerhistory.org/storageengine/minicomputers-stimulate-floppy-disk-sales/
-[sa400-1976]: https://vintageapple.org/byte/pdf/197612_Byte_Magazine_Vol_00-16_Machine_Readable_Print.pdf
 [disk2-13]: https://archive.computerhistory.org/resources/access/text/2016/06/102725167-05-01-acc.pdf
 [win-media]: https://learn.microsoft.com/windows/win32/api/winioctl/ne-winioctl-media_type
-[ibm12-manual]: https://www.manualslib.com/manual/1015063/Ibm-6151.html?page=511
+[ibm12-manual]: https://bitsavers.trailing-edge.com/pdf/ibm/pc/SA38-0037-00_Personal_Computer_Family_Service_Information_Manual_Jul89.pdf
 [sony-fd]: https://www.sony.jp/rec-media/info/20100423.html
-[sony-oa30]: https://bitsavers.org/pdf/sony/floppy/Sony_Micro_Floppy_Disk_Drive_Model_0A-D30V_OEM_Manual_Mar82.pdf
-[mac400]: https://support.apple.com/en-us/112187
+[sony-oa30]: https://mirrors.meulie.net/bitsavers.org/pdf/sony/floppy/Sony_Micro_Floppy_Disk_Drive_Model_0A-D30V_OEM_Manual_Mar82.pdf
+[mac400]: https://support.apple.com/en-hk/112190
 [mac800]: https://support.apple.com/en-ae/112183
 [att-fd]: https://www.bitsavers.org/pdf/att/unix/System_V_386_Release_4/0-13-957481-6_Unix_System_V_386_Release_4_Multibus_Reference_1990.pdf
 [tape-first]: https://www.computerhistory.org/storageengine/tape-unit-developed-for-data-storage/
 [ibm-tape]: https://www.ibm.com/history/magnetic-tape
-[ibm3480-year]: https://www.ibm.com/support/pages/node/7093315
+[ibm3480-year]: https://bitsavers.trailing-edge.com/pdf/ibm/3480/3480_Product_Annoucement_Mar84.pdf
 [ibm3480-cap]: https://www.ibm.com/support/pages/node/641919
 [lto-archive]: https://www.lto.org/pr-archive/
 [lto-cap]: https://www.ibm.com/docs/en/t-tt-and-t?topic=media-data-cartridges
@@ -383,7 +382,7 @@ CDは収録時間とセクタのモードで有効データ量が変わる。DVD
 [sony-ar1991]: https://www.sony.com/en/SonyInfo/IR/library/ar/8ido18000005flxn-att/1991-E.pdf
 [mo-history]: https://www.computerhistory.org/storageengine/magneto-optical-storage-demonstrated/
 [gigamo]: https://info.archives.global.fujitsu/jp/news/1998/Nov/5-e.html
-[mo640-spec]: https://www.fujitsu.com/downloads/HK/mce_mcf3064ss.pdf
+[mo640-spec]: https://www.iso.org/standard/26279.html
 [gigamo23]: https://www.fujitsu.com/downloads/HK/mcj3230ss.pdf
 [ecma-odc-history]: https://dev.ecma-international.org/wp-content/uploads/Standardization-of-ODCs-3.pdf
 [bd2002]: https://www.sony.com/en/SonyInfo/News/Press/200202/02-0219E/
@@ -444,3 +443,6 @@ CDは収録時間とセクタのモードで有効データ量が変わる。DVD
 [ecma288]: https://ecma-international.org/publications-and-standards/standards/ecma-288/
 [ecma377]: https://ecma-international.org/publications-and-standards/standards/ecma-377/
 [ecma378]: https://ecma-international.org/publications-and-standards/standards/ecma-378/
+[dos2]: https://bitsavers.trailing-edge.com/pdf/ibm/serviceForConsultants/Service_For_Consultants_198303.pdf
+[sd-toshiba-2000]: https://www.global.toshiba/jp/news/corporate/2000/03/pr1501/doc_05.html
+[sa400-spec]: https://deramp.com/swtpc.com/SA400/SA400_Datasheet.pdf

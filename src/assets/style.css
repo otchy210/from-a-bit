@@ -5,6 +5,14 @@
   --muted: #59635c;
   --line: #d6d9ce;
   --accent: #af421f;
+  --capacity-b: #59635c;
+  --capacity-kb: #2f735d;
+  --capacity-mb: #366785;
+  --capacity-gb: #ae431f;
+  --capacity-tb: #725378;
+  --capacity-pb: #7c642b;
+  --capacity-eb: #166e77;
+  --capacity-zb: #a13d54;
   --gutter: clamp(1.25rem, 5vw, 4rem);
   --content-width: 64rem;
   --graphic-size: clamp(4.5rem, 12vw, 8rem);
@@ -38,9 +46,9 @@ main:focus { outline: none; }
   inset: 0 0 auto;
   z-index: 3;
   height: 3px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
+  background: var(--capacity-b);
+  clip-path: inset(0 100% 0 0);
+  pointer-events: none;
 }
 .site-header,
 .site-footer {
@@ -160,14 +168,6 @@ h1, h2 {
 /* Without enhancement, the sections remain a normal, readable document. */
 .is-zooming {
   --scene-left: max(var(--gutter), calc((100vw - var(--content-width)) / 2));
-  --capacity-b: #59635c;
-  --capacity-kb: #2f735d;
-  --capacity-mb: #366785;
-  --capacity-gb: #ae431f;
-  --capacity-tb: #725378;
-  --capacity-pb: #7c642b;
-  --capacity-eb: #166e77;
-  --capacity-zb: #a13d54;
   isolation: isolate;
 }
 .is-zooming .chapter-capacity { position: relative; padding-block: 0; }

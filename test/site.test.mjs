@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
 import sharp from "sharp";
 import { graphicSizes, graphicVariant, graphicWidths } from "../lib/graphics.mjs";
-import { capacityBoundaries, capacityFill, parseCapacityBits, visibleCapacityBands } from "../lib/capacity.mjs";
+import { capacityBoundaries, capacityFill, parseCapacityBits, readingProgressFill, visibleCapacityBands } from "../lib/capacity.mjs";
 import { escapeHtml } from "../lib/html.mjs";
 import { loadSite, validateSite, validateGraphics } from "../lib/site.mjs";
 import Page from "../src/index.11ty.mjs";
@@ -45,6 +45,17 @@ test("capacity bars skip subpixel widths and restore visible bands when enlarged
 
   const justOverKilobyte = capacityBoundaries(8_008n);
   assert.equal(capacityFill(justOverKilobyte, visibleCapacityBands(justOverKilobyte, 250)), "var(--capacity-b)");
+});
+
+test("reading progress changes colour at the scroll anchor of the first chapter beyond each unit", () => {
+  const bits = [1n, 8_000n, 16_000n, 16_000_000n];
+  const offsets = [64, 200, 400, 600];
+  const gradient = readingProgressFill(bits, offsets, 800);
+  assert.match(gradient, /var\(--capacity-b\) 50%, var\(--capacity-kb\) 50%/);
+  assert.match(gradient, /var\(--capacity-kb\) 75%, var\(--capacity-mb\) 75%/);
+  assert.doesNotMatch(gradient, /--capacity-gb/);
+  assert.doesNotMatch(readingProgressFill(bits, offsets, 600), /--capacity-mb/);
+  assert.equal(readingProgressFill(bits, offsets, 0), "var(--capacity-b)");
 });
 
 test("invalid metadata fails before it can be rendered", () => {

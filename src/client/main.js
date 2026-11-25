@@ -1,4 +1,4 @@
-import { capacityBoundaries, capacityFill, visibleCapacityBands } from "../../lib/capacity.mjs";
+import { capacityBoundaries, capacityFill, readingProgressFill, visibleCapacityBands } from "../../lib/capacity.mjs";
 import { capacityLog2 } from "../../lib/scale.mjs";
 import { layoutScene, visibleLayers } from "../../lib/scene.mjs";
 import { graphicSizes, graphicWidths, masterWidth } from "../../lib/graphics.mjs";
@@ -109,9 +109,20 @@ function scheduleFrame() {
     if (scroll === lastScroll) return;
     lastScroll = scroll;
     if (layout) paint(visibleLayers(layout, capacities, scroll - sceneStart));
-    const progress = scrollableHeight > 0 ? scroll / scrollableHeight : 0;
-    progressBar.style.transform = `scaleX(${Math.max(0, Math.min(1, progress))})`;
+    const progress = scrollableHeight > 0 ? Math.max(0, Math.min(1, scroll / scrollableHeight)) : 0;
+    progressBar.style.clipPath = `inset(0 ${(1 - progress) * 100}% 0 0)`;
   });
+}
+
+function measureProgress() {
+  if (reducedMotion.matches) return;
+  scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const chapterOffsets = layout
+    ? layout.chapters.map(({ offset }) => sceneStart + offset)
+    : chapters.map((chapter) => chapter.getBoundingClientRect().top + window.scrollY);
+  progressBar.style.background = readingProgressFill(bits, chapterOffsets, scrollableHeight);
+  lastScroll = undefined;
+  scheduleFrame();
 }
 
 function measure() {
@@ -141,9 +152,7 @@ function measure() {
   });
   if (!layout) paint([]);
   sceneStart = layout ? chapters[0].getBoundingClientRect().top + window.scrollY : 0;
-  scrollableHeight = document.documentElement.scrollHeight - viewportHeight;
-  lastScroll = undefined;
-  scheduleFrame();
+  measureProgress();
 }
 
 function showChapter(chapter) {
@@ -166,6 +175,7 @@ window.addEventListener("scroll", scheduleFrame, { passive: true });
 window.addEventListener("resize", measure);
 window.addEventListener("hashchange", followAnchor);
 window.addEventListener("load", followAnchor);
+document.querySelector(".footer-analytics")?.addEventListener("toggle", measureProgress);
 reducedMotion.addEventListener("change", measure);
 enableBackToStart(reducedMotion);
 measure();

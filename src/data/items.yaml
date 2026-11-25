@@ -35,6 +35,8 @@
       - >-
         8ビットをひとまとまりにすると1バイトです。例えば、「あ」の1文字はUTF-8で3バイト。文字を保存するときの大きさは、文字と符号化の方式で決まります。
   sources:
+    - label: "NIST：バイトの定義"
+      url: "https://csrc.nist.gov/glossary/term/byte"
     - label: "Unicode公式FAQ"
       url: "https://www.unicode.org/faq/utf_bom.html"
 
@@ -68,7 +70,7 @@
     capacity: "32 B／チップ"
     description:
       - >-
-        Sylvaniaが製作した256 bitの初期の半導体ROM。読み出し専用のデータをチップに組み込む方式です。初期の半導体ROMには、その後に登場したMOS方式など複数の系譜があります。
+        Sylvaniaが製作したROMは、チップに組み込んだ256 bitのデータを読み出せました。同じ1965年、General MicroelectronicsはMOS方式で1,024 bitを記憶するROMを開発しました。
   sources:
     - label: "CHM：半導体ROM"
       url: "https://www.computerhistory.org/siliconengine/semiconductor-read-only-memory-chips-appear/"
@@ -80,14 +82,16 @@
     src: graphics/punch-card.webp
   text:
     heading: ["穴で読む", "80文字"]
-    era: "1928年 · IBMの80欄形式"
+    era: "1928年 · IBMの80欄カード／1930年 · 12段に拡張"
     capacity: "80 B相当／カード1枚"
     description:
       - >-
-        IBMのパンチカードは、縦に並ぶ穴の組み合わせで、1欄に1文字、カード1枚で80文字を表しました。1890年の米国国勢調査にも、別形式のパンチカードが使われています。
+        1928年のIBMのカードは80欄で、1欄に数字を1つ記録しました。のちの12段のカードでは、縦に並ぶ穴の組み合わせで英字も表せるようになり、1枚に80文字を収められました。1890年の米国国勢調査には別形式のカードが使われています。
   sources:
     - label: "IBM：パンチカード"
       url: "https://www.ibm.com/history/punched-card"
+    - label: "コロンビア大学：カードと英数字の符号"
+      url: "https://www.columbia.edu/cu/computinghistory/1890tabulator.html"
     - label: "米国国勢調査局"
       url: "https://www.census.gov/programs-surveys/decennial-census/decade/1890/about-1890.html"
 
@@ -126,8 +130,8 @@
   sources:
     - label: "CHM：プログラマブルROM"
       url: "https://www.computerhistory.org/siliconengine/reusable-programmable-rom-introduces-iterative-design-flexibility/"
-    - label: "Intel 1983 Memory Component Handbook"
-      url: "https://www.bitsavers.org/components/intel/_dataBooks/1983_Memory_Component_Handbook.pdf"
+    - label: "開発者の論文：2,048 bitのEPROM"
+      url: "https://doi.org/10.1109/JSSC.1971.1050191"
 
 - id: magnetic-drum
   kind: capacity
@@ -137,7 +141,7 @@
     alt: "回転軸に沿って固定ヘッドが並び、その下を円筒の記録面が回る。"
   text:
     heading: ["回転する", "磁気ドラム"]
-    era: "1932年 · Tauschekが実演／1933年 · 特許出願"
+    era: "1932年 · Tauschekが実演／1933年 · ドイツで特許出願"
     capacity: "62.5 KB／試作機"
     description:
       - >-
@@ -162,6 +166,8 @@
   sources:
     - label: "NASA NTRS：1966年設計資料"
       url: "https://ntrs.nasa.gov/api/citations/19660019469/downloads/19660019469.pdf"
+    - label: "NASA：アポロ11号の着陸と誘導コンピューター"
+      url: "https://www.nasa.gov/wp-content/uploads/static/history/alsj/a11/a11.1201-fm.html"
 
 - id: early-floppy
   kind: capacity
@@ -174,14 +180,14 @@
     capacity: "80 KB／8インチディスク"
     description:
       - >-
-        最初期のIBM 23FDは読み出し専用の8インチフロッピーで、装置にデータを読み込ませるために使われました。後に登場した5.25インチのSA400は、約89.6 KBを収めました。
+        IBMの23FDは、8インチのディスクから大型コンピューターにデータを読み込む専用の装置でした。5.25インチのShugart SA400では、ディスクの書式の一つで約89.6 KBを読み書きできました。
   sources:
     - label: "CHM：最初のFD"
       url: "https://www.computerhistory.org/storageengine/floppy-disk-loads-mainframe-computer-data/"
-    - label: "IBM：開発史"
-      url: "https://www.ibm.com/history/floppy-disk"
     - label: "CHM：minifloppy"
       url: "https://www.computerhistory.org/storageengine/minicomputers-stimulate-floppy-disk-sales/"
+    - label: "Shugart：SA400の仕様"
+      url: "https://deramp.com/swtpc.com/SA400/SA400_Datasheet.pdf"
 
 - id: pc-floppy
   kind: capacity
@@ -190,20 +196,22 @@
     src: graphics/pc-floppy.webp
   text:
     heading: ["PCで使われた", "フロッピー"]
-    era: "1981年 · ECMA-70初版、Sony 3.5型発売／1984年 · Mac採用"
+    era: "1983年 · IBM PC DOS 2.0が360 KiB形式に対応"
     capacity: "360 KiB／両面"
     description:
       - >-
-        PC向けの5.25インチフロッピーには、両面で360 KiBを収める形式がありました。国内の2Dは320 KiB、Sonyの初期3.5型は322.5 KB、初期Macは400 KiBでした。
+        IBM PCでは、5.25型フロッピーの両面に360 KiBを記録できました。国内の2D形式は320 KiB。ソニーは1981年に3.5型を発売し、初期ドライブの公称容量は322.5 KBでした。1984年の初代Macintoshは3.5型1枚に400 KiBを収めました。
   sources:
-    - label: "ECMA-70"
-      url: "https://ecma-international.org/publications-and-standards/standards/ecma-70/"
-    - label: "Microsoft：媒体形式"
-      url: "https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ne-winioctl-media_type"
-    - label: "Sony OEM manual"
-      url: "https://bitsavers.org/pdf/sony/floppy/Sony_Micro_Floppy_Disk_Drive_Model_0A-D30V_OEM_Manual_Mar82.pdf"
-    - label: "Apple：Macintosh 512K仕様"
-      url: "https://support.apple.com/en-us/112187"
+    - label: "IBM：PC DOS 2.0の対応書式"
+      url: "https://bitsavers.trailing-edge.com/pdf/ibm/serviceForConsultants/Service_For_Consultants_198303.pdf"
+    - label: "国立天文台：国内の2D形式"
+      url: "https://prc.nao.ac.jp/museum/arc_news/arc_news297.pdf"
+    - label: "ソニー：3.5型の発売"
+      url: "https://www.sony.com/en/SonyInfo/IR/library/ar/1981-E.pdf"
+    - label: "ソニー：初期ドライブの容量"
+      url: "https://mirrors.meulie.net/bitsavers.org/pdf/sony/floppy/Sony_Micro_Floppy_Disk_Drive_Model_0A-D30V_OEM_Manual_Mar82.pdf"
+    - label: "Apple：初代Macintoshの仕様"
+      url: "https://support.apple.com/en-hk/112190"
 
 - id: first-nand
   kind: capacity
@@ -236,11 +244,11 @@
     capacity: "559.512 KB／『こころ』の電子版"
     description:
       - >-
-        夏目漱石の『こころ』の電子版は、新聞1日分の文字データとおおよそ同じ大きさです。新聞1日分の目安は約465 KBです。
+        夏目漱石の『こころ』を青空文庫のテキストで読むと、その文字データは新聞1日分とおおよそ同じ大きさです。新聞の文字量は、朝日新聞の授業で紹介された字数から約465 KBと見積もれます。
   sources:
     - label: "図書カード・初出年"
       url: "https://www.aozora.gr.jp/cards/000148/card773.html"
-    - label: "授業リポート"
+    - label: "朝日新聞：新聞1日分の文字数"
       url: "https://oshihaku.jp/teacher/classreport/14754625"
 
 - id: floppy-2dd
@@ -248,7 +256,7 @@
   capacityBits: "5898240"
   graphic:
     src: graphics/floppy-2dd.webp
-    alt: "金属製のシャッターが付いた3.5型ディスク。下の角の片側に書き込み保護用の穴がある。"
+    alt: "ラベル面を手前にし、金属製のシャッターを上にした3.5型2DD。左下に書き込み保護用の穴が1つある。"
   text:
     heading: ["2DDの", "フロッピー"]
     era: "1985年 · ECMA-100初版／1986年 · Macintosh Plus発売"
@@ -259,31 +267,35 @@
   sources:
     - label: "ECMA-100"
       url: "https://ecma-international.org/publications-and-standards/standards/ecma-100/"
-    - label: "Microsoft：媒体形式"
-      url: "https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ne-winioctl-media_type"
-    - label: "Apple：Macintosh Plus仕様"
-      url: "https://support.apple.com/en-ae/112183"
+    - label: "IBM：3.5型の見分け方（図1-2）"
+      url: "https://bitsavers.trailing-edge.com/pdf/ibm/pc/SA38-0037-00_Personal_Computer_Family_Service_Information_Manual_Jul89.pdf"
+    - label: "国立国会図書館：国内の書式"
+      url: "https://doi.org/10.11501/12771911"
+    - label: "Apple：Macintosh Plusの仕様"
+      url: "https://support.apple.com/en-ca/112183"
 
 - id: floppy-2hd
   kind: capacity
   capacityBits: "11796480"
   graphic:
     src: graphics/floppy-2hd.webp
-    alt: "2DDとよく似たケースで、書き込み保護用の穴の反対側にも密度識別用の穴がある。"
+    alt: "ラベル面から見た3.5型2HD。左下の書き込み保護用の穴に加え、右下に密度識別用の穴がある。"
   text:
     heading: ["2HDの", "フロッピー"]
     era: "1984年 · PC/ATで高密度形式採用／1987年 · ECMA-125初版"
     capacity: "1,440 KiB／両面"
     description:
       - >-
-        3.5型の「1.44 MB」フロッピーは1,440 KiBを収めました。5.25型のPC/ATでは1,200 KiB、国内PCで使われた3.5型の別形式では1,232 KiBでした。
+        3.5型の「1.44 MB」フロッピーは1,440 KiBを収めました。IBM PC/ATが採用した5.25型は1,200 KiBで、国内PCで使われた3.5型には1,232 KiBの書式もありました。
   sources:
     - label: "ECMA-125"
       url: "https://ecma-international.org/publications-and-standards/standards/ecma-125/"
-    - label: "IBMサービスマニュアル"
-      url: "https://www.manualslib.com/manual/1015063/Ibm-6151.html?page=511"
-    - label: "Microsoft：媒体形式"
-      url: "https://learn.microsoft.com/en-us/windows/win32/api/winioctl/ne-winioctl-media_type"
+    - label: "IBM：フロッピーの形式と識別穴"
+      url: "https://bitsavers.trailing-edge.com/pdf/ibm/pc/SA38-0037-00_Personal_Computer_Family_Service_Information_Manual_Jul89.pdf"
+    - label: "IBM：1984年の高密度ディスク"
+      url: "https://www.ibm.com/history/floppy-disk"
+    - label: "国立国会図書館：国内の書式"
+      url: "https://doi.org/10.11501/12771911"
 
 - id: ibm-350
   kind: capacity
@@ -303,6 +315,8 @@
       url: "https://www.computerhistory.org/storageengine/first-commercial-hard-disk-drive-shipped/"
     - label: "IBM：RAMAC"
       url: "https://www.ibm.com/history/ramac"
+    - label: "IBM：305 RAMACの文字コード"
+      url: "https://bitsavers.trailing-edge.com/pdf/ibm/305_ramac/A26-3502-0_305_RAMAC_Reference_Manual_1958.pdf"
 
 - id: st-506
   kind: capacity
@@ -311,16 +325,18 @@
     src: graphics/st-506.webp
   text:
     heading: ["PCに入る", "ハードディスク"]
-    era: "1980年 · Seagate ST-506／1983年 · Rodimeの3.5型"
+    era: "1980年 · ST-506出荷／1983年 · Rodimeの3.5型HDD出荷"
     capacity: "5 MB／ドライブ"
     description:
       - >-
         SeagateのST-506は、5.25インチのドライブに5 MBを収めました。Rodimeはさらに小さい3.5型を導入し、デスクトップPCで馴染みのある形へとつながります。
   sources:
-    - label: "CHM：ST-506研究ノート"
-      url: "https://s3.computerhistory.org/groups/ds-seagate-st-506.pdf"
-    - label: "CHM：Rodime研究ノート"
-      url: "https://s3.computerhistory.org/groups/rodime-ro352.pdf"
+    - label: "Seagate：ST-506の出荷"
+      url: "https://www.seagate.com/files/www-content/ti-dm/articles/_content/reliability-understanding-the-critical-factor-behind-disk-storage.pdf"
+    - label: "Seagate：ST-506の仕様"
+      url: "https://computermuseum.informatik.uni-stuttgart.de/ftp/mirrors/www.minuszerodegrees.net/manuals/Seagate/Seagate%20ST506%20-%20Service%20Manual%20-%20May82.pdf"
+    - label: "CHM：Rodimeの3.5型HDD"
+      url: "https://d1yx3ys82bpsa0.cloudfront.net/groups/rodime-ro352.pdf"
 
 - id: sd-card
   kind: capacity
@@ -333,14 +349,14 @@
     capacity: "8 MB／カード1枚"
     description:
       - >-
-        初期のSDカードは8 MB。ソニーのメモリースティックも4 MBと8 MBで登場しました。カードを差し替えれば、デジタルカメラなどで記録する場所を手軽に増やせます。
+        初期のSDカードには8 MBの製品があり、東芝は2000年に32 MBと64 MBのモデルを発表しました。ソニーのメモリースティックは、それに先立つ1998年に4 MBと8 MBで登場しました。
   sources:
     - label: "SD Association：初期カードの説明"
       url: "https://www.sdcard.org/press/thoughtleadership/anatomy-of-an-sd-memory-card-what-matters-most-for-photography-and-videography/"
+    - label: "東芝：32 MBと64 MBのSDカード"
+      url: "https://www.global.toshiba/jp/news/corporate/2000/03/pr1501/doc_05.html"
     - label: "Sony：発売発表"
       url: "https://www.sony.com/en/SonyInfo/News/Press/199807/98-067/"
-    - label: "公式20年史"
-      url: "https://www.sdcard.org/pdf/SDA20thAnniversary_Infographic.pdf"
 
 - id: prairietek-220
   kind: capacity
@@ -373,8 +389,8 @@
   sources:
     - label: "Eli Harari：2011年IMW論文"
       url: "https://ethw-images.s3.us-east-va.perf.cloud.ovh.us/ethw/2/29/Ref7-IMW-2011.pdf"
-    - label: "CHM：SSD"
-      url: "https://www.computerhistory.org/storageengine/solid-state-drive-module-demonstrated/"
+    - label: "CHM：開発者Eli Harariの証言"
+      url: "https://archive.computerhistory.org/resources/access/text/2012/03/102745933-05-01-acc.pdf"
 
 - id: winchester
   kind: capacity
@@ -401,7 +417,7 @@
     src: graphics/zip-100.webp
   text:
     heading: ["フロッピーの", "先にあった", "Zip"]
-    era: "1994年 · Iomega Zip発表"
+    era: "1994年 · Iomega Zip発表／1995年3月 · 市場に登場"
     capacity: "100 MB／ディスク"
     description:
       - >-
@@ -409,6 +425,8 @@
   sources:
     - label: "CHM：minifloppy"
       url: "https://www.computerhistory.org/storageengine/minicomputers-stimulate-floppy-disk-sales/"
+    - label: "Iomega：Zipの市場導入（年報）"
+      url: "https://media.corporate-ir.net/media_files/NYS/iom/reports/Iomega_Corporation_2003_Annual_Report.pdf"
 
 - id: sd-card-128mb
   kind: capacity
@@ -444,9 +462,9 @@
     capacity: "約170 MB／1年分の文字"
     description:
       - >-
-        毎日の新聞の文字を1年分ためると、約170 MBになります。
+        朝日新聞の授業では、新聞1日分の文字数を約15万～16万字と紹介しています。その文字量が365日分続くと、文字データだけで約170 MBになります。
   sources:
-    - label: "授業リポート"
+    - label: "朝日新聞：新聞1日分の文字数"
       url: "https://oshihaku.jp/teacher/classreport/14754625"
 
 - id: ibm-3480
@@ -456,14 +474,14 @@
     src: graphics/ibm-3480.webp
   text:
     heading: ["リールから", "カートリッジへ"]
-    era: "1984年3月 · IBM 3480一般提供"
+    era: "1984年3月22日 · IBM 3480発表"
     capacity: "200 MB／巻"
     description:
       - >-
         初期の商用コンピューターでは、大きなリールに巻いた磁気テープも記憶装置でした。IBM 3480は1巻200 MBのテープを片手で扱えるカートリッジに収めました。
   sources:
-    - label: "IBM：ライフサイクル"
-      url: "https://www.ibm.com/support/pages/node/7093315"
+    - label: "IBM：1984年3月の製品発表"
+      url: "https://bitsavers.trailing-edge.com/pdf/ibm/3480/3480_Product_Annoucement_Mar84.pdf"
     - label: "IBM：仕様一覧"
       url: "https://www.ibm.com/support/pages/node/641919"
     - label: "CHM：UNISERVO"
@@ -482,8 +500,8 @@
       - >-
         MOはレーザーで記録面を熱し、磁気でデータを書き込みます。3.5型640 MBの前後には128・230・540 MBがあり、大きい5.25型にも650 MB級、後のGIGAMOには1 GBを超える製品がありました。
   sources:
-    - label: "富士通：仕様"
-      url: "https://www.fujitsu.com/downloads/HK/mce_mcf3064ss.pdf"
+    - label: "ISO：640 MBのMO規格"
+      url: "https://www.iso.org/standard/26279.html"
     - label: "Sony 1991年報"
       url: "https://www.sony.com/en/SonyInfo/IR/library/ar/8ido18000005flxn-att/1991-E.pdf"
     - label: "富士通・Sony：回顧付き発表"
@@ -506,6 +524,8 @@
       url: "https://ecma-international.org/publications-and-standards/standards/ecma-130/"
     - label: "Sony：CD開発史"
       url: "https://www.sony.com/en/SonyInfo/CorporateInfo/History/SonyHistory/2-07.html"
+    - label: "ソニー：1985年のCD-ROM研究発表"
+      url: "https://opg.optica.org/abstract.cfm?uri=ODS-1985-WCC1"
     - label: "太陽誘電の沿革"
       url: "https://www.yuden.co.jp/en/company/history/"
     - label: "Ricoh：沿革"
@@ -526,6 +546,8 @@
   sources:
     - label: "IBM：Description and User's Guide"
       url: "https://bitsavers.trailing-edge.com/pdf/ibm/dasd/3380/GA26-1664-3_3380_Description_and_Users_Guide_198412.pdf"
+    - label: "日本IBM：3380の発表年"
+      url: "https://www.ibm.com/multimedia/portal/V616852R54630Q45/keireki2015.pdf"
 
 - id: sdhc
   kind: capacity
@@ -603,14 +625,12 @@
       - >-
         Samsungの初代V-NANDは、記憶セルを24層に積み重ね、チップ1個で128 Gbitを記憶できました。東芝は2007年に3D技術を発表し、2015年には48層のBiCSを発表しています。
   sources:
-    - label: "Samsung：V-NAND世代表"
-      url: "https://semiconductor.samsung.com/news-events/news/samsung-electronics-takes-3d-memory-to-new-heights-with-sixth-generation-v-nand-ssds-for-client-computing/"
+    - label: "Samsung：2013年の量産発表"
+      url: "https://news.samsung.com/global/samsung-starts-mass-producing-industrys-first-3d-vertical-nand-flash"
     - label: "KIOXIA：技術開発史"
       url: "https://www.kioxia.com/ja-jp/rd/technology/history.html"
     - label: "KIOXIA／当時東芝：発表"
       url: "https://www.kioxia.com/ja-jp/about/news/2015/20150804-1.html"
-    - label: "Samsung：2013年の量産発表"
-      url: "https://news.samsung.com/global/samsung-starts-mass-producing-industrys-first-3d-vertical-nand-flash"
 
 - id: blu-ray
   kind: capacity
@@ -660,7 +680,7 @@
     src: graphics/bdxl.webp
     alt: "BDXLの断面模式図。1枚のディスクの中に3つの記録層が並ぶ。"
   text:
-    heading: ["100 GBを", "超える", "光ディスク"]
+    heading: ["3層で", "100 GBの", "光ディスク"]
     era: "2010年6月 · BDXL仕様確定"
     capacity: "100 GB／3層BD-R"
     description:
@@ -719,8 +739,8 @@
   sources:
     - label: "SD Association：microSDの歴史"
       url: "https://www.sdcard.org/press/thoughtleadership/celebrating-20-years-of-microsd/"
-    - label: "Western Digital：SanDiskの1 TB製品発表"
-      url: "https://www.westerndigital.com/company/newsroom/press-releases/2019/2019-02-25-western-digital-unveils-worlds-fastest-1tb-uhs-i-microsd-card"
+    - label: "Western Digital：1 TB製品の発表"
+      url: "https://www.westerndigital.com/en-sg/company/newsroom/press-releases/2019/2019-02-25-western-digital-unveils-worlds-fastest-1tb-uhs-i-microsd-card"
 
 - id: lto-5
   kind: capacity
@@ -740,6 +760,8 @@
       url: "https://www.lto.org/pr-archive/"
     - label: "Fujifilm：仕様"
       url: "https://www.fujifilm.com/in/en/business/data-management/datastorage/ltotape/specifications"
+    - label: "LTO Program：LTFSのしくみ"
+      url: "https://www.lto.org/linear-tape-file-system/"
 
 - id: national-diet-library
   kind: capacity
@@ -749,13 +771,13 @@
   text:
     heading: ["国立国会図書館の", "図書を", "文字に"]
     era: "2025年度末 · 国立国会図書館の蔵書統計"
-    capacity: "約11.37 TB／図書の文字"
+    capacity: "約11 TB／図書の文字量の試算"
     description:
       - >-
-        国立国会図書館の図書は約1,263万点。収められた文字をすべてテキストにすると、約11.37 TBに相当します。
+        国立国会図書館が2025年度末に所蔵していた図書は約1,263万点。1点あたり30万字と仮定すると、文字だけで約11 TBに相当します。
   sources:
-    - label: "NDL公式統計"
-      url: "https://www.ndl.go.jp/aboutus/outline/numerically"
+    - label: "国立国会図書館：令和7年度の所蔵統計"
+      url: "https://dl.ndl.go.jp/view/download/digidepo_15042678_po_nen_r6.pdf?contentNo=1"
 
 - id: pm1633a
   kind: capacity
@@ -791,6 +813,8 @@
       url: "https://www.seagate.com/stories/articles/seagates-breakthrough-30tb-plus-hard-drives-ramp-volume-marking-an-inflection-point-in-the-storage-industry-pr/"
     - label: "Seagate：Exos M製品マニュアル"
       url: "https://www.seagate.com/content/dam/seagate/assets/support/internal-hard-drives/enterprise-hard-drives/exos-m/_shared/files/seagate-exos-m-sata-product-manual-210048100c.pdf"
+    - label: "Seagate：HAMRのしくみ"
+      url: "https://www.seagate.com/innovation/hamr/"
 
 - id: lto-10
   kind: capacity
@@ -862,6 +886,8 @@
   sources:
     - label: "Dell仕様書"
       url: "https://cdn.blueally.com/sanstorageworks/datasheets/poweredge/poweredge-r760xd2-spec-sheet.pdf"
+    - label: "Dell：R760xd2の最大構成"
+      url: "https://www.delltechnologies.com/asset/en-us/products/servers/technical-support/poweredge-r760xd2-spec-sheet.pdf"
     - label: "HPE日本語構成図"
       url: "https://h50146.www5.hpe.com/directplus_ent/library/pdfs_storage/pl_tape.pdf"
 
@@ -917,8 +943,8 @@
       url: "https://cdn.allbound.com/iq-ab/2021/11/Scalar-Tape-DS00559A.pdf"
     - label: "Quantum設置ガイド"
       url: "https://qsupport.quantum.com/kb/flare/content/Scalar_i7_RAPTOR/docCenter/Site_Planning_i7.htm"
-    - label: "一般提供の発表"
-      url: "https://d1io3yog0oux5.cloudfront.net/_1f880a8a07b7adc6058553eac190da16/quantum/news/2024-12-04_Quantum_Scalar_i7_RAPTOR_Now_209.pdf"
+    - label: "Quantum：一般提供の発表"
+      url: "https://investors.quantum.com/news-events/press-releases/detail/209/quantum-scalar-i7-raptor-now-available"
 
 - id: google-search-index
   kind: capacity
@@ -944,13 +970,15 @@
   text:
     heading: ["NASAが蓄える", "地球の", "観測記録"]
     era: "2024年9月末 · NASAの2024会計年度末"
-    capacity: "128.56 PB／地球科学データの保存量"
+    capacity: "128.56 PB／EOSDISの保存量"
     description:
       - >-
-        NASAは地球の大気や海洋、陸地を調べるための観測・解析データを保管しています。2024会計年度末に保管していたデータのうち、66.69 PBはクラウドにありました。
+        NASAの地球観測データシステム（EOSDIS）には、大気や海洋、陸地の観測・解析データが集まります。2024年9月末に保管していた128.56 PBのうち、66.69 PBはクラウドにありました。
   sources:
     - label: "NASA Earthdata：保存量の報告（5ページ）"
       url: "https://wiki.earthdata.nasa.gov/download/attachments/378738424/ESDS-RFC-057v1_OFAIR-Guide.pdf?api=v2&modificationDate=1764095753357&version=1"
+    - label: "NASA：EOSDISの年度末集計"
+      url: "https://ntrs.nasa.gov/api/citations/20250001398/downloads/Agency%20Report.pdf"
 
 - id: internet-archive
   kind: capacity
@@ -960,10 +988,10 @@
   text:
     heading: ["昔のウェブを", "開ける", "デジタル図書館"]
     era: "2025年 · Internet Archiveの保存実績"
-    capacity: "210 PB超／コレクションの保存量"
+    capacity: "210 PB超／コレクションの保存量（重複を除く）"
     description:
       - >-
-        過去のウェブページを閲覧できるWayback Machineは、2025年に1兆件の保存記録に達しました。運営するInternet Archiveは、電子書籍、映像、音声、ソフトウェアも保存しています。
+        Internet Archiveは電子書籍、映像、音声、ソフトウェアに加え、ウェブページも保存しています。過去のページを閲覧できるWayback Machineでは、2025年にウェブの保存記録が1兆件に達しました。
   sources:
     - label: "Internet Archive：2025年の運用報告"
       url: "https://digitalpreservation.gov/meetings/DSA2026/0117_jonah_edwards_ia_dsa_2026.pdf"
@@ -998,12 +1026,10 @@
     capacity: "最大約2.2 EB／45フレーム"
     description:
       - >-
-        Spectra LogicのTFinity Plusは、筐体を連結してテープを保管する設備です。最大構成では、先ほどの80.64 PBのライブラリーと同じ40 TBのLTO-10テープを最大56,400巻収められます。
+        Spectra LogicのTFinity Plusは、筐体を連結してテープを保管する設備です。45フレームで最大56,400巻を収容でき、LTO-10構成の公称容量は非圧縮で2.2 EBです。
   sources:
     - label: "Spectra Logic：TFinity Plus仕様"
       url: "https://spectralogic.com/tfinity-libraries/"
-    - label: "Fujifilm：40 TBのLTO-10"
-      url: "https://www.fujifilm.com/in/en/news/fujifilm-expands-lto-portfolio-with-lto-10-40tb"
 
 - id: internet-traffic-day
   kind: capacity
@@ -1053,7 +1079,7 @@
         1 ZBは1,000 EBです。Seagateが2025年7月までに出荷した記憶装置の容量は、創業以来の累計で4 ZBを超えました。
   sources:
     - label: "Seagate：累計出荷容量"
-      url: "https://investors.seagate.com/news/news-details/2025/Seagate-Technology-Reports-Fiscal-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/"
+      url: "https://investors.seagate.com/news/news-details/2025/Seagate-Technology-Reports-Fiscal-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/default.aspx"
 
 - id: global-installed-storage
   kind: capacity
@@ -1062,11 +1088,11 @@
     src: graphics/global-installed-storage.webp
   text:
     heading: ["世界に", "設置された", "記憶容量"]
-    era: "2026年 · IDC Global StorageSphere"
+    era: "2026年末の見込み · IDC Global StorageSphere"
     capacity: "約13 ZB／世界の設備容量"
     description:
       - >-
-        家庭や企業、データセンターにある記憶媒体の容量は、世界で合計どれくらいになるのでしょうか。IDCは、使っている領域と空き領域を合わせ、2026年は約13 ZBと推計しています。
+        家庭や企業、データセンターにある記憶媒体の容量は、世界で合計どれくらいになるのでしょうか。IDCは、使用中の領域と空き領域を合わせて、2026年末には約13 ZBに達すると予測しています。
   sources:
     - label: "IDC：2026年の設備容量"
       url: "https://www.idc.com/resource-center/blog/beyond-the-prompt-the-hidden-data-and-storage-implications-of-generative-ai/"

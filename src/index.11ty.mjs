@@ -58,7 +58,8 @@ export default class Page {
     const title = escape(site.title);
     const description = escape(site.description);
     const socialImageAlt = escape(site.socialImageAlt);
-    const backToStart = `<a href="#top" data-back-to-start>${escape(site.backToStart)}<span aria-hidden="true">↑</span></a>`;
+    const authorName = escape(site.authorName);
+    const backToStart = `<a href="./" data-back-to-start>${escape(site.backToStart)}<span aria-hidden="true">↑</span></a>`;
     let previousBits = 0n;
     const chapters = site.items.map((item, index) => {
       const chapter = renderChapter(item, index, previousBits);
@@ -127,6 +128,10 @@ ${notes.entries.map((entry) => `            <div>
       </div>` : ""}
       <div class="footer-bar">
         <span>${escape(site.name)}</span>
+        <nav class="footer-author" aria-label="作者 ${authorName}">
+          <span aria-hidden="true">作者 ${authorName}:</span>
+${site.authorLinks.map(({ url, label }) => `          <a href="${escape(url)}" target="_blank" rel="noopener" aria-describedby="new-window">${escape(label)}</a>`).join("\n")}
+        </nav>
         ${backToStart}
       </div>
     </footer>

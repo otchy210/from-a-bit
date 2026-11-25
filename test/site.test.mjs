@@ -103,11 +103,24 @@ test("the home page identifies the site and its canonical URL to search engines"
   assert.ok(html.includes('<link rel="icon" href="favicon.png" type="image/png" sizes="96x96">'));
 });
 
+test("the footer links to the author and to the start without a fragment", () => {
+  const site = validateSite(metadata.config, metadata.items);
+  const html = new Page().render({ site });
+  const footer = html.match(/<footer\b[\s\S]*?<\/footer>/)[0];
+  assert.equal((footer.match(/<a href="\.\/" data-back-to-start>/g) ?? []).length, 2);
+  assert.doesNotMatch(footer, /href="#top"/);
+  assert.ok(footer.includes(`>作者 ${escapeHtml(site.authorName)}:</span>`));
+  for (const { url, label } of site.authorLinks) {
+    assert.ok(footer.includes(`<a href="${escapeHtml(url)}" target="_blank" rel="noopener" aria-describedby="new-window">${escapeHtml(label)}</a>`));
+  }
+});
+
 test("all citations share an icon and an accessible new-window description", () => {
   const site = validateSite(metadata.config, metadata.items);
   const html = new Page().render({ site });
   const count = site.items.reduce((total, item) => total + item.sources.length, 0);
-  assert.equal((html.match(/target="_blank" rel="noopener" aria-describedby="new-window"/g) ?? []).length, count);
+  const citations = (html.match(/<ul class="sources">.*?<\/ul>/gs) ?? []).join("");
+  assert.equal((citations.match(/target="_blank" rel="noopener" aria-describedby="new-window"/g) ?? []).length, count);
   assert.equal((html.match(/<use href="#external-link"/g) ?? []).length, count);
   assert.equal((html.match(/id="external-link"/g) ?? []).length, 1);
   assert.equal((html.match(/id="new-window"/g) ?? []).length, 1);

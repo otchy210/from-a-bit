@@ -12,7 +12,11 @@ export function enableBackToStart(reducedMotion) {
   function finishReturn() {
     stopReturn();
     window.scrollTo({ top: 0, behavior: "instant" });
-    if (window.location.hash !== "#top") window.history.pushState(null, "", "#top");
+    if (window.location.hash) {
+      const url = new URL(window.location.href);
+      url.hash = "";
+      window.history.pushState(null, "", url);
+    }
     document.getElementById("top").focus({ preventScroll: true });
   }
 

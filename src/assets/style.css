@@ -130,28 +130,75 @@ h1, h2 {
 /* Without enhancement, the sections remain a normal, readable document. */
 .is-zooming {
   --scene-left: max(var(--gutter), calc((100vw - var(--content-width)) / 2));
+  --capacity-b: #59635c;
+  --capacity-kb: #2f735d;
+  --capacity-mb: #366785;
+  --capacity-gb: #ae431f;
+  --capacity-tb: #725378;
+  --capacity-pb: #7c642b;
+  --capacity-eb: #166e77;
+  --capacity-zb: #a13d54;
   isolation: isolate;
 }
-.is-zooming .chapter-capacity { padding-block: 0; }
+.is-zooming .chapter-capacity { position: relative; padding-block: 0; }
 .is-zooming .chapter-capacity .chapter-content {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: var(--scene-left);
   width: calc(100vw - 2 * var(--gutter));
+  row-gap: 0.8rem;
   transform-origin: top left;
   opacity: 0;
   pointer-events: none;
   z-index: 1;
 }
+.is-zooming .chapter-capacity .is-in-scene { position: fixed; }
+.is-zooming .capacity-scale {
+  display: block;
+  grid-column: 1 / -1;
+  position: relative;
+  height: 6px;
+  visibility: hidden;
+}
+.is-zooming .capacity-scale.is-visible { visibility: visible; }
+.is-zooming .capacity-scale.has-capacity-mark { height: 1.55rem; }
+.capacity-scale:not(.is-visible) > * { display: none; }
+.capacity-scale.is-visible .capacity-line { will-change: transform; }
+.capacity-line {
+  position: absolute;
+  inset: auto 0 0;
+  height: 6px;
+  transform-origin: left;
+}
+.capacity-mark {
+  position: absolute;
+  inset: 0;
+  color: var(--mark-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+.capacity-mark::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 0.63rem;
+  background: currentColor;
+}
+.capacity-mark span { position: absolute; left: 0; bottom: 0.72rem; }
+.mark-at-end span { transform: translateX(-100%); }
 /* An empty paint area keeps off-scene links available in the tab order. */
 .is-zooming .chapter-capacity .chapter-content:not(.is-in-scene) {
   clip-path: inset(50%);
 }
 .is-zooming .chapter-content.has-visible-copy :is(h1, h2, p, a) { pointer-events: auto; }
-.is-zooming .chapter-copy { opacity: var(--copy-opacity, 1); }
 
 @media (max-width: 480px) {
   :root { --graphic-size: 3.25rem; --graphic-gap: 1rem; }
+  .is-zooming .capacity-scale { width: 75%; }
   .chapter-copy { overflow-wrap: anywhere; }
   .sources { column-gap: 1.1rem; }
 }

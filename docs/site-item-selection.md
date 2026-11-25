@@ -1,8 +1,8 @@
 # サイト掲載アイテムの選定案：容量順
 
-改訂日：2026-11-25。**容量順に並べたサイト掲載用の45項目。**
+改訂日：2026-11-25。**容量順に並べたサイト掲載用の59項目。**
 
-媒体・記憶装置39項目、導入2項目、比較4項目。M13（Intel 3101）とM20（初代NAND）は独立した必須項目として残す。調査の母集団は[媒体の調査一覧](storage-history-candidates.md)と[比較データの調査一覧](large-number-candidates.md)に保持する。
+最初の49項目は媒体・記憶装置43項目、導入2項目、比較4項目。続く10項目はPB級を超える設備容量やデジタルデータを扱う。M13（Intel 3101）とM20（初代NAND）は独立した必須項目として残す。調査の母集団は[媒体の調査一覧](storage-history-candidates.md)、[比較データの調査一覧](large-number-candidates.md)、[EB・ZB級の候補](exabyte-data-candidates.md)に保持する。
 
 ## 今回の絞り方
 
@@ -12,22 +12,23 @@
 - **容量差が大きい中間世代は「近い容量だから統合」とせず、独立表示を削って沿革へ移す。** 例：MOの128/230 MB、Blu-rayの50 GB、LTOの中間世代、EPROMに続くEEPROM。差が見えないという理由で丸める操作とは区別する。
 - **同容量でも、主題として残す転換点は分ける。** 20 MBの2.5 inch HDDと初期flash SSDは、回転媒体からflashへの変化を見せるため2項目のまま。同じ100 GBのBDXLとLTOも、光ディスクとテープの比較として残す。
 - **揮発メモリの4事例は3項目内に収める。** 1 bitのCRT実験は導入、BabyとIntel 1103は128 B級の項目へ。Intel 3101は独立。現代のDDR/HBM競争は追わない。
-- **比較は4項目。** 『こころ』と新聞1日を同じ文字容量帯にまとめ、新聞1年、国会図書館、πを残す。新聞100年、EHT、文字1字、原稿用紙等の独立表示は外す。
+- **身近な比較は4項目。** 『こころ』と新聞1日を同じ文字容量帯にまとめ、新聞1年、国会図書館、πを残す。100 PB超の区間は、デジタル媒体や実際に扱われたデジタルデータに絞る。
 
 ## 表の読み方
 
-「代表ID」は[媒体の調査一覧](storage-history-candidates.md)のID。「比較:」は[比較データの調査一覧](large-number-candidates.md)、「PB」で始まるIDは[TBからPBへの補強調査](pb-system-candidates.md)を参照。括弧内などに残す元IDで、何を統合・説明へ移したか追える。連番は今回の掲載順案で、恒久IDではない。
+「代表ID」は[媒体の調査一覧](storage-history-candidates.md)のID。「比較:」は[比較データの調査一覧](large-number-candidates.md)、「PB」で始まるIDは[TBからPBへの補強調査](pb-system-candidates.md)、「E」で始まる数字付きIDは[EB・ZB級の候補](exabyte-data-candidates.md)を参照。括弧内などに残す元IDで、何を統合・説明へ移したか追える。連番は掲載順を表す。
 
 **順序は各項目の代表容量で決める。** 統合範囲は代表値の上下に広がるため、隣の別ジャンルの容量と重なることがある。グループ全体に厳密な大小関係があるという意味ではない。
 
 - **確定・算定**：調査済みの整数、または語数・sector構成等から計算した値。構成・初採用年の照合が残る場合は個別に記す。
-- **公称**：メーカー・規格の表示。MB/GB/TB/PBは原則十進だが、歴史資料のKB等は定義を確認するまで公称とする。80 KBは仮80,000 Bの位置に置く。
+- **公称**：メーカー・規格の表示。MB/GB/TB/PB/EB/ZBは原則十進だが、歴史資料のKB等は定義を確認するまで公称とする。80 KBは仮80,000 Bの位置に置く。
+- **公表・下限・推計**：運営者や調査機関が示した数字。下限が示される項目の図はその値を使い、通信・出荷・生成などの量には集計期間を添える。
 - **仮換算**：M20の4 Mbitは仮512 KiB、M22の128 Gbitは仮16 GiBとして並べた。厳密構成・予備領域を確認するまで実装用の値にしない。
 - **模型・実測変換・研究・定義**：文字コード等の仮定、指定版からの変換、史料上の実証容量、単位の定義。実媒体の有効容量と区別する。
 
 公称・仮換算を含むので、これは確定した実装順ではない。表内の未照合事項は、まとめた後も解決済みとは扱わない。sector総量とファイルの空き容量、情報bitとparity、nativeと圧縮後容量も区別する。
 
-## 容量順の45項目
+## 容量順の59項目
 
 ### 1. 小さな記憶からフロッピーへ
 
@@ -55,46 +56,65 @@
 | **15・F13** | **2HD世代のフロッピー**<br>1984：PC/AT導入／1987：ECMA-125初版 | 1,474,560 B＝1,440 KiB／両面【算定】 | 描画は3.5型1,474,560 B。PC/ATの5.25型1,228,800 Bと、国内PC系の1,261,568 Bもまとめる。1.2/1.44 MBという呼び名、密度と容量の違いは説明する。 元ID：F08・Q09/5hd・Q09/3hd。 | [ECMA-125][ecma125]、[IBMサービスマニュアル][ibm12-manual]、[Microsoft：媒体形式][win-media-en] |
 | **16・D02** | **世界初の商用HDD、IBM 350**<br>1956：初出荷 | 30,000,000 bit＝3,750,000 B／ドライブ【算定】 | 500万文字×6情報bit＝3,750,000 B。巨大な装置から始まるHDD史の柱。通俗的な5 MBと区別する。 | [CHM：RAMAC][ramac]、[IBM：RAMAC][ibm-ramac] |
 | **17・D06** | **PC向けの小型HDD**<br>1980：ST-506／1983：Rodime 3.5型導入 | 公称5 MB formatted／ドライブ【公称】 | 図はST-506の公称5 MB formatted。5.25型から3.5型へという変化もここで説明する。Rodimeの既知の6.38/12.75 MBはunformattedなので、同じ実容量として扱わない。 元ID：D08。 | [CHM：ST-506研究ノート][st506]、[CHM：Rodime研究ノート][rodime] |
-| **18・C04** | **初期のメモリーカード**<br>1998：Memory Stick／2000：初期SD導入 | 公称8 MB／カード【公称】 | 描画は初期SDの公称8 MB。同容量のMemory Stick 8 MBをまとめ、4 MB版やxD 16 MB、CF・microSD・USBメモリー等への展開は本文へ。SDの規格上限を初期実製品容量にしない。 元ID：C03・C02・C05・C01・C07・Q13。 | [SD Association：初期カードの説明][sd-initial]、[Sony：発売発表][memorystick]、[Olympus：当時の発表][xd]、[公式20年史][sd-years] |
+| **18・C04** | **初期のメモリーカード**<br>1998：Memory Stick／2000：初期SD導入 | 公称8 MB／カード【公称】 | 描画は初期SDの公称8 MB。ソニーのMemory Stickの4 MB版と8 MB版を本文で紹介。 元ID：C03・C02。 | [SD Association：初期カードの説明][sd-initial]、[Sony：発売発表][memorystick]、[公式20年史][sd-years] |
 | **19・D09** | **ノートPCへつながる2.5 inch HDD**<br>1988：PrairieTek 220導入 | 公称20 MB／ドライブ【公称】 | 公称20 MB。次の初期flash SSDとは同容量でも記録原理が違うため、独立させる。 | [CHM：小型HDD][mini-hdd] |
 | **20・D10** | **初期のflash SSD**<br>1991：SunDiskのIBM向け納入 | 公称20 MB／ドライブ【公称】 | 公称20 MB。回転しないストレージへの転換点として単独で残す。「SSD全般の最初」ではなくflash SSDの節目。 | [Eli Harari：2011年IMW論文][harari-ssd]、[CHM：SSD][ssd-history] |
 | **21・D04/35** | **Winchester方式のHDD**<br>1973：IBM 3340/3348導入 | 公称35 MB／モジュール【公称】 | 図は35 MBのデータモジュール。70 MB版と交換式ディスクパックの前史は本文に移し、中間容量で画面を増やさない。 元ID：D04/70・D03。 | [CHM：Winchester][winchester]、[CHM：ディスクパック][disk-pack] |
 | **22・F15** | **Zip 100**<br>1994：発表 | 公称100 MB／ディスク【公称】 | 家庭・仕事で使われた大容量リムーバブル。公称100 MBでFDからの跳躍を見せる。厳密B数は仕様照合待ち。 | [CHM：minifloppy][minifloppy] |
-| **23・比較:N03** | **新聞1年分の文字**<br>2022：文字数説明／2026：換算模型 | 約169,725,000 B【模型】 | 約15.5万字×3 B×365日。写真や紙面を含まない。新聞100年分の独立項目は置かない。 | [授業リポート][newspaper] |
-| **24・T03** | **カートリッジ式の業務用テープ**<br>1984-03-22：IBM 3480一般提供 | 公称200 MB native／巻【公称】 | 図は3480の公称200 MB native。UNISERVOやIBM 726の初期商用テープ、オープンリールからの変化はこの本文で紹介。初期テープの「桁」をBへ置換しない。 元ID：T01・T02。 | [IBM：ライフサイクル][ibm3480-year]、[IBM：仕様一覧][ibm3480-cap]、[CHM：UNISERVO][tape-first] |
-| **25・O10** | **MO、640 MB級**<br>1988：初期5.25型／1991：3.5型／1997：640 MBのISO規格 | 公称640 MB／3.5 inch媒体【公称】 | 描画は3.5型640 MB。近い540 MB・5.25型650 MBをまとめる。128/230 MBからGIGAMO 1.3/2.3 GBまでの推移は本文の沿革へ移す。 元ID：O09・O05・O07・O08・O12・O13。 | [富士通：仕様][mo640-spec]、[Sony 1991年報][sony-ar1991]、[富士通・Sony：回顧付き発表][gigamo] |
-| **26・O02** | **CD、650 MB級**<br>1982：音楽CD／1985：CD-ROM研究発表／1988：ECMA初版 | 681,984,000 B／74分の構成例【算定】 | 図は74分のCD-ROM Mode 1、681,984,000 B。CD-R・CD-RWもここで説明。音楽CDは同時間でもPCM本体が約783 MBとなり、ユーザーデータ容量と同じではない。初期CD-Rの容量は未照合。 元ID：O04・O01・O03。 | [CD-ROM規格][ecma130]、[Sony：CD開発史][cd-history]、[太陽誘電の沿革][cdr-yuden]、[Ricoh：沿革][cdrw-ricoh] |
+| **23・追加:SD128** | **128 MBのSDと競合カード**<br>2001：128 MBのSDとスマートメディア／2002：xD登場 | 公称128 MB／カード【公称】 | 描画は128 MBのSD。スマートメディア、CompactFlash、xDにも同じ公称容量の製品があり、本文でまとめて紹介する。 元ID：C01・C05・Q12。 | [SD Association：容量推移][sd-history]、[東芝レビュー：SD-M128][toshiba-sd128]、[オリンパス：スマートメディア][smartmedia128]、[オリンパス：CF][cf128]、[オリンパス：xD][xd] |
+| **24・比較:N03** | **新聞1年分の文字**<br>2022：文字数説明／2026：換算模型 | 約169,725,000 B【模型】 | 約15.5万字×3 B×365日。写真や紙面を含まない。新聞100年分の独立項目は置かない。 | [授業リポート][newspaper] |
+| **25・T03** | **カートリッジ式の業務用テープ**<br>1984-03-22：IBM 3480一般提供 | 公称200 MB native／巻【公称】 | 図は3480の公称200 MB native。UNISERVOやIBM 726の初期商用テープ、オープンリールからの変化はこの本文で紹介。初期テープの「桁」をBへ置換しない。 元ID：T01・T02。 | [IBM：ライフサイクル][ibm3480-year]、[IBM：仕様一覧][ibm3480-cap]、[CHM：UNISERVO][tape-first] |
+| **26・O10** | **MO、640 MB級**<br>1988：初期5.25型／1991：3.5型／1997：640 MBのISO規格 | 公称640 MB／3.5 inch媒体【公称】 | 描画は3.5型640 MB。近い540 MB・5.25型650 MBをまとめる。128/230 MBからGIGAMO 1.3/2.3 GBまでの推移は本文の沿革へ移す。 元ID：O09・O05・O07・O08・O12・O13。 | [富士通：仕様][mo640-spec]、[Sony 1991年報][sony-ar1991]、[富士通・Sony：回顧付き発表][gigamo] |
+| **27・O02** | **CD、650 MB級**<br>1982：音楽CD／1985：CD-ROM研究発表／1988：ECMA初版 | 681,984,000 B／74分の構成例【算定】 | 図は74分のCD-ROM Mode 1、681,984,000 B。CD-R・CD-RWもここで説明。音楽CDは同時間でもPCM本体が約783 MBとなり、ユーザーデータ容量と同じではない。初期CD-Rの容量は未照合。 元ID：O04・O01・O03。 | [CD-ROM規格][ecma130]、[Sony：CD開発史][cd-history]、[太陽誘電の沿革][cdr-yuden]、[Ricoh：沿革][cdrw-ricoh] |
 
 ### 3. GB級の媒体とフラッシュ
 
 | 順・代表ID | 項目と年代 | 描画の基準にする容量 | 統合する内容・本文に残す違い | 根拠 |
 | --- | --- | --- | --- | --- |
-| **27・D07** | **GBに届いた業務用HDD**<br>1980：IBM 3380発表 | 公称2.52 GB／2 HDAユニット【公称】 | 公称2.52 GB、2 HDAを持つユニット全体。1 HDAの約1.26 GBと混ぜない。実際の初出荷時期は照合を残す。 | [IBM：Description and User's Guide][ibm3380-manual] |
-| **28・O19** | **DVD、片面1層4.7 GB級**<br>1997：DVD-ROMのECMA初版／各記録型は後続 | 公称4.7 GB／片面【公称】 | DVD-ROM・DVD-R・DVD+R・DVD-RW・DVD+RW・4.7 GB DVD-RAMを1項目にする。描画はDVD-5の公称4.7 GB。+Rの正確な4,700,372,992 Bや方式・互換性の差は本文へ。 元ID：O24・O25・O26・O27・O29/single。 | [ECMA-267][ecma267]、[ECMA-349初版PDF][ecma349]、[ECMA-330][ecma330] |
-| **29・O20** | **DVDの大容量化、8.5～9.4 GB級**<br>1997：DVD-ROMのECMA初版／記録型DLは後続 | 公称8.5 GB／片面2層【公称】 | 描画は片面2層DVD-9の公称8.5 GB。DVD±R DLの8.54/8.55 GBと、両面9.4 GBの形式もまとめ、2層と両面の違いを説明する。 元ID：O30・O31・O21・O29/double。 | [ECMA-267][ecma267]、[ECMA-364][ecma364]、[ECMA-382][ecma382]、[ECMA-330][ecma330] |
-| **30・M22** | **3D NAND、積層して増やす**<br>2013：Samsung第1世代V-NAND量産 | 公称128 Gbit（仮16 GiB）／ダイ【仮換算】 | 図は128 Gbitの1ダイ（仮16 GiB）。東芝の2007年3D技術発表や2015年48層BiCS 256 Gbitは沿革へ。ダイ容量に層数を再度掛けない。 元ID：M23。 | [Samsung：V-NAND世代表][vnand]、[KIOXIA：技術開発史][kioxia-history]、[KIOXIA／当時東芝：発表][bics256] |
-| **31・O33/25** | **Blu-ray Disc、25 GB級**<br>2002：基本仕様発表／2006：BD-ROM米国量産発表 | 公称25 GB／片面1層【公称】 | 描画は25 GBのBD-ROM。BD-R/REの同容量形式をまとめ、初期23.3 GB、2層50 GBは本文で扱う。全方式の初発売が2006年という意味ではない。 元ID：O34/25・O35/25・O32/23.3・O33/50・O34/50・O35/50。 | [9社共同発表／Sony][bd2002]、[Sony DADC：2006年発表][bd2006]、[Sony：媒体容量][bd-capacity] |
-| **32・O36** | **BDXL、100～128 GB級**<br>2010-06-25：仕様確定 | 公称100 GB／3層【公称】 | 図は3層BD-R 100 GB。BD-RE 100 GBと4層BD-R 128 GBをまとめる。100 GBの媒体全てが追記型・3層だとはしない。 元ID：O37・O38。 | [BDA：仕様確定発表][bdxl] |
-| **33・T04** | **LTOの始まり、100 GB**<br>2000：LTO Ultrium 1市場導入 | 100 GB native／巻【公称】 | DC・業務用テープの現代につながる規格。LTO-2～4の中間容量は沿革だけにし、巻ごとの非圧縮容量で比較する。 元ID：T05・T06・T07。 | [LTO公式沿革][lto-archive]、[IBM：容量一覧][lto-cap] |
+| **28・D07** | **GBに届いた業務用HDD**<br>1980：IBM 3380発表 | 公称2.52 GB／2 HDAユニット【公称】 | 公称2.52 GB、2 HDAを持つユニット全体。1 HDAの約1.26 GBと混ぜない。実際の初出荷時期は照合を残す。 | [IBM：Description and User's Guide][ibm3380-manual] |
+| **29・C08** | **SDHC**<br>2006：規格登場／2007-01-05：東芝が製品発表 | 公称4 GB／カード【公称】 | 描画は東芝の4 GB SDHC。同社の4 GB miniSDHCと、2006年に発表されたソニーの同容量のメモリースティック PRO デュオを本文にまとめる。32 GBはSDHCの規格上限。 元ID：C06。 | [SD Association：容量規格][sd-capacity]、[東芝：4 GB SDHC][toshiba-sdhc]、[Sony：4 GB PRO デュオ][ms-produo4] |
+| **30・O19** | **DVD、片面1層4.7 GB級**<br>1997：DVD-ROMのECMA初版／各記録型は後続 | 公称4.7 GB／片面【公称】 | DVD-ROM・DVD-R・DVD+R・DVD-RW・DVD+RW・4.7 GB DVD-RAMを1項目にする。描画はDVD-5の公称4.7 GB。+Rの正確な4,700,372,992 Bや方式・互換性の差は本文へ。 元ID：O24・O25・O26・O27・O29/single。 | [ECMA-267][ecma267]、[ECMA-349初版PDF][ecma349]、[ECMA-330][ecma330] |
+| **31・O20** | **DVDの大容量化、8.5～9.4 GB級**<br>1997：DVD-ROMのECMA初版／記録型DLは後続 | 公称8.5 GB／片面2層【公称】 | 描画は片面2層DVD-9の公称8.5 GB。DVD±R DLの8.54/8.55 GBと、両面9.4 GBの形式もまとめ、2層と両面の違いを説明する。 元ID：O30・O31・O21・O29/double。 | [ECMA-267][ecma267]、[ECMA-364][ecma364]、[ECMA-382][ecma382]、[ECMA-330][ecma330] |
+| **32・M22** | **3D NAND、積層して増やす**<br>2013：Samsung第1世代V-NAND量産 | 公称128 Gbit（仮16 GiB）／ダイ【仮換算】 | 図は128 Gbitの1ダイ（仮16 GiB）。東芝の2007年3D技術発表や2015年48層BiCS 256 Gbitは沿革へ。ダイ容量に層数を再度掛けない。 元ID：M23。 | [Samsung：V-NAND世代表][vnand]、[KIOXIA：技術開発史][kioxia-history]、[KIOXIA／当時東芝：発表][bics256] |
+| **33・O33/25** | **Blu-ray Disc、25 GB級**<br>2002：基本仕様発表／2006：BD-ROM米国量産発表 | 公称25 GB／片面1層【公称】 | 描画は25 GBのBD-ROM。BD-R/REの同容量形式をまとめ、初期23.3 GB、2層50 GBは本文で扱う。全方式の初発売が2006年という意味ではない。 元ID：O34/25・O35/25・O32/23.3・O33/50・O34/50・O35/50。 | [9社共同発表／Sony][bd2002]、[Sony DADC：2006年発表][bd2006]、[Sony：媒体容量][bd-capacity] |
+| **34・C09** | **SDXC**<br>2009：SDXC規格と東芝の64 GB品発表／2010-04-17：国内発売 | 公称64 GB／カード【公称】 | 描画は東芝 THNSU064GAA2BC。SanDiskの64 GB CompactFlashも同じ容量帯のカメラ向け製品として本文に添える。2 TBはSDXCの規格上限。 | [東芝：64 GB SDXC発表][toshiba-sdxc]、[東芝：発売日][toshiba-sdxc-release]、[SanDisk：CF仕様][cf64gb] |
+| **35・O36** | **BDXL、100～128 GB級**<br>2010-06-25：仕様確定 | 公称100 GB／3層【公称】 | 図は3層BD-R 100 GB。BD-RE 100 GBと4層BD-R 128 GBをまとめる。100 GBの媒体全てが追記型・3層だとはしない。 元ID：O37・O38。 | [BDA：仕様確定発表][bdxl] |
+| **36・T04** | **LTOの始まり、100 GB**<br>2000：LTO Ultrium 1市場導入 | 100 GB native／巻【公称】 | DC・業務用テープの現代につながる規格。LTO-2～4の中間容量は沿革だけにし、巻ごとの非圧縮容量で比較する。 元ID：T05・T06・T07。 | [LTO公式沿革][lto-archive]、[IBM：容量一覧][lto-cap] |
 
 ### 4. TBからPBへ
 
 | 順・代表ID | 項目と年代 | 描画の基準にする容量 | 統合する内容・本文に残す違い | 根拠 |
 | --- | --- | --- | --- | --- |
-| **34・D12** | **1 TB HDD**<br>2007-01-05：Deskstar 7K1000発表 | 公称1 TB／ドライブ【公称】 | 家庭用PCにもつながる単体HDDの1 TB到達。発表・出荷予定と実出荷日は区別する。 | [Hitachi：当時の発表][hitachi-1tb] |
-| **35・T08** | **LTOもTB級へ**<br>2010：LTO Ultrium 5規格・互換認証 | 1.5 TB native／巻【公称】 | 1.5 TB native。LTFSやパーティションの世代として残す。以後の2.5/6/12/18 TBの中間世代は本文へ。 元ID：T09・T10・T11・T12。 | [LTO公式沿革][lto-archive]、[Fujifilm：仕様][lto-fuji] |
-| **36・比較:L01** | **国立国会図書館の図書を文字に**<br>2025年度末：図書数／2026：換算模型 | 約11.368 TB／仮定した全文字【模型】 | 12,631,196点×1冊30万字×3 B。図書館が公表した実データ容量ではなく、ページ数・文字密度を仮定した約11.368 TB。 | [NDL公式統計][ndl] |
-| **37・D13** | **2.5 inch SSDに15 TB超**<br>2016年3月：Samsung PM1633a出荷発表 | 公称15.36 TB／2.5 inch SSD【公称】 | 公称15.36 TBの単体SSD。初期20 MB SSDとの大きな隔たりと、DCでの用途を伝える。 | [Samsung：出荷発表][samsung-1536] |
-| **38・D14** | **HDDは30 TB級へ**<br>2024-01-17：Seagate HAMR量産拡大発表 | 公称30 TB級／HDD【公称】 | 磁気記録も進化し続けることを示す。公称30 TB級とし、実装時は描く型番を固定する。 | [Seagate：当時の発表][hamr] |
-| **39・T14** | **LTOは30～40 TB級へ**<br>2025：LTO-10 30 TB仕様／2026：40 TB媒体発売告知 | 40 TB native／巻【公称】 | 描画は40 TB native。30 TB版も同じ項目へ。圧縮時の75/100 TBを記憶容量にしない。 元ID：T13。 | [LTO：2025年発表][lto10]、[Fujifilm：40 TB発売発表][lto40]、[LTO：互換性][lto-compat] |
-| **40・D15** | **単体SSDに245.76 TB**<br>2025-07-22：開発発表／2026：サーバー構成発表 | 公称245.76 TB／E3.L SSD【公称】 | KIOXIA LC9、E3.Lのモデル。初期発表・その後の構成を区別し、この容量が全フォームファクターにあるとしない。 | [KIOXIA：2025年発表][lc9]、[2026年構成][pb-server] |
-| **41・比較:P01** | **πの314兆桁を文字で保存**<br>2025：計算・発表／2026-11-08：記録確認 | 314 TB／数字のみの模型【模型】 | 314兆個の数字をASCIIで1桁1 Bとする314 TBの模型。計算中の作業領域ではなく、数字列の保存を比べる。 | [開発者記録表][pi-records]、[StorageReviewの一次報告][pi-run] |
-| **42・PB02** | **2UのHDDサーバーに616 TB**<br>2023年5月のDell仕様書／2026：HPE Gen4構成資料 | 公称合計616 TB raw／2Uサーバー【公称】 | 図はDell PowerEdge R760xd2の22 TB×28台。ここから装置全体の容量を比べる。高さが同じ2UのHPE MSL2024 Gen4は、LTO-9の18 TB×24巻で非圧縮432 TBと本文で紹介する。元ID：PB01。 | [Dell仕様書][dell-hdd-2u]、[HPE日本語構成図][hpe-lto-2u] |
-| **43・PB03** | **4UのHDDストレージに2.5 PB**<br>2023-11-14：2.5 PB構成発表 | 公称2.5 PB raw／4Uの1筐体【公称】 | Seagate Exos CORVAULT 4U106。4Uの筐体にHDDと冗長コントローラーを収める。描画には保護領域などを差し引く前の公称値を使う。 | [Seagate発表][corvault-release]、[Seagate仕様書][corvault-spec] |
-| **44・X01** | **40台のSSDで約9.8 PB**<br>2026-05-15：Dell/KIOXIAシステム実現発表 | 公称合計9.8304 PB／2Uサーバー【公称】 | Dell PowerEdge R7725xdにKIOXIA LC9を40台搭載。245.76 TB×40＝9.8304 PB。RAID・ファイルシステムを差し引く前。 | [2026年構成][pb-server] |
-| **45・PB04** | **テープライブラリー1筐体に80.64 PB**<br>2024：製品の一般提供開始／2026：40 TB LTO-10構成を仕様書で確認 | 最大80.64 PB native／48Uの1筐体【公称】 | Quantum Scalar i7 RAPTOR。LTO-10の40 TB×2,016巻を全スロットに収める場合の非圧縮容量。搬入出用スロットなどの割当に応じてデータ用の巻数は変わる。 | [Quantum仕様書][raptor-spec]、[Quantum設置ガイド][raptor-guide]、[一般提供の発表][raptor-ga] |
+| **37・D12** | **1 TB HDD**<br>2007-01-05：Deskstar 7K1000発表 | 公称1 TB／ドライブ【公称】 | 家庭用PCにもつながる単体HDDの1 TB到達。発表・出荷予定と実出荷日は区別する。 | [Hitachi：当時の発表][hitachi-1tb] |
+| **38・C07** | **1 TBのmicroSDXC**<br>2005：microSD規格登場／2019-02-25：SanDiskの1 TB品発表 | 公称1 TB／カード【公称】 | 描画はSanDisk Extreme UHS-I microSDXC。初期microSDの32～128 MBを本文で紹介。3.5型HDDと同じ容量でも記録方式と外形の違いを見せるため別項目にする。 | [SD Association：microSDの歴史][microsd-history]、[Western Digital：SanDiskの1 TB品][sandisk-microsd1tb] |
+| **39・T08** | **LTOもTB級へ**<br>2010：LTO Ultrium 5規格・互換認証 | 1.5 TB native／巻【公称】 | 1.5 TB native。LTFSやパーティションの世代として残す。以後の2.5/6/12/18 TBの中間世代は本文へ。 元ID：T09・T10・T11・T12。 | [LTO公式沿革][lto-archive]、[Fujifilm：仕様][lto-fuji] |
+| **40・比較:L01** | **国立国会図書館の図書を文字に**<br>2025年度末：図書数／2026：換算模型 | 約11.368 TB／仮定した全文字【模型】 | 12,631,196点×1冊30万字×3 B。図書館が公表した実データ容量ではなく、ページ数・文字密度を仮定した約11.368 TB。 | [NDL公式統計][ndl] |
+| **41・D13** | **2.5 inch SSDに15 TB超**<br>2016年3月：Samsung PM1633a出荷発表 | 公称15.36 TB／2.5 inch SSD【公称】 | 公称15.36 TBの単体SSD。初期20 MB SSDとの大きな隔たりと、DCでの用途を伝える。 | [Samsung：出荷発表][samsung-1536] |
+| **42・D14** | **HDDは30 TB級へ**<br>2024-01-17：Seagate HAMR量産拡大発表 | 公称30 TB級／HDD【公称】 | 磁気記録も進化し続けることを示す。公称30 TB級とし、実装時は描く型番を固定する。 | [Seagate：当時の発表][hamr] |
+| **43・T14** | **LTOは30～40 TB級へ**<br>2025：LTO-10 30 TB仕様／2026：40 TB媒体発売告知 | 40 TB native／巻【公称】 | 描画は40 TB native。30 TB版も同じ項目へ。圧縮時の75/100 TBを記憶容量にしない。 元ID：T13。 | [LTO：2025年発表][lto10]、[Fujifilm：40 TB発売発表][lto40]、[LTO：互換性][lto-compat] |
+| **44・D15** | **単体SSDに245.76 TB**<br>2025-07-22：開発発表／2026：サーバー構成発表 | 公称245.76 TB／E3.L SSD【公称】 | KIOXIA LC9、E3.Lのモデル。初期発表・その後の構成を区別し、この容量が全フォームファクターにあるとしない。 | [KIOXIA：2025年発表][lc9]、[2026年構成][pb-server] |
+| **45・比較:P01** | **πの314兆桁を文字で保存**<br>2025：計算・発表／2026-11-08：記録確認 | 314 TB／数字のみの模型【模型】 | 314兆個の数字をASCIIで1桁1 Bとする314 TBの模型。計算中の作業領域ではなく、数字列の保存を比べる。 | [開発者記録表][pi-records]、[StorageReviewの一次報告][pi-run] |
+| **46・PB02** | **2UのHDDサーバーに616 TB**<br>2023年5月のDell仕様書／2026：HPE Gen4構成資料 | 公称合計616 TB raw／2Uサーバー【公称】 | 図はDell PowerEdge R760xd2の22 TB×28台。ここから装置全体の容量を比べる。高さが同じ2UのHPE MSL2024 Gen4は、LTO-9の18 TB×24巻で非圧縮432 TBと本文で紹介する。元ID：PB01。 | [Dell仕様書][dell-hdd-2u]、[HPE日本語構成図][hpe-lto-2u] |
+| **47・PB03** | **4UのHDDストレージに2.5 PB**<br>2023-11-14：2.5 PB構成発表 | 公称2.5 PB raw／4Uの1筐体【公称】 | Seagate Exos CORVAULT 4U106。4Uの筐体にHDDと冗長コントローラーを収める。描画には保護領域などを差し引く前の公称値を使う。 | [Seagate発表][corvault-release]、[Seagate仕様書][corvault-spec] |
+| **48・X01** | **40台のSSDで約9.8 PB**<br>2026-05-15：Dell/KIOXIAシステム実現発表 | 公称合計9.8304 PB／2Uサーバー【公称】 | Dell PowerEdge R7725xdにKIOXIA LC9を40台搭載。245.76 TB×40＝9.8304 PB。RAID・ファイルシステムを差し引く前。 | [2026年構成][pb-server] |
+| **49・PB04** | **テープライブラリー1筐体に80.64 PB**<br>2024：製品の一般提供開始／2026：40 TB LTO-10構成を仕様書で確認 | 最大80.64 PB native／48Uの1筐体【公称】 | Quantum Scalar i7 RAPTOR。LTO-10の40 TB×2,016巻を全スロットに収める場合の非圧縮容量。搬入出用スロットなどの割当に応じてデータ用の巻数は変わる。 | [Quantum仕様書][raptor-spec]、[Quantum設置ガイド][raptor-guide]、[一般提供の発表][raptor-ga] |
 
-41～45番の容量比、構成上限、年代の根拠は[TBからPBへの補強調査](pb-system-candidates.md)を参照。
+45～49番の容量比、構成上限、年代の根拠は[TBからPBへの補強調査](pb-system-candidates.md)を参照。
+
+### 5. デジタルデータの集積からZB級へ
+
+| 順・代表ID | 項目と年代 | 描画の基準にする容量 | 本文と注記 | 根拠 |
+| --- | --- | --- | --- | --- |
+| **50・E01** | **Google検索の索引**<br>2026年11月：公式解説を確認 | 100 PB【下限】 | Googleが示す検索索引の下限を使う。数千億のウェブページなどを検索する情報の量。 | [Google公式解説][e-google-index] |
+| **51・E02** | **NASAの地球科学データ**<br>2024年9月末：2024会計年度末 | 128.56 PB【公表】 | 保管量のうち66.69 PBがクラウド分。 | [NASA Earthdataの技術資料][e-nasa] |
+| **52・E04** | **Internet Archive**<br>2025：保存実績 | 210 PB【下限】 | Wayback Machine、電子書籍、動画、音声などを含むユニークデータ。1兆件の保存記録を本文に添える。 | [運用報告][e-archive-storage]、[公式発表][e-archive-count] |
+| **53・E08** | **CERNのLHC実験データ**<br>2025年12月：到達を発表 | 1 EB【公表】 | 15年以上にわたって保存した実験データ。大半を磁気テープに保存。 | [CERN公式発表][e-cern] |
+| **54・E10** | **TFinity Plusの45フレーム構成**<br>2026：仕様確認 | 2.2 EB【公称】 | メーカーが示す非圧縮の構成上限。最大56,400巻のLTO-10。 | [Spectra Logicの仕様][e-spectra]、[40 TBのLTO-10][e-lto-40] |
+| **55・E13** | **世界のインターネット通信1日分**<br>2026：ITU推計 | 約25 EB／平均1日【推計】 | 固定回線とモバイル回線の推計を平均1日分に換算。 | [ITUの通信量統計][e-itu]、[推計方法][e-itu-method] |
+| **56・E15** | **Seagateが1年に出荷したHDD**<br>2026年7月3日：2026会計年度末 | 789 EB【公表】 | 当該会計年度に出荷したHDDの容量の合計。 | [SeagateのSEC提出資料][e-seagate-year] |
+| **57・E16** | **Seagateの累計出荷容量**<br>2025年7月：決算発表 | 4 ZB【下限】 | 創業から発表時点までの累計。ここで初めてZBを紹介する。 | [Seagateの決算発表][e-seagate-total] |
+| **58・E18** | **世界に設置された記憶容量**<br>2026：IDC推計 | 約13 ZB【推計】 | 使用領域と空き領域を含む設備容量。 | [IDCの2026年解説][e-idc-installed] |
+| **59・E19** | **世界で1年に生成・取得・複製・消費されたデータ**<br>2025：対象年／2026年6月：IDC推計 | 218.433 ZB【推計】 | IDCの218,433 EBを描画の基準にし、容量欄は約218 ZB。配信やコピーによる重複、一時的なデータを含む1年の量。 | [IDCの指標定義と推計][e-idc-data] |
 
 ## 主な統合結果
 
@@ -106,7 +126,10 @@
 | 国内2D、PCの360 KB、初期Sony 3.5型、Mac 400K | 320～400 KB級の1項目 | PCの360 KiB形式 |
 | 640/720/800 KiBのFD | 2DD世代の1項目 | 3.5型720 KiB |
 | PC/ATの1.2 MB、国内PCの1,232 KiB、1.44 MB | 2HD世代の1項目 | 3.5型1,474,560 B |
-| 初期SD 8 MB、Memory Stick 8 MB | 初期メモリーカードの1項目 | SDの公称8 MB。前後の4/16 MB品や他形式は沿革として説明。 |
+| 初期SD 8 MB、Memory Stick 8 MB | 初期メモリーカードの1項目 | SDの公称8 MB。4 MBのMemory Stickも本文に残す。 |
+| SD、スマートメディア、CF、xDの128 MB級 | デジタルカメラ用カードの1項目 | SDの公称128 MB。 |
+| SDHC、miniSDHC、メモリースティック PRO デュオの4 GB級 | SDHCの1項目 | 東芝のSDHCの公称4 GB。 |
+| SDXC、CompactFlashの64 GB級 | SDXCの1項目 | 東芝のSDXCの公称64 GB。 |
 | MOの540/640/650 MB | MOの1項目 | 3.5型640 MB。128/230 MBやGIGAMOは沿革として説明。 |
 | CD-ROM・CD-R・CD-RW・音楽CD | CDの1項目 | 74分CD-ROM Mode 1の681,984,000 B。音声ペイロードとの違いは本文へ。 |
 | DVD-ROMとDVD±R/±RW/RAMの4.7 GB級 | 片面1層DVDの1項目 | DVD-5の公称4.7 GB |
@@ -114,7 +137,7 @@
 | BD-ROM/R/REの25 GB | Blu-rayの1項目 | BD-ROMの25 GB。50 GB等の容量推移は沿革へ。 |
 | BDXLの100/128 GB、R/RE | BDXLの1項目 | BD-Rの100 GB |
 | LTO-10の30/40 TB | 現代LTOの1項目 | 40 TB native |
-| 2U HDDサーバーと2U LTOライブラリー | 42番にまとめ、LTOの非圧縮432 TBは本文で紹介 | Dell PowerEdge R760xd2の616 TB raw |
+| 2U HDDサーバーと2U LTOライブラリー | 46番にまとめ、LTOの非圧縮432 TBは本文で紹介 | Dell PowerEdge R760xd2の616 TB raw |
 | 『こころ』約560 kBと新聞1日の文字約465 kB | 日本語テキストの1項目 | 『こころ』の指定版559,512 B |
 
 上の表は「似た容量の統合」と「沿革への移動」を区別している。例えば、EEPROM 2 KiBとEPROM 256 B、MO 128 MBと640 MB、Blu-ray 25 GBと50 GBを、同じ容量として描くわけではない。
@@ -129,22 +152,23 @@
 | FDの160/180 KB、Apple IIの13/16-sector、8 inchの各中間容量、2ED | PCの320～400 KB、2DD、2HDを代表にする。初期FDの書き込み可能化や容量の拡張は本文へ。 |
 | 大径MOの各規格、NeXT MO、PD、MD DATA、Hi-MD、UDO、Microdrive | 普及度・説明量と主題への寄与を比べ、今回は独立表示を外す。MO・HDDの沿革で必要なら短く触れる。 |
 | 初期DVD-R 3.95 GB、DVD-RAM 2.6/5.2 GB、DVD-18 | 普及した4.7 GBと大容量8.5 GB級で代表させる。方式ごとの詳細史は主軸から外す。 |
-| Memory Stick PROの容量違い、フラッシュの後続ダイ容量 | 小型カードと3D NANDの代表例に集中する。 |
+| Memory Stick PROの容量違い、フラッシュの後続ダイ容量 | メモリースティック PRO デュオの4 GB品はSDHCとまとめ、チップは3D NANDの代表例に絞る。 |
 | LTO-2/3/4/6/7/8/9の各独立項目 | LTOは100 GB→1.5 TB→30～40 TBの3項目。中間世代と年は必要に応じて本文へ。 |
-| 新聞100年分、EHT、ほかの大量データ・個数の比喩 | 比較は4項目に限定。コンピュータの記憶媒体を主役にし、終点は80.64 PBのテープライブラリーにする。 |
-| 前案の未配置12枠をすべて別項目にする計画 | 自動追加しない。初期テープ、初期CD-R、CF/microSD/USB、初期3.5 inch HDD等は現在の関連項目の本文で扱い、容量確認が必要ならそこに課題を残す。Z1/Z3・ABC等を含む独立の前史拡張は今回見送る。 |
+| 新聞100年分、EHT、ほかの大量データ・個数の比喩 | 既存の容量帯の身近な比較は4項目に絞る。 |
+| E11のColossus、E17の世界の年間通信量 | Googleの例には検索索引を採用する。世界のインターネット通信量は平均1日分を表示する。 |
+| 前案の未配置12枠をすべて別項目にする計画 | 自動追加しない。初期テープ、初期CD-R、USBメモリー、初期3.5 inch HDD等は現在の関連項目の本文で扱い、容量確認が必要ならそこに課題を残す。Z1/Z3・ABC等を含む独立の前史拡張は今回見送る。 |
 
 ## 代表例・説明を確定するときの確認
 
 - [ ] 掲載数をさらに絞る場合は、Zip、コアロープROM、Winchester、初期2.5 inch HDDなどを見直す。M13・M20は維持する。
 - [ ] 代表容量を原典で固定する。とくに公称KB、チップのMbit/Gbit、MO/DVD/BDの正確なデータ領域、HDD/SSDの特定型番。
 - [ ] 一つにまとめた項目でも、各製品の初出年・容量・方式・比較単位を本文で取り違えない。代表例の年を全ジャンルの発明年にしない。
-- [ ] 初期テープの符号と巻長、初期CD-Rの収録時間、初期CF/microSD/USBの実製品、Rodimeのformatted容量は引き続き照合する。未照合の数字は説明にも断定して入れない。
+- [ ] 初期テープの符号と巻長、初期CD-Rの収録時間、初期CF・USBの実製品、Rodimeのformatted容量は引き続き照合する。未照合の数字は説明にも断定して入れない。
 - [ ] 『こころ』の版・注記、新聞と図書館の文字数模型を確定する。日本語1文字3 Bは模型の基本で、実測値を一律に置き換えない。
 
 ## 出典
 
-2026-11-08～09の[媒体調査](storage-history-candidates.md)と[比較データ調査](large-number-candidates.md)、2026-11-25の[TBからPBへの補強調査](pb-system-candidates.md)に基づく。
+2026-11-08～09の[媒体調査](storage-history-candidates.md)と[比較データ調査](large-number-candidates.md)、2026-11-25の[TBからPBへの補強調査](pb-system-candidates.md)に基づく。SD系の追加項目は、以下の規格団体とメーカーの資料で製品容量・年代を確認した。
 
 [baby]: https://curation.cs.manchester.ac.uk/computer50/www.computer50.org/mark1/new.baby.html
 [crt]: https://www.computerhistory.org/storageengine/williams-demonstrates-crt-storage/
@@ -230,3 +254,29 @@
 [raptor-spec]: https://cdn.allbound.com/iq-ab/2021/11/Scalar-Tape-DS00559A.pdf
 [raptor-guide]: https://qsupport.quantum.com/kb/flare/content/Scalar_i7_RAPTOR/docCenter/Site_Planning_i7.htm
 [raptor-ga]: https://d1io3yog0oux5.cloudfront.net/_1f880a8a07b7adc6058553eac190da16/quantum/news/2024-12-04_Quantum_Scalar_i7_RAPTOR_Now_209.pdf
+
+[sd-history]: https://www.sdcard.org/wp-content/uploads/2020/11/SD_Celebrates_10_Years_of_Innovation_at_CES_2010.pdf
+[toshiba-sd128]: https://www.global.toshiba/content/dam/toshiba/migration/corp/techReviewAssets/tech/review/2002/01/57_01pdf/b06.pdf
+[smartmedia128]: https://www.olympus.co.jp/jp/news/2001a/nr010220m128pij.html
+[cf128]: https://www.olympus.co.jp/jp/news/2000a/nr000426cfcardj.html
+[sd-capacity]: https://www.sdcard.org/developers/sd-standard-overview/capacity-sd-sdhc-sdxc-sduc/
+[toshiba-sdhc]: https://www.global.toshiba/jp/news/corporate/2007/01/pr0502.html
+[ms-produo4]: https://www.sony.jp/rec-media/memorystick/whatsnew/product_060627.html
+[toshiba-sdxc]: https://www.global.toshiba/jp/news/corporate/2009/08/pr0401.html
+[toshiba-sdxc-release]: https://www.kioxia.com/ja-jp/personal/news/2010/20100415-1.html
+[cf64gb]: https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/memory-cards/extreme-pro-compactflash/data-sheet-extreme-pro-compactflash.pdf
+[microsd-history]: https://www.sdcard.org/press/thoughtleadership/celebrating-20-years-of-microsd/
+[sandisk-microsd1tb]: https://www.westerndigital.com/company/newsroom/press-releases/2019/2019-02-25-western-digital-unveils-worlds-fastest-1tb-uhs-i-microsd-card
+[e-google-index]: https://www.google.com/intl/en_uk/search/howsearchworks/how-search-works/organizing-information/
+[e-nasa]: https://wiki.earthdata.nasa.gov/download/attachments/378738424/ESDS-RFC-057v1_OFAIR-Guide.pdf?api=v2&modificationDate=1764095753357&version=1
+[e-archive-storage]: https://digitalpreservation.gov/meetings/DSA2026/0117_jonah_edwards_ia_dsa_2026.pdf
+[e-archive-count]: https://blog.archive.org/trillion/
+[e-cern]: https://home.cern/cern-hits-one-exabyte-stored-experimental-data-lhc/
+[e-spectra]: https://spectralogic.com/tfinity-libraries/
+[e-lto-40]: https://www.fujifilm.com/in/en/news/fujifilm-expands-lto-portfolio-with-lto-10-40tb
+[e-itu]: https://www.itu.int/itu-d/reports/statistics/2026/10/13/ff26-internet-traffic/
+[e-itu-method]: https://www.itu.int/itu-d/reports/statistics/2026/10/13/ff26-methodology/
+[e-seagate-year]: https://www.sec.gov/Archives/edgar/data/1137789/000113778926000207/stx-20260908.htm
+[e-seagate-total]: https://investors.seagate.com/news/news-details/2025/Seagate-Technology-Reports-Fiscal-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/
+[e-idc-installed]: https://www.idc.com/resource-center/blog/beyond-the-prompt-the-hidden-data-and-storage-implications-of-generative-ai/
+[e-idc-data]: https://www.idc.com/resource-center/definitions/what-are-the-global-datasphere-and-global-storagesphere/

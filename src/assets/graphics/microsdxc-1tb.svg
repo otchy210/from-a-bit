@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path d="M24 13h43l10 10v64H21V46l3-6z" fill="#202a25" stroke="#202a25" stroke-width="2.3" stroke-linejoin="round"/>
+  <path d="M21 48h56v39H21z" fill="#dfb18e" stroke="#202a25" stroke-width="2.3" stroke-linejoin="round"/>
+  <path d="M33 20v13m6-13v13m6-13v13m6-13v13m6-13v13m6-13v13m6-8v8" fill="none" stroke="#a5b7a3" stroke-width="2.3" stroke-linecap="round"/>
+  <g fill="#202a25" text-anchor="middle" font-family="monospace" font-weight="700">
+    <text x="49" y="61" font-size="7">microSDXC</text>
+    <text x="49" y="77" font-size="14">1 TB</text>
+  </g>
+</svg>

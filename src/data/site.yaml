@@ -11,7 +11,7 @@ capacityNotes:
   entries:
     - heading: 単位と容量の基準
       description: >-
-        1 Bは8 bitです。KB、MB、GB、TB、PBは1,000倍ずつ、KiB、MiB、GiBは1,024倍ずつ増えます。製品の容量は原則としてメーカーや資料の公称値を使い、ST-506の5 MBはフォーマット後の値を採用しています。
+        1 Bは8 bitです。KB、MB、GB、TB、PB、EB、ZBは1,000倍ずつ、KiB、MiB、GiBは1,024倍ずつ増えます。製品の容量は原則としてメーカーや資料の公称値を使い、ST-506の5 MBはフォーマット後の値を採用しています。
     - heading: パンチカードと初期の記憶装置
       description: >-
         IBMのパンチカードは1文字を1 Bと置いて80 B、磁気ドラムはComputer History Museumの資料にある50万bitで描いています。アポロのコアロープROMはパリティを除いた1語15 bit、IBM 350は1文字6 bitで換算しています。
@@ -29,4 +29,10 @@ capacityNotes:
         314兆桁をASCIIの数字1桁につき1 Bで換算しました。小数点と改行は含めていません。
     - heading: テープと大容量システム
       description: >-
-        IBM 3480とLTOは非圧縮容量を使っています。HPEの432 TBはLTO-9の18 TBを24巻、Quantumの80.64 PBはLTO-10の40 TBを最大2,016巻並べた構成です。Dellの616 TBと9.8304 PBは搭載ドライブの公称値の合計、Seagateの2.5 PBもデータ保護に使う領域を差し引く前の容量です。
+        IBM 3480とLTOは非圧縮容量を使っています。HPEの432 TBはLTO-9の18 TBを24巻、Quantumの80.64 PBはLTO-10の40 TBを最大2,016巻並べた構成です。Spectra Logicの最大構成は、メーカーが示す非圧縮2.2 EBを使っています。Dellの616 TBと9.8304 PBは搭載ドライブの公称値の合計、Seagateの2.5 PBもデータ保護に使う領域を差し引く前の容量です。
+    - heading: 公表値の下限を使う項目
+      description: >-
+        Googleの検索索引、Internet Archiveの保存量、Seagateの累計出荷容量は、各資料で示された下限の100 PB、210 PB、4 ZBで描いています。
+    - heading: 世界の通信量とデータ量
+      description: >-
+        世界のインターネット通信は、ITUの2026年の固定・モバイル回線の推計を合算し、365日で割って平均1日分に換算しています。閉じた専用サービスやIPTVは集計の対象外です。IDCによる設備容量には空き領域も含まれます。年間の生成・取得・複製・消費量にはデータのコピーや一時的なデータも含まれます。

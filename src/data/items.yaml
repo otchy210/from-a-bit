@@ -34,7 +34,7 @@
     capacity: "1 B（8 bit）"
     description:
       - >-
-        八つのビットをひとまとまりにすると1バイトです。例えば、「あ」の1文字はUTF-8で3バイト。文字を保存するときの大きさは、文字と符号化の方式で決まります。
+        8ビットをひとまとまりにすると1バイトです。例えば、「あ」の1文字はUTF-8で3バイト。文字を保存するときの大きさは、文字と符号化の方式で決まります。
   sources:
     - label: "Unicode公式FAQ"
       url: "https://www.unicode.org/faq/utf_bom.html"
@@ -48,7 +48,7 @@
     heading:
       - "Intelの最初のメモリ"
     era: "1969年4月 · Intel 3101発売"
-    capacity: "8 B（64 bit）／チップ"
+    capacity: "8 B／チップ"
     description:
       - >-
         Intelが最初に売り出した製品は、64 bitのSRAMでした。4 bitのデータを16組記憶し、電源を切ると中身は失われます。
@@ -67,7 +67,7 @@
     heading:
       - "半導体に固定した32バイト"
     era: "1965年 · Sylvaniaの初期半導体ROM"
-    capacity: "32 B（256 bit）／チップ"
+    capacity: "32 B／チップ"
     description:
       - >-
         Sylvaniaが製作した256 bitの初期の半導体ROM。読み出し専用のデータをチップに組み込む方式です。初期の半導体ROMには、その後に登場したMOS方式など複数の系譜があります。
@@ -84,10 +84,10 @@
     heading:
       - "穴で読む80文字"
     era: "1928年 · IBMの80欄形式"
-    capacity: "80文字／カード1枚"
+    capacity: "80 B相当／カード1枚"
     description:
       - >-
-        IBMのパンチカードは、縦に並ぶ穴の組み合わせで、1欄に1文字を表しました。1890年の米国国勢調査にも、別形式のパンチカードが使われています。
+        IBMのパンチカードは、縦に並ぶ穴の組み合わせで、1欄に1文字、カード1枚で80文字を表しました。1890年の米国国勢調査にも、別形式のパンチカードが使われています。
   sources:
     - label: "IBM：パンチカード"
       url: "https://www.ibm.com/history/punched-card"
@@ -103,7 +103,7 @@
     heading:
       - "ブラウン管が主記憶だった"
     era: "1948年 · Manchester Babyがプログラムを実行"
-    capacity: "128 B（1,024 bit）／主記憶"
+    capacity: "128 B／主記憶"
     description:
       - >-
         Babyはブラウン管に32 bitの語を32個記憶できました。同じ1,024 bitでも、1953年の磁気コアはコア面1枚、1970年のIntel 1103はDRAMチップ1個。コアは電源を切っても磁化を保ち、DRAMは定期的な再書き込みを必要とします。
@@ -124,10 +124,10 @@
     heading:
       - "窓から光を当てて消すROM"
     era: "1971年 · Intel 1702発表"
-    capacity: "256 B（2,048 bit）／チップ"
+    capacity: "256 B／チップ"
     description:
       - >-
-        Intel 1702には、紫外線を通す窓がありました。書き込んだ内容を紫外線で消去し、プログラムを入れ直せます。後のEEPROMでは、消去も電気的に行えるようになります。
+        2,048 bitを記憶するIntel 1702には、紫外線を通す窓がありました。書き込んだ内容を紫外線で消去し、プログラムを入れ直せます。後のEEPROMでは、消去も電気的に行えるようになります。
   sources:
     - label: "CHM：プログラマブルROM"
       url: "https://www.computerhistory.org/siliconengine/reusable-programmable-rom-introduces-iterative-design-flexibility/"
@@ -220,17 +220,17 @@
   text:
     heading:
       - "初代NANDフラッシュ"
-    era: "1987年 · 東芝が研究発表／1991年 · 4 Mbit製品化"
-    capacity: "4 Mbit／チップ"
+    era: "1987年 · 東芝が研究発表／1991年 · 製品化"
+    capacity: "512 KiB／チップ"
     description:
       - >-
-        電源を切ってもデータが残るNANDフラッシュは、まとめて読み書きするデータの記憶に向きます。読み出しの自由度を重視するNORとは用途が分かれ、のちにメモリーカードやSSDの土台になりました。
+        東芝が製品化した初代NANDフラッシュの公称容量は4 Mbitでした。電源を切ってもデータが残り、まとめて読み書きする用途に向きます。読み出しの自由度を重視するNORとは用途が分かれ、のちにメモリーカードやSSDの土台になりました。
   sources:
     - label: "KIOXIA：技術開発史"
       url: "https://www.kioxia.com/ja-jp/rd/technology/history.html"
     - label: "Intel開発者の口述記録"
       url: "https://archive.computerhistory.org/resources/access/text/2012/04/102658199-05-01-acc.pdf"
-    - label: "KIOXIA：4 Mbit NANDの製品化（英語版年表）"
+    - label: "KIOXIA：初代NANDの製品化（英語版年表）"
       url: "https://www.kioxia.com/en-jp/rd/technology/history.html"
 
 - id: kokoro
@@ -344,14 +344,12 @@
     capacity: "8 MB／カード1枚"
     description:
       - >-
-        初期のSDカードは8 MB。ソニーのMemory Stickも4 MBと8 MBで登場しました。カード型のフラッシュ記憶はデジタルカメラなどに広がり、後にmicroSDのような小型規格も生まれました。
+        初期のSDカードは8 MB。ソニーのメモリースティックも4 MBと8 MBで登場しました。カードを差し替えれば、デジタルカメラなどで記録する場所を手軽に増やせます。
   sources:
     - label: "SD Association：初期カードの説明"
       url: "https://www.sdcard.org/press/thoughtleadership/anatomy-of-an-sd-memory-card-what-matters-most-for-photography-and-videography/"
     - label: "Sony：発売発表"
       url: "https://www.sony.com/en/SonyInfo/News/Press/199807/98-067/"
-    - label: "Olympus：当時の発表"
-      url: "https://www.olympus.co.jp/jp/news/2002b/nr020822xdcardj.html"
     - label: "公式20年史"
       url: "https://www.sdcard.org/pdf/SDA20thAnniversary_Infographic.pdf"
 
@@ -426,6 +424,29 @@
   sources:
     - label: "CHM：minifloppy"
       url: "https://www.computerhistory.org/storageengine/minicomputers-stimulate-floppy-disk-sales/"
+
+- id: sd-card-128mb
+  kind: capacity
+  capacityBits: "1024000000"
+  graphic:
+    src: graphics/sd-card-128mb.svg
+  text:
+    heading:
+      - "デジカメのカードが競った128 MB"
+    era: "2001年 · 128 MBのSDとスマートメディア／2002年 · xD登場"
+    capacity: "128 MB／カード1枚"
+    description:
+      - >-
+        SDに128 MBの製品が登場した頃、デジタルカメラ向けには同じ容量のスマートメディア、コンパクトフラッシュ（CF）、xDピクチャーカードもありました。使えるカードはカメラによって異なりました。
+  sources:
+    - label: "SD Association：初期の容量推移"
+      url: "https://www.sdcard.org/wp-content/uploads/2020/11/SD_Celebrates_10_Years_of_Innovation_at_CES_2010.pdf"
+    - label: "オリンパス：スマートメディア"
+      url: "https://www.olympus.co.jp/jp/news/2001a/nr010220m128pij.html"
+    - label: "オリンパス：CF"
+      url: "https://www.olympus.co.jp/jp/news/2000a/nr000426cfcardj.html"
+    - label: "オリンパス：xD"
+      url: "https://www.olympus.co.jp/jp/news/2002b/nr020822xdcardj.html"
 
 - id: newspaper-year
   kind: capacity
@@ -526,6 +547,27 @@
     - label: "IBM：Description and User's Guide"
       url: "https://bitsavers.trailing-edge.com/pdf/ibm/dasd/3380/GA26-1664-3_3380_Description_and_Users_Guide_198412.pdf"
 
+- id: sdhc
+  kind: capacity
+  capacityBits: "32000000000"
+  graphic:
+    src: graphics/sdhc.svg
+  text:
+    heading:
+      - "2 GBの壁を越えたSDHC"
+    era: "2006年 · SDHC規格登場／2007年 · 東芝の4 GB製品発表"
+    capacity: "4 GB／カード1枚"
+    description:
+      - >-
+        SDHCは従来のSDの上限だった2 GBを超え、規格上は32 GBまで対応します。東芝は4 GBのSDHCと小型のminiSDHCを発表。同じ4 GBのメモリースティック PRO デュオは、ソニーがデジタルカメラやPSP向けに発売しました。
+  sources:
+    - label: "SD Association：容量規格"
+      url: "https://www.sdcard.org/developers/sd-standard-overview/capacity-sd-sdhc-sdxc-sduc/"
+    - label: "東芝：4 GBのSDHCとminiSDHC発表"
+      url: "https://www.global.toshiba/jp/news/corporate/2007/01/pr0502.html"
+    - label: "ソニー：4 GBのメモリースティック"
+      url: "https://www.sony.jp/rec-media/memorystick/whatsnew/product_060627.html"
+
 - id: dvd-single
   kind: capacity
   capacityBits: "37600000000"
@@ -579,10 +621,10 @@
     heading:
       - "記憶セルを積み上げる"
     era: "2013年 · Samsung初代V-NAND量産発表"
-    capacity: "128 Gbit／チップ"
+    capacity: "16 GiB／チップ"
     description:
       - >-
-        Samsungの初代V-NANDは、記憶セルを24層に積み重ねて密度を上げました。東芝は2007年に3D技術を発表し、2015年には48層のBiCSを発表しています。
+        Samsungの初代V-NANDは、記憶セルを24層に積み重ね、チップ1個で128 Gbitを記憶できました。東芝は2007年に3D技術を発表し、2015年には48層のBiCSを発表しています。
   sources:
     - label: "Samsung：V-NAND世代表"
       url: "https://semiconductor.samsung.com/news-events/news/samsung-electronics-takes-3d-memory-to-new-heights-with-sixth-generation-v-nand-ssds-for-client-computing/"
@@ -613,6 +655,27 @@
       url: "https://www.sony.com/SonyInfo/IR/news/20060516.pdf"
     - label: "Sony：媒体容量"
       url: "https://www.sony.com/electronics/support/audio-video-accessories-other-av-accessories/dlc-hd50g/articles/00029645"
+
+- id: sdxc
+  kind: capacity
+  capacityBits: "512000000000"
+  graphic:
+    src: graphics/sdxc.svg
+  text:
+    heading:
+      - "SDXCのカードに64 GB"
+    era: "2009年 · SDXC規格策定／2010年 · 東芝の64 GB製品発売"
+    capacity: "64 GB／カード1枚"
+    description:
+      - >-
+        SDXCはSDHCの上限だった32 GBを超え、規格上は2 TBまで対応します。東芝の64 GB品は、HD動画の撮影や写真の高速連写を想定した製品でした。カメラ向けには、SanDiskのコンパクトフラッシュにも64 GB品がありました。
+  sources:
+    - label: "東芝：64 GBのSDXC発表"
+      url: "https://www.global.toshiba/jp/news/corporate/2009/08/pr0401.html"
+    - label: "東芝：発売日の告知"
+      url: "https://www.kioxia.com/ja-jp/personal/news/2010/20100415-1.html"
+    - label: "SanDisk：CompactFlash仕様"
+      url: "https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/memory-cards/extreme-pro-compactflash/data-sheet-extreme-pro-compactflash.pdf"
 
 - id: bdxl
   kind: capacity
@@ -666,6 +729,25 @@
   sources:
     - label: "Hitachi：当時の発表"
       url: "https://www.hitachi.com/en-us/press/archive/01052007/"
+
+- id: microsdxc-1tb
+  kind: capacity
+  capacityBits: "8000000000000"
+  graphic:
+    src: graphics/microsdxc-1tb.svg
+  text:
+    heading:
+      - "爪ほどのカードに1 TB"
+    era: "2005年 · microSD規格登場／2019年 · SanDiskの1 TB製品発表"
+    capacity: "1 TB／カード1枚"
+    description:
+      - >-
+        携帯電話向けに登場した初期のmicroSDは32～128 MBでした。2019年、SanDiskは1 TBのmicroSDXCを発表。2007年に登場した3.5型HDDと同じ容量が、爪ほどのカードに収まりました。
+  sources:
+    - label: "SD Association：microSDの歴史"
+      url: "https://www.sdcard.org/press/thoughtleadership/celebrating-20-years-of-microsd/"
+    - label: "Western Digital：SanDiskの1 TB製品発表"
+      url: "https://www.westerndigital.com/company/newsroom/press-releases/2019/2019-02-25-western-digital-unveils-worlds-fastest-1tb-uhs-i-microsd-card"
 
 - id: lto-5
   kind: capacity
@@ -772,12 +854,10 @@
     capacity: "245.76 TB／E3.Lドライブ"
     description:
       - >-
-        KIOXIA LC9の245.76 TBモデルは、サーバー向けのE3.L形状に大容量のフラッシュを収めます。後に登場する9.83 PBのサーバーには、このドライブが40台入っています。
+        KIOXIA LC9の245.76 TBモデルは、サーバー向けのE3.L形状に大容量のフラッシュを収めます。
   sources:
     - label: "KIOXIA：2025年発表"
       url: "https://www.kioxia.com/ja-jp/business/news/2025/20250722-1.html"
-    - label: "2026年構成"
-      url: "https://www.kioxia.com/ja-jp/business/news/2026/20260515-1.html"
 
 - id: pi-digits
   kind: capacity
@@ -848,7 +928,7 @@
     capacity: "9.8304 PB／2Uサーバー"
     description:
       - >-
-        Dell PowerEdge R7725xdの2U筐体に245.76 TBのSSDを40台搭載。616 TBのHDD機とラック内で占める高さは同じで、容量は約16倍になります。
+        先ほどの245.76 TBのSSD、KIOXIA LC9を40台搭載したのが、Dell PowerEdge R7725xdです。616 TBのHDD機とラック内で占める高さは同じで、容量は約16倍になります。
   sources:
     - label: "2026年構成"
       url: "https://www.kioxia.com/ja-jp/business/news/2026/20260515-1.html"
@@ -873,3 +953,181 @@
       url: "https://qsupport.quantum.com/kb/flare/content/Scalar_i7_RAPTOR/docCenter/Site_Planning_i7.htm"
     - label: "一般提供の発表"
       url: "https://d1io3yog0oux5.cloudfront.net/_1f880a8a07b7adc6058553eac190da16/quantum/news/2024-12-04_Quantum_Scalar_i7_RAPTOR_Now_209.pdf"
+
+- id: google-search-index
+  kind: capacity
+  capacityBits: "800000000000000000"
+  graphic:
+    src: graphics/google-search-index.svg
+  text:
+    heading:
+      - "Google検索の巨大な索引"
+    era: "2026年11月 · Googleの公式解説を確認"
+    capacity: "100 PB超／検索索引"
+    description:
+      - >-
+        本の巻末にある索引のように、Googleは数千億のウェブページなどを探す手がかりを整理しています。その検索索引だけで100 PBを大きく超えます。
+  sources:
+    - label: "Google：検索索引の仕組み"
+      url: "https://www.google.com/intl/en_uk/search/howsearchworks/how-search-works/organizing-information/"
+
+- id: nasa-earthdata
+  kind: capacity
+  capacityBits: "1028480000000000000"
+  graphic:
+    src: graphics/nasa-earthdata.svg
+  text:
+    heading:
+      - "NASAが蓄える地球の観測記録"
+    era: "2024年9月末 · NASAの2024会計年度末"
+    capacity: "128.56 PB／地球科学データの保存量"
+    description:
+      - >-
+        NASAは地球の大気や海洋、陸地を調べるための観測・解析データを保管しています。2024会計年度末に保管していたデータのうち、66.69 PBはクラウドにありました。
+  sources:
+    - label: "NASA Earthdata：保存量の報告（5ページ）"
+      url: "https://wiki.earthdata.nasa.gov/download/attachments/378738424/ESDS-RFC-057v1_OFAIR-Guide.pdf?api=v2&modificationDate=1764095753357&version=1"
+
+- id: internet-archive
+  kind: capacity
+  capacityBits: "1680000000000000000"
+  graphic:
+    src: graphics/internet-archive.svg
+  text:
+    heading:
+      - "昔のウェブを開けるデジタル図書館"
+    era: "2025年 · Internet Archiveの保存実績"
+    capacity: "210 PB超／コレクションの保存量"
+    description:
+      - >-
+        過去のウェブページを閲覧できるWayback Machineは、2025年に1兆件の保存記録に達しました。運営するInternet Archiveは、電子書籍、映像、音声、ソフトウェアも保存しています。
+  sources:
+    - label: "Internet Archive：2025年の運用報告"
+      url: "https://digitalpreservation.gov/meetings/DSA2026/0117_jonah_edwards_ia_dsa_2026.pdf"
+    - label: "Internet Archive：1兆件の保存記録"
+      url: "https://blog.archive.org/trillion/"
+
+- id: cern-lhc
+  kind: capacity
+  capacityBits: "8000000000000000000"
+  graphic:
+    src: graphics/cern-lhc.svg
+  text:
+    heading:
+      - "粒子の衝突実験を1 EB分保存"
+    era: "2025年12月 · CERNが到達を発表"
+    capacity: "1 EB／LHC実験データの保存量"
+    description:
+      - >-
+        CERNは大型ハドロン衝突型加速器（LHC）の検出器から、分析に使う記録を選んで保存しています。15年以上かけて蓄えた実験データは1 EBに達し、その大半は磁気テープにあります。
+  sources:
+    - label: "CERN：1 EB到達の発表"
+      url: "https://home.cern/cern-hits-one-exabyte-stored-experimental-data-lhc/"
+
+- id: tfinity-plus
+  kind: capacity
+  capacityBits: "17600000000000000000"
+  graphic:
+    src: graphics/tfinity-plus.svg
+  text:
+    heading:
+      - "45フレームを連ねるテープライブラリー"
+    era: "2026年 · LTO-10構成をメーカー仕様で確認"
+    capacity: "最大約2.2 EB／45フレーム"
+    description:
+      - >-
+        Spectra LogicのTFinity Plusは、筐体を連結してテープを保管する設備です。最大構成では、先ほどの80.64 PBのライブラリーと同じ40 TBのLTO-10テープを最大56,400巻収められます。
+  sources:
+    - label: "Spectra Logic：TFinity Plus仕様"
+      url: "https://spectralogic.com/tfinity-libraries/"
+    - label: "Fujifilm：40 TBのLTO-10"
+      url: "https://www.fujifilm.com/in/en/news/fujifilm-expands-lto-portfolio-with-lto-10-40tb"
+
+- id: internet-traffic-day
+  kind: capacity
+  capacityBits: "200000000000000000000"
+  graphic:
+    src: graphics/internet-traffic-day.svg
+  text:
+    heading:
+      - "世界のインターネット通信、1日分"
+    era: "2026年 · 国際電気通信連合（ITU）の推計"
+    capacity: "約25 EB／平均1日の通信量"
+    description:
+      - >-
+        動画を見たり、写真を送ったりするたびにデータが流れます。世界の固定回線とモバイル回線を通じた利用者向けのインターネット通信を合計すると、平均1日で約25 EBになります。
+  sources:
+    - label: "ITU：2026年のインターネット通信量"
+      url: "https://www.itu.int/itu-d/reports/statistics/2026/10/13/ff26-internet-traffic/"
+    - label: "ITU：推計方法"
+      url: "https://www.itu.int/itu-d/reports/statistics/2026/10/13/ff26-methodology/"
+
+- id: seagate-hdd-shipments-year
+  kind: capacity
+  capacityBits: "6312000000000000000000"
+  graphic:
+    src: graphics/seagate-hdd-shipments-year.svg
+  text:
+    heading:
+      - "Seagateが1年に出荷したHDD"
+    era: "2026会計年度 · 2026年7月3日終了"
+    capacity: "789 EB／1会計年度の出荷容量"
+    description:
+      - >-
+        Seagateが2026会計年度に出荷したHDDの容量を足すと、789 EBになります。容量の約9割は、クラウドや企業のデータセンターで使われるニアラインHDDが占めました。
+  sources:
+    - label: "Seagate：SEC提出資料"
+      url: "https://www.sec.gov/Archives/edgar/data/1137789/000113778926000207/stx-20260908.htm"
+
+- id: seagate-storage-shipments
+  kind: capacity
+  capacityBits: "32000000000000000000000"
+  graphic:
+    src: graphics/seagate-storage-shipments.svg
+  text:
+    heading:
+      - "出荷の累計がゼタバイト級に"
+    era: "2025年7月 · Seagateの累計出荷発表"
+    capacity: "4 ZB超／創業以来の出荷容量"
+    description:
+      - >-
+        1 ZBは1,000 EBです。Seagateが2025年7月までに出荷した記憶装置の容量は、創業以来の累計で4 ZBを超えました。
+  sources:
+    - label: "Seagate：累計出荷容量"
+      url: "https://investors.seagate.com/news/news-details/2025/Seagate-Technology-Reports-Fiscal-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/"
+
+- id: global-installed-storage
+  kind: capacity
+  capacityBits: "104000000000000000000000"
+  graphic:
+    src: graphics/global-installed-storage.svg
+  text:
+    heading:
+      - "世界に設置された記憶容量"
+    era: "2026年 · IDC Global StorageSphere"
+    capacity: "約13 ZB／世界の設備容量"
+    description:
+      - >-
+        家庭や企業、データセンターにある記憶媒体の容量は、世界で合計どれくらいになるのでしょうか。IDCは、使っている領域と空き領域を合わせ、2026年は約13 ZBと推計しています。
+  sources:
+    - label: "IDC：2026年の設備容量"
+      url: "https://www.idc.com/resource-center/blog/beyond-the-prompt-the-hidden-data-and-storage-implications-of-generative-ai/"
+    - label: "IDC：StorageSphereの定義"
+      url: "https://www.idc.com/resource-center/definitions/what-are-the-global-datasphere-and-global-storagesphere/"
+
+- id: global-data-created
+  kind: capacity
+  capacityBits: "1747464000000000000000000"
+  graphic:
+    src: graphics/global-data-created.svg
+  text:
+    heading:
+      - "世界で1年に生まれ、複製されるデータ"
+    era: "2025年のデータ量 · IDCの2026年6月版推計"
+    capacity: "約218 ZB／1年分の生成・複製など"
+    description:
+      - >-
+        撮影や観測で新しいデータが生まれ、配信やバックアップでコピーが作られます。IDCは、短時間で消えるデータも含め、2025年に世界で生成・取得・複製・消費されたデータを約218 ZBと推計しています。
+  sources:
+    - label: "IDC：DataSphereの定義と2025年推計"
+      url: "https://www.idc.com/resource-center/definitions/what-are-the-global-datasphere-and-global-storagesphere/"

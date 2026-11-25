@@ -27,6 +27,8 @@
     <main id="main" tabindex="-1">
       <section class="chapter chapter-capacity" id="bit" aria-labelledby="bit-title" data-capacity-bits="1">
         <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
           <img class="chapter-graphic" src="assets/graphics/bit.svg" width="72" height="72" alt="">
           <div class="chapter-copy">
             <h1 id="bit-title">すべては、<br>ひとつのビットから。</h1>
@@ -39,22 +41,26 @@
       </section>
       <section class="chapter chapter-capacity" id="byte" aria-labelledby="byte-title" data-capacity-bits="8">
         <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
           <img class="chapter-graphic" src="assets/graphics/byte.svg" width="72" height="72" alt="">
           <div class="chapter-copy">
             <h2 id="byte-title">8 bit で、<br>1 byte。</h2>
             <p class="chapter-measure">1 B（8 bit）</p>
             <p class="chapter-era">単位の定義</p>
-            <p class="intro">八つのビットをひとまとまりにすると1バイトです。例えば、「あ」の1文字はUTF-8で3バイト。文字を保存するときの大きさは、文字と符号化の方式で決まります。</p>
+            <p class="intro">8ビットをひとまとまりにすると1バイトです。例えば、「あ」の1文字はUTF-8で3バイト。文字を保存するときの大きさは、文字と符号化の方式で決まります。</p>
             <ul class="sources"><li><a href="https://www.unicode.org/faq/utf_bom.html" target="_blank" rel="noopener" aria-describedby="new-window">Unicode公式FAQ<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
       <section class="chapter chapter-capacity" id="intel-3101" aria-labelledby="intel-3101-title" data-capacity-bits="64">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/intel-3101.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/intel-3101.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="intel-3101-title">Intelの最初のメモリ</h2>
-            <p class="chapter-measure">8 B（64 bit）／チップ</p>
+            <p class="chapter-measure">8 B／チップ</p>
             <p class="chapter-era">1969年4月 · Intel 3101発売</p>
             <p class="intro">Intelが最初に売り出した製品は、64 bitのSRAMでした。4 bitのデータを16組記憶し、電源を切ると中身は失われます。</p>
             <ul class="sources"><li><a href="https://www.intel.com/content/www/us/en/history/virtual-vault/articles/intels-first-product-3101.html" target="_blank" rel="noopener" aria-describedby="new-window">Intel：3101<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://bitsavers.trailing-edge.com/components/intel/_dataBooks/1978_Intel_Component_Data_Catalog.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Intel：3101データシート<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
@@ -63,10 +69,12 @@
       </section>
       <section class="chapter chapter-capacity" id="early-rom" aria-labelledby="early-rom-title" data-capacity-bits="256">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/early-rom.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/early-rom.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="early-rom-title">半導体に固定した32バイト</h2>
-            <p class="chapter-measure">32 B（256 bit）／チップ</p>
+            <p class="chapter-measure">32 B／チップ</p>
             <p class="chapter-era">1965年 · Sylvaniaの初期半導体ROM</p>
             <p class="intro">Sylvaniaが製作した256 bitの初期の半導体ROM。読み出し専用のデータをチップに組み込む方式です。初期の半導体ROMには、その後に登場したMOS方式など複数の系譜があります。</p>
             <ul class="sources"><li><a href="https://www.computerhistory.org/siliconengine/semiconductor-read-only-memory-chips-appear/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：半導体ROM<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
@@ -75,22 +83,26 @@
       </section>
       <section class="chapter chapter-capacity" id="punch-card" aria-labelledby="punch-card-title" data-capacity-bits="640">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/punch-card.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/punch-card.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="punch-card-title">穴で読む80文字</h2>
-            <p class="chapter-measure">80文字／カード1枚</p>
+            <p class="chapter-measure">80 B相当／カード1枚</p>
             <p class="chapter-era">1928年 · IBMの80欄形式</p>
-            <p class="intro">IBMのパンチカードは、縦に並ぶ穴の組み合わせで、1欄に1文字を表しました。1890年の米国国勢調査にも、別形式のパンチカードが使われています。</p>
+            <p class="intro">IBMのパンチカードは、縦に並ぶ穴の組み合わせで、1欄に1文字、カード1枚で80文字を表しました。1890年の米国国勢調査にも、別形式のパンチカードが使われています。</p>
             <ul class="sources"><li><a href="https://www.ibm.com/history/punched-card" target="_blank" rel="noopener" aria-describedby="new-window">IBM：パンチカード<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.census.gov/programs-surveys/decennial-census/decade/1890/about-1890.html" target="_blank" rel="noopener" aria-describedby="new-window">米国国勢調査局<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
       <section class="chapter chapter-capacity" id="manchester-baby" aria-labelledby="manchester-baby-title" data-capacity-bits="1024">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/manchester-baby.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/manchester-baby.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="manchester-baby-title">ブラウン管が主記憶だった</h2>
-            <p class="chapter-measure">128 B（1,024 bit）／主記憶</p>
+            <p class="chapter-measure">128 B／主記憶</p>
             <p class="chapter-era">1948年 · Manchester Babyがプログラムを実行</p>
             <p class="intro">Babyはブラウン管に32 bitの語を32個記憶できました。同じ1,024 bitでも、1953年の磁気コアはコア面1枚、1970年のIntel 1103はDRAMチップ1個。コアは電源を切っても磁化を保ち、DRAMは定期的な再書き込みを必要とします。</p>
             <ul class="sources"><li><a href="https://curation.cs.manchester.ac.uk/computer50/www.computer50.org/mark1/new.baby.html" target="_blank" rel="noopener" aria-describedby="new-window">Manchester：Baby開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.computerhistory.org/storageengine/whirlwind-computer-debuts-core-memory/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：Whirlwind<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.computerhistory.org/siliconengine/mos-dynamic-ram-competes-with-magnetic-core-memory-on-price/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：SRAMからDRAMへ<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
@@ -99,19 +111,25 @@
       </section>
       <section class="chapter chapter-capacity" id="eprom-1702" aria-labelledby="eprom-1702-title" data-capacity-bits="2048">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/eprom-1702.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/eprom-1702.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="eprom-1702-title">窓から光を当てて消すROM</h2>
-            <p class="chapter-measure">256 B（2,048 bit）／チップ</p>
+            <p class="chapter-measure">256 B／チップ</p>
             <p class="chapter-era">1971年 · Intel 1702発表</p>
-            <p class="intro">Intel 1702には、紫外線を通す窓がありました。書き込んだ内容を紫外線で消去し、プログラムを入れ直せます。後のEEPROMでは、消去も電気的に行えるようになります。</p>
+            <p class="intro">2,048 bitを記憶するIntel 1702には、紫外線を通す窓がありました。書き込んだ内容を紫外線で消去し、プログラムを入れ直せます。後のEEPROMでは、消去も電気的に行えるようになります。</p>
             <ul class="sources"><li><a href="https://www.computerhistory.org/siliconengine/reusable-programmable-rom-introduces-iterative-design-flexibility/" target="_blank" rel="noopener" aria-describedby="new-window">CHM：プログラマブルROM<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.bitsavers.org/components/intel/_dataBooks/1983_Memory_Component_Handbook.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Intel 1983 Memory Component Handbook<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
       <section class="chapter chapter-capacity" id="magnetic-drum" aria-labelledby="magnetic-drum-title" data-capacity-bits="500000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/magnetic-drum.svg" width="72" height="72" alt="">
+          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>
+            <span class="capacity-mark" data-position="1.6" style="--mark-color:var(--capacity-kb)"><span>1 KB</span></span>
+          </div>
+          <img class="chapter-graphic" src="assets/graphics/magnetic-drum.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="magnetic-drum-title">回転する磁気ドラム</h2>
             <p class="chapter-measure">62.5 KB／試作機</p>
@@ -123,7 +141,9 @@
       </section>
       <section class="chapter chapter-capacity" id="apollo-rope" aria-labelledby="apollo-rope-title" data-capacity-bits="552960">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/apollo-rope.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/apollo-rope.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="apollo-rope-title">月へ行ったコアロープROM</h2>
             <p class="chapter-measure">69.12 KB／ROM</p>
@@ -135,7 +155,9 @@
       </section>
       <section class="chapter chapter-capacity" id="early-floppy" aria-labelledby="early-floppy-title" data-capacity-bits="640000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/early-floppy.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/early-floppy.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="early-floppy-title">最初期のフロッピー</h2>
             <p class="chapter-measure">80 KB／8インチディスク</p>
@@ -147,7 +169,9 @@
       </section>
       <section class="chapter chapter-capacity" id="pc-floppy" aria-labelledby="pc-floppy-title" data-capacity-bits="2949120">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/pc-floppy.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/pc-floppy.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="pc-floppy-title">PCで使われたフロッピー</h2>
             <p class="chapter-measure">360 KiB／両面</p>
@@ -159,19 +183,23 @@
       </section>
       <section class="chapter chapter-capacity" id="first-nand" aria-labelledby="first-nand-title" data-capacity-bits="4194304">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/first-nand.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/first-nand.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="first-nand-title">初代NANDフラッシュ</h2>
-            <p class="chapter-measure">4 Mbit／チップ</p>
-            <p class="chapter-era">1987年 · 東芝が研究発表／1991年 · 4 Mbit製品化</p>
-            <p class="intro">電源を切ってもデータが残るNANDフラッシュは、まとめて読み書きするデータの記憶に向きます。読み出しの自由度を重視するNORとは用途が分かれ、のちにメモリーカードやSSDの土台になりました。</p>
-            <ul class="sources"><li><a href="https://www.kioxia.com/ja-jp/rd/technology/history.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：技術開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://archive.computerhistory.org/resources/access/text/2012/04/102658199-05-01-acc.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Intel開発者の口述記録<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/en-jp/rd/technology/history.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：4 Mbit NANDの製品化（英語版年表）<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+            <p class="chapter-measure">512 KiB／チップ</p>
+            <p class="chapter-era">1987年 · 東芝が研究発表／1991年 · 製品化</p>
+            <p class="intro">東芝が製品化した初代NANDフラッシュの公称容量は4 Mbitでした。電源を切ってもデータが残り、まとめて読み書きする用途に向きます。読み出しの自由度を重視するNORとは用途が分かれ、のちにメモリーカードやSSDの土台になりました。</p>
+            <ul class="sources"><li><a href="https://www.kioxia.com/ja-jp/rd/technology/history.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：技術開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://archive.computerhistory.org/resources/access/text/2012/04/102658199-05-01-acc.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Intel開発者の口述記録<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/en-jp/rd/technology/history.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：初代NANDの製品化（英語版年表）<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
       <section class="chapter chapter-capacity" id="kokoro" aria-labelledby="kokoro-title" data-capacity-bits="4476096">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/kokoro.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/kokoro.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="kokoro-title">小説1冊、あるいは新聞1日</h2>
             <p class="chapter-measure">559.512 KB／『こころ』の電子版</p>
@@ -183,7 +211,9 @@
       </section>
       <section class="chapter chapter-capacity" id="floppy-2dd" aria-labelledby="floppy-2dd-title" data-capacity-bits="5898240">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/floppy-2dd.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/floppy-2dd.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="floppy-2dd-title">2DDのフロッピー</h2>
             <p class="chapter-measure">720 KiB／両面</p>
@@ -195,7 +225,11 @@
       </section>
       <section class="chapter chapter-capacity" id="floppy-2hd" aria-labelledby="floppy-2hd-title" data-capacity-bits="11796480">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/floppy-2hd.svg" width="72" height="72" alt="">
+          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>
+            <span class="capacity-mark" data-position="67.81684028" style="--mark-color:var(--capacity-mb)"><span>1 MB</span></span>
+          </div>
+          <img class="chapter-graphic" src="assets/graphics/floppy-2hd.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="floppy-2hd-title">2HDのフロッピー</h2>
             <p class="chapter-measure">1,440 KiB／両面</p>
@@ -207,7 +241,9 @@
       </section>
       <section class="chapter chapter-capacity" id="ibm-350" aria-labelledby="ibm-350-title" data-capacity-bits="30000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/ibm-350.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/ibm-350.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="ibm-350-title">世界初の商用ハードディスク</h2>
             <p class="chapter-measure">3.75 MB相当／ドライブ</p>
@@ -219,7 +255,9 @@
       </section>
       <section class="chapter chapter-capacity" id="st-506" aria-labelledby="st-506-title" data-capacity-bits="40000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/st-506.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/st-506.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="st-506-title">PCに入るハードディスク</h2>
             <p class="chapter-measure">5 MB／ドライブ</p>
@@ -231,19 +269,23 @@
       </section>
       <section class="chapter chapter-capacity" id="sd-card" aria-labelledby="sd-card-title" data-capacity-bits="64000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/sd-card.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/sd-card.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="sd-card-title">指先に載るメモリーカード</h2>
             <p class="chapter-measure">8 MB／カード1枚</p>
             <p class="chapter-era">1998年 · Memory Stick発売／2000年 · 初期SD登場</p>
-            <p class="intro">初期のSDカードは8 MB。ソニーのMemory Stickも4 MBと8 MBで登場しました。カード型のフラッシュ記憶はデジタルカメラなどに広がり、後にmicroSDのような小型規格も生まれました。</p>
-            <ul class="sources"><li><a href="https://www.sdcard.org/press/thoughtleadership/anatomy-of-an-sd-memory-card-what-matters-most-for-photography-and-videography/" target="_blank" rel="noopener" aria-describedby="new-window">SD Association：初期カードの説明<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sony.com/en/SonyInfo/News/Press/199807/98-067/" target="_blank" rel="noopener" aria-describedby="new-window">Sony：発売発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.olympus.co.jp/jp/news/2002b/nr020822xdcardj.html" target="_blank" rel="noopener" aria-describedby="new-window">Olympus：当時の発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sdcard.org/pdf/SDA20thAnniversary_Infographic.pdf" target="_blank" rel="noopener" aria-describedby="new-window">公式20年史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+            <p class="intro">初期のSDカードは8 MB。ソニーのメモリースティックも4 MBと8 MBで登場しました。カードを差し替えれば、デジタルカメラなどで記録する場所を手軽に増やせます。</p>
+            <ul class="sources"><li><a href="https://www.sdcard.org/press/thoughtleadership/anatomy-of-an-sd-memory-card-what-matters-most-for-photography-and-videography/" target="_blank" rel="noopener" aria-describedby="new-window">SD Association：初期カードの説明<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sony.com/en/SonyInfo/News/Press/199807/98-067/" target="_blank" rel="noopener" aria-describedby="new-window">Sony：発売発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sdcard.org/pdf/SDA20thAnniversary_Infographic.pdf" target="_blank" rel="noopener" aria-describedby="new-window">公式20年史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
       <section class="chapter chapter-capacity" id="prairietek-220" aria-labelledby="prairietek-220-title" data-capacity-bits="160000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/prairietek-220.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/prairietek-220.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="prairietek-220-title">ノートPCへの2.5型HDD</h2>
             <p class="chapter-measure">20 MB／ドライブ</p>
@@ -255,7 +297,9 @@
       </section>
       <section class="chapter chapter-capacity" id="sundisk-ssd" aria-labelledby="sundisk-ssd-title" data-capacity-bits="160000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/sundisk-ssd.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/sundisk-ssd.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="sundisk-ssd-title">回転しない20 MB</h2>
             <p class="chapter-measure">20 MB／ドライブ</p>
@@ -267,7 +311,9 @@
       </section>
       <section class="chapter chapter-capacity" id="winchester" aria-labelledby="winchester-title" data-capacity-bits="280000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/winchester.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/winchester.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="winchester-title">密閉型HDDへの転換点</h2>
             <p class="chapter-measure">35 MB／モジュール</p>
@@ -279,7 +325,9 @@
       </section>
       <section class="chapter chapter-capacity" id="zip-100" aria-labelledby="zip-100-title" data-capacity-bits="800000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/zip-100.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/zip-100.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="zip-100-title">フロッピーの先にあったZip</h2>
             <p class="chapter-measure">100 MB／ディスク</p>
@@ -289,9 +337,25 @@
           </div>
         </div>
       </section>
+      <section class="chapter chapter-capacity" id="sd-card-128mb" aria-labelledby="sd-card-128mb-title" data-capacity-bits="1024000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/sd-card-128mb.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="sd-card-128mb-title">デジカメのカードが競った128 MB</h2>
+            <p class="chapter-measure">128 MB／カード1枚</p>
+            <p class="chapter-era">2001年 · 128 MBのSDとスマートメディア／2002年 · xD登場</p>
+            <p class="intro">SDに128 MBの製品が登場した頃、デジタルカメラ向けには同じ容量のスマートメディア、コンパクトフラッシュ（CF）、xDピクチャーカードもありました。使えるカードはカメラによって異なりました。</p>
+            <ul class="sources"><li><a href="https://www.sdcard.org/wp-content/uploads/2020/11/SD_Celebrates_10_Years_of_Innovation_at_CES_2010.pdf" target="_blank" rel="noopener" aria-describedby="new-window">SD Association：初期の容量推移<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.olympus.co.jp/jp/news/2001a/nr010220m128pij.html" target="_blank" rel="noopener" aria-describedby="new-window">オリンパス：スマートメディア<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.olympus.co.jp/jp/news/2000a/nr000426cfcardj.html" target="_blank" rel="noopener" aria-describedby="new-window">オリンパス：CF<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.olympus.co.jp/jp/news/2002b/nr020822xdcardj.html" target="_blank" rel="noopener" aria-describedby="new-window">オリンパス：xD<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
       <section class="chapter chapter-capacity" id="newspaper-year" aria-labelledby="newspaper-year-title" data-capacity-bits="1357800000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/newspaper-year.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/newspaper-year.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="newspaper-year-title">新聞1年分を文字だけに</h2>
             <p class="chapter-measure">約170 MB／1年分の文字</p>
@@ -303,7 +367,9 @@
       </section>
       <section class="chapter chapter-capacity" id="ibm-3480" aria-labelledby="ibm-3480-title" data-capacity-bits="1600000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/ibm-3480.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/ibm-3480.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="ibm-3480-title">リールからカートリッジへ</h2>
             <p class="chapter-measure">200 MB／巻</p>
@@ -315,7 +381,9 @@
       </section>
       <section class="chapter chapter-capacity" id="mo-640" aria-labelledby="mo-640-title" data-capacity-bits="5120000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/mo-640.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/mo-640.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="mo-640-title">光と磁気で書き換えるMO</h2>
             <p class="chapter-measure">640 MB／3.5型ディスク</p>
@@ -327,7 +395,9 @@
       </section>
       <section class="chapter chapter-capacity" id="cd-rom" aria-labelledby="cd-rom-title" data-capacity-bits="5455872000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/cd-rom.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/cd-rom.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="cd-rom-title">CDで配るソフトウェア</h2>
             <p class="chapter-measure">681.984 MB／74分のCD-ROM</p>
@@ -339,7 +409,11 @@
       </section>
       <section class="chapter chapter-capacity" id="ibm-3380" aria-labelledby="ibm-3380-title" data-capacity-bits="20160000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/ibm-3380.svg" width="72" height="72" alt="">
+          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>
+            <span class="capacity-mark" data-position="39.68253968" style="--mark-color:var(--capacity-gb)"><span>1 GB</span></span>
+          </div>
+          <img class="chapter-graphic" src="assets/graphics/ibm-3380.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="ibm-3380-title">GBに届いた業務用HDD</h2>
             <p class="chapter-measure">2.52 GB／ユニット</p>
@@ -349,9 +423,25 @@
           </div>
         </div>
       </section>
+      <section class="chapter chapter-capacity" id="sdhc" aria-labelledby="sdhc-title" data-capacity-bits="32000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/sdhc.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="sdhc-title">2 GBの壁を越えたSDHC</h2>
+            <p class="chapter-measure">4 GB／カード1枚</p>
+            <p class="chapter-era">2006年 · SDHC規格登場／2007年 · 東芝の4 GB製品発表</p>
+            <p class="intro">SDHCは従来のSDの上限だった2 GBを超え、規格上は32 GBまで対応します。東芝は4 GBのSDHCと小型のminiSDHCを発表。同じ4 GBのメモリースティック PRO デュオは、ソニーがデジタルカメラやPSP向けに発売しました。</p>
+            <ul class="sources"><li><a href="https://www.sdcard.org/developers/sd-standard-overview/capacity-sd-sdhc-sdxc-sduc/" target="_blank" rel="noopener" aria-describedby="new-window">SD Association：容量規格<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.global.toshiba/jp/news/corporate/2007/01/pr0502.html" target="_blank" rel="noopener" aria-describedby="new-window">東芝：4 GBのSDHCとminiSDHC発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.sony.jp/rec-media/memorystick/whatsnew/product_060627.html" target="_blank" rel="noopener" aria-describedby="new-window">ソニー：4 GBのメモリースティック<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
       <section class="chapter chapter-capacity" id="dvd-single" aria-labelledby="dvd-single-title" data-capacity-bits="37600000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/dvd-single.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/dvd-single.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="dvd-single-title">片面1層のDVD</h2>
             <p class="chapter-measure">4.7 GB／片面1層</p>
@@ -363,7 +453,9 @@
       </section>
       <section class="chapter chapter-capacity" id="dvd-dual" aria-labelledby="dvd-dual-title" data-capacity-bits="68000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/dvd-dual.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/dvd-dual.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="dvd-dual-title">DVDの記録層を重ねる</h2>
             <p class="chapter-measure">8.5 GB／片面2層</p>
@@ -375,19 +467,23 @@
       </section>
       <section class="chapter chapter-capacity" id="v-nand" aria-labelledby="v-nand-title" data-capacity-bits="137438953472">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/v-nand.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/v-nand.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="v-nand-title">記憶セルを積み上げる</h2>
-            <p class="chapter-measure">128 Gbit／チップ</p>
+            <p class="chapter-measure">16 GiB／チップ</p>
             <p class="chapter-era">2013年 · Samsung初代V-NAND量産発表</p>
-            <p class="intro">Samsungの初代V-NANDは、記憶セルを24層に積み重ねて密度を上げました。東芝は2007年に3D技術を発表し、2015年には48層のBiCSを発表しています。</p>
+            <p class="intro">Samsungの初代V-NANDは、記憶セルを24層に積み重ね、チップ1個で128 Gbitを記憶できました。東芝は2007年に3D技術を発表し、2015年には48層のBiCSを発表しています。</p>
             <ul class="sources"><li><a href="https://semiconductor.samsung.com/news-events/news/samsung-electronics-takes-3d-memory-to-new-heights-with-sixth-generation-v-nand-ssds-for-client-computing/" target="_blank" rel="noopener" aria-describedby="new-window">Samsung：V-NAND世代表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/ja-jp/rd/technology/history.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：技術開発史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/ja-jp/about/news/2015/20150804-1.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA／当時東芝：発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://news.samsung.com/global/samsung-starts-mass-producing-industrys-first-3d-vertical-nand-flash" target="_blank" rel="noopener" aria-describedby="new-window">Samsung：2013年の量産発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
       <section class="chapter chapter-capacity" id="blu-ray" aria-labelledby="blu-ray-title" data-capacity-bits="200000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/blu-ray.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/blu-ray.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="blu-ray-title">青紫色のレーザーで25 GB</h2>
             <p class="chapter-measure">25 GB／片面1層</p>
@@ -397,9 +493,25 @@
           </div>
         </div>
       </section>
+      <section class="chapter chapter-capacity" id="sdxc" aria-labelledby="sdxc-title" data-capacity-bits="512000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/sdxc.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="sdxc-title">SDXCのカードに64 GB</h2>
+            <p class="chapter-measure">64 GB／カード1枚</p>
+            <p class="chapter-era">2009年 · SDXC規格策定／2010年 · 東芝の64 GB製品発売</p>
+            <p class="intro">SDXCはSDHCの上限だった32 GBを超え、規格上は2 TBまで対応します。東芝の64 GB品は、HD動画の撮影や写真の高速連写を想定した製品でした。カメラ向けには、SanDiskのコンパクトフラッシュにも64 GB品がありました。</p>
+            <ul class="sources"><li><a href="https://www.global.toshiba/jp/news/corporate/2009/08/pr0401.html" target="_blank" rel="noopener" aria-describedby="new-window">東芝：64 GBのSDXC発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/ja-jp/personal/news/2010/20100415-1.html" target="_blank" rel="noopener" aria-describedby="new-window">東芝：発売日の告知<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://documents.sandisk.com/content/dam/asset-library/en_us/assets/public/sandisk/product/memory-cards/extreme-pro-compactflash/data-sheet-extreme-pro-compactflash.pdf" target="_blank" rel="noopener" aria-describedby="new-window">SanDisk：CompactFlash仕様<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
       <section class="chapter chapter-capacity" id="bdxl" aria-labelledby="bdxl-title" data-capacity-bits="800000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/bdxl.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/bdxl.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="bdxl-title">100 GBを超える光ディスク</h2>
             <p class="chapter-measure">100 GB／3層BD-R</p>
@@ -411,7 +523,9 @@
       </section>
       <section class="chapter chapter-capacity" id="lto-1" aria-labelledby="lto-1-title" data-capacity-bits="800000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/lto-1.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/lto-1.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="lto-1-title">LTOの始まり</h2>
             <p class="chapter-measure">100 GB／巻</p>
@@ -423,7 +537,11 @@
       </section>
       <section class="chapter chapter-capacity" id="hdd-1tb" aria-labelledby="hdd-1tb-title" data-capacity-bits="8000000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/hdd-1tb.svg" width="72" height="72" alt="">
+          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>
+            <span class="capacity-mark mark-at-end" data-position="100" style="--mark-color:var(--capacity-tb)"><span>1 TB</span></span>
+          </div>
+          <img class="chapter-graphic" src="assets/graphics/hdd-1tb.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="hdd-1tb-title">ハードディスクが1 TBに</h2>
             <p class="chapter-measure">1 TB／ドライブ</p>
@@ -433,9 +551,25 @@
           </div>
         </div>
       </section>
+      <section class="chapter chapter-capacity" id="microsdxc-1tb" aria-labelledby="microsdxc-1tb-title" data-capacity-bits="8000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/microsdxc-1tb.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="microsdxc-1tb-title">爪ほどのカードに1 TB</h2>
+            <p class="chapter-measure">1 TB／カード1枚</p>
+            <p class="chapter-era">2005年 · microSD規格登場／2019年 · SanDiskの1 TB製品発表</p>
+            <p class="intro">携帯電話向けに登場した初期のmicroSDは32～128 MBでした。2019年、SanDiskは1 TBのmicroSDXCを発表。2007年に登場した3.5型HDDと同じ容量が、爪ほどのカードに収まりました。</p>
+            <ul class="sources"><li><a href="https://www.sdcard.org/press/thoughtleadership/celebrating-20-years-of-microsd/" target="_blank" rel="noopener" aria-describedby="new-window">SD Association：microSDの歴史<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.westerndigital.com/company/newsroom/press-releases/2019/2019-02-25-western-digital-unveils-worlds-fastest-1tb-uhs-i-microsd-card" target="_blank" rel="noopener" aria-describedby="new-window">Western Digital：SanDiskの1 TB製品発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
       <section class="chapter chapter-capacity" id="lto-5" aria-labelledby="lto-5-title" data-capacity-bits="12000000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/lto-5.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/lto-5.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="lto-5-title">テープもTB級へ</h2>
             <p class="chapter-measure">1.5 TB／巻</p>
@@ -447,7 +581,9 @@
       </section>
       <section class="chapter chapter-capacity" id="national-diet-library" aria-labelledby="national-diet-library-title" data-capacity-bits="90944611200000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/national-diet-library.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/national-diet-library.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="national-diet-library-title">国立国会図書館の図書を文字に</h2>
             <p class="chapter-measure">約11.37 TB／図書の文字</p>
@@ -459,7 +595,9 @@
       </section>
       <section class="chapter chapter-capacity" id="pm1633a" aria-labelledby="pm1633a-title" data-capacity-bits="122880000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/pm1633a.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/pm1633a.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="pm1633a-title">2.5型のSSDに15 TB超</h2>
             <p class="chapter-measure">15.36 TB／ドライブ</p>
@@ -471,7 +609,9 @@
       </section>
       <section class="chapter chapter-capacity" id="hamr-hdd" aria-labelledby="hamr-hdd-title" data-capacity-bits="240000000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/hamr-hdd.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/hamr-hdd.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="hamr-hdd-title">熱で記録密度を上げるHDD</h2>
             <p class="chapter-measure">30 TB／ドライブ</p>
@@ -483,7 +623,9 @@
       </section>
       <section class="chapter chapter-capacity" id="lto-10" aria-labelledby="lto-10-title" data-capacity-bits="320000000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/lto-10.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/lto-10.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="lto-10-title">1巻に40 TBのテープ</h2>
             <p class="chapter-measure">40 TB／巻</p>
@@ -495,19 +637,23 @@
       </section>
       <section class="chapter chapter-capacity" id="lc9" aria-labelledby="lc9-title" data-capacity-bits="1966080000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/lc9.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/lc9.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="lc9-title">SSD1台に245.76 TB</h2>
             <p class="chapter-measure">245.76 TB／E3.Lドライブ</p>
             <p class="chapter-era">2025年7月 · KIOXIA LC9開発発表</p>
-            <p class="intro">KIOXIA LC9の245.76 TBモデルは、サーバー向けのE3.L形状に大容量のフラッシュを収めます。後に登場する9.83 PBのサーバーには、このドライブが40台入っています。</p>
-            <ul class="sources"><li><a href="https://www.kioxia.com/ja-jp/business/news/2025/20250722-1.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：2025年発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.kioxia.com/ja-jp/business/news/2026/20260515-1.html" target="_blank" rel="noopener" aria-describedby="new-window">2026年構成<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+            <p class="intro">KIOXIA LC9の245.76 TBモデルは、サーバー向けのE3.L形状に大容量のフラッシュを収めます。</p>
+            <ul class="sources"><li><a href="https://www.kioxia.com/ja-jp/business/news/2025/20250722-1.html" target="_blank" rel="noopener" aria-describedby="new-window">KIOXIA：2025年発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
       <section class="chapter chapter-capacity" id="pi-digits" aria-labelledby="pi-digits-title" data-capacity-bits="2512000000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/pi-digits.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/pi-digits.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="pi-digits-title">円周率314兆桁を文字で保存</h2>
             <p class="chapter-measure">314 TB／数字列</p>
@@ -519,7 +665,9 @@
       </section>
       <section class="chapter chapter-capacity" id="hdd-server" aria-labelledby="hdd-server-title" data-capacity-bits="4928000000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/hdd-server.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/hdd-server.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="hdd-server-title">2UのHDDサーバー</h2>
             <p class="chapter-measure">616 TB／2Uサーバー</p>
@@ -531,7 +679,11 @@
       </section>
       <section class="chapter chapter-capacity" id="corvault" aria-labelledby="corvault-title" data-capacity-bits="20000000000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/corvault.svg" width="72" height="72" alt="">
+          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>
+            <span class="capacity-mark" data-position="40" style="--mark-color:var(--capacity-pb)"><span>1 PB</span></span>
+          </div>
+          <img class="chapter-graphic" src="assets/graphics/corvault.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="corvault-title">4UのHDDに2.5 PB</h2>
             <p class="chapter-measure">2.5 PB／4Uの1筐体</p>
@@ -543,25 +695,173 @@
       </section>
       <section class="chapter chapter-capacity" id="ssd-server" aria-labelledby="ssd-server-title" data-capacity-bits="78643200000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/ssd-server.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/ssd-server.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="ssd-server-title">40台のSSDで約9.8 PB</h2>
             <p class="chapter-measure">9.8304 PB／2Uサーバー</p>
             <p class="chapter-era">2026年5月 · DellとKIOXIAが構成の実現を発表</p>
-            <p class="intro">Dell PowerEdge R7725xdの2U筐体に245.76 TBのSSDを40台搭載。616 TBのHDD機とラック内で占める高さは同じで、容量は約16倍になります。</p>
+            <p class="intro">先ほどの245.76 TBのSSD、KIOXIA LC9を40台搭載したのが、Dell PowerEdge R7725xdです。616 TBのHDD機とラック内で占める高さは同じで、容量は約16倍になります。</p>
             <ul class="sources"><li><a href="https://www.kioxia.com/ja-jp/business/news/2026/20260515-1.html" target="_blank" rel="noopener" aria-describedby="new-window">2026年構成<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
       <section class="chapter chapter-capacity" id="tape-library" aria-labelledby="tape-library-title" data-capacity-bits="645120000000000000">
         <div class="chapter-content">
-          <img class="chapter-graphic" src="assets/graphics/tape-library.svg" width="72" height="72" alt="">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/tape-library.svg" width="72" height="72" alt="" loading="lazy">
           <div class="chapter-copy">
             <h2 id="tape-library-title">1筐体に80.64 PB</h2>
             <p class="chapter-measure">最大80.64 PB／48Uの1筐体</p>
             <p class="chapter-era">2024年 · 製品の一般提供／2026年 · LTO-10構成を確認</p>
             <p class="intro">Quantum Scalar i7 RAPTORは、専用の48Uキャビネットに最大2,016巻を収めるテープライブラリーです。必要な巻をロボットが選び、ドライブに装填します。</p>
             <ul class="sources"><li><a href="https://cdn.allbound.com/iq-ab/2021/11/Scalar-Tape-DS00559A.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Quantum仕様書<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://qsupport.quantum.com/kb/flare/content/Scalar_i7_RAPTOR/docCenter/Site_Planning_i7.htm" target="_blank" rel="noopener" aria-describedby="new-window">Quantum設置ガイド<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://d1io3yog0oux5.cloudfront.net/_1f880a8a07b7adc6058553eac190da16/quantum/news/2024-12-04_Quantum_Scalar_i7_RAPTOR_Now_209.pdf" target="_blank" rel="noopener" aria-describedby="new-window">一般提供の発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="google-search-index" aria-labelledby="google-search-index-title" data-capacity-bits="800000000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/google-search-index.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="google-search-index-title">Google検索の巨大な索引</h2>
+            <p class="chapter-measure">100 PB超／検索索引</p>
+            <p class="chapter-era">2026年11月 · Googleの公式解説を確認</p>
+            <p class="intro">本の巻末にある索引のように、Googleは数千億のウェブページなどを探す手がかりを整理しています。その検索索引だけで100 PBを大きく超えます。</p>
+            <ul class="sources"><li><a href="https://www.google.com/intl/en_uk/search/howsearchworks/how-search-works/organizing-information/" target="_blank" rel="noopener" aria-describedby="new-window">Google：検索索引の仕組み<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="nasa-earthdata" aria-labelledby="nasa-earthdata-title" data-capacity-bits="1028480000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/nasa-earthdata.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="nasa-earthdata-title">NASAが蓄える地球の観測記録</h2>
+            <p class="chapter-measure">128.56 PB／地球科学データの保存量</p>
+            <p class="chapter-era">2024年9月末 · NASAの2024会計年度末</p>
+            <p class="intro">NASAは地球の大気や海洋、陸地を調べるための観測・解析データを保管しています。2024会計年度末に保管していたデータのうち、66.69 PBはクラウドにありました。</p>
+            <ul class="sources"><li><a href="https://wiki.earthdata.nasa.gov/download/attachments/378738424/ESDS-RFC-057v1_OFAIR-Guide.pdf?api=v2&amp;modificationDate=1764095753357&amp;version=1" target="_blank" rel="noopener" aria-describedby="new-window">NASA Earthdata：保存量の報告（5ページ）<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="internet-archive" aria-labelledby="internet-archive-title" data-capacity-bits="1680000000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/internet-archive.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="internet-archive-title">昔のウェブを開けるデジタル図書館</h2>
+            <p class="chapter-measure">210 PB超／コレクションの保存量</p>
+            <p class="chapter-era">2025年 · Internet Archiveの保存実績</p>
+            <p class="intro">過去のウェブページを閲覧できるWayback Machineは、2025年に1兆件の保存記録に達しました。運営するInternet Archiveは、電子書籍、映像、音声、ソフトウェアも保存しています。</p>
+            <ul class="sources"><li><a href="https://digitalpreservation.gov/meetings/DSA2026/0117_jonah_edwards_ia_dsa_2026.pdf" target="_blank" rel="noopener" aria-describedby="new-window">Internet Archive：2025年の運用報告<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://blog.archive.org/trillion/" target="_blank" rel="noopener" aria-describedby="new-window">Internet Archive：1兆件の保存記録<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="cern-lhc" aria-labelledby="cern-lhc-title" data-capacity-bits="8000000000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>
+            <span class="capacity-mark mark-at-end" data-position="100" style="--mark-color:var(--capacity-eb)"><span>1 EB</span></span>
+          </div>
+          <img class="chapter-graphic" src="assets/graphics/cern-lhc.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="cern-lhc-title">粒子の衝突実験を1 EB分保存</h2>
+            <p class="chapter-measure">1 EB／LHC実験データの保存量</p>
+            <p class="chapter-era">2025年12月 · CERNが到達を発表</p>
+            <p class="intro">CERNは大型ハドロン衝突型加速器（LHC）の検出器から、分析に使う記録を選んで保存しています。15年以上かけて蓄えた実験データは1 EBに達し、その大半は磁気テープにあります。</p>
+            <ul class="sources"><li><a href="https://home.cern/cern-hits-one-exabyte-stored-experimental-data-lhc/" target="_blank" rel="noopener" aria-describedby="new-window">CERN：1 EB到達の発表<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="tfinity-plus" aria-labelledby="tfinity-plus-title" data-capacity-bits="17600000000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/tfinity-plus.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="tfinity-plus-title">45フレームを連ねるテープライブラリー</h2>
+            <p class="chapter-measure">最大約2.2 EB／45フレーム</p>
+            <p class="chapter-era">2026年 · LTO-10構成をメーカー仕様で確認</p>
+            <p class="intro">Spectra LogicのTFinity Plusは、筐体を連結してテープを保管する設備です。最大構成では、先ほどの80.64 PBのライブラリーと同じ40 TBのLTO-10テープを最大56,400巻収められます。</p>
+            <ul class="sources"><li><a href="https://spectralogic.com/tfinity-libraries/" target="_blank" rel="noopener" aria-describedby="new-window">Spectra Logic：TFinity Plus仕様<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.fujifilm.com/in/en/news/fujifilm-expands-lto-portfolio-with-lto-10-40tb" target="_blank" rel="noopener" aria-describedby="new-window">Fujifilm：40 TBのLTO-10<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="internet-traffic-day" aria-labelledby="internet-traffic-day-title" data-capacity-bits="200000000000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/internet-traffic-day.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="internet-traffic-day-title">世界のインターネット通信、1日分</h2>
+            <p class="chapter-measure">約25 EB／平均1日の通信量</p>
+            <p class="chapter-era">2026年 · 国際電気通信連合（ITU）の推計</p>
+            <p class="intro">動画を見たり、写真を送ったりするたびにデータが流れます。世界の固定回線とモバイル回線を通じた利用者向けのインターネット通信を合計すると、平均1日で約25 EBになります。</p>
+            <ul class="sources"><li><a href="https://www.itu.int/itu-d/reports/statistics/2026/10/13/ff26-internet-traffic/" target="_blank" rel="noopener" aria-describedby="new-window">ITU：2026年のインターネット通信量<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.itu.int/itu-d/reports/statistics/2026/10/13/ff26-methodology/" target="_blank" rel="noopener" aria-describedby="new-window">ITU：推計方法<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="seagate-hdd-shipments-year" aria-labelledby="seagate-hdd-shipments-year-title" data-capacity-bits="6312000000000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/seagate-hdd-shipments-year.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="seagate-hdd-shipments-year-title">Seagateが1年に出荷したHDD</h2>
+            <p class="chapter-measure">789 EB／1会計年度の出荷容量</p>
+            <p class="chapter-era">2026会計年度 · 2026年7月3日終了</p>
+            <p class="intro">Seagateが2026会計年度に出荷したHDDの容量を足すと、789 EBになります。容量の約9割は、クラウドや企業のデータセンターで使われるニアラインHDDが占めました。</p>
+            <ul class="sources"><li><a href="https://www.sec.gov/Archives/edgar/data/1137789/000113778926000207/stx-20260908.htm" target="_blank" rel="noopener" aria-describedby="new-window">Seagate：SEC提出資料<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="seagate-storage-shipments" aria-labelledby="seagate-storage-shipments-title" data-capacity-bits="32000000000000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale has-capacity-mark" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>
+            <span class="capacity-mark" data-position="25" style="--mark-color:var(--capacity-zb)"><span>1 ZB</span></span>
+          </div>
+          <img class="chapter-graphic" src="assets/graphics/seagate-storage-shipments.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="seagate-storage-shipments-title">出荷の累計がゼタバイト級に</h2>
+            <p class="chapter-measure">4 ZB超／創業以来の出荷容量</p>
+            <p class="chapter-era">2025年7月 · Seagateの累計出荷発表</p>
+            <p class="intro">1 ZBは1,000 EBです。Seagateが2025年7月までに出荷した記憶装置の容量は、創業以来の累計で4 ZBを超えました。</p>
+            <ul class="sources"><li><a href="https://investors.seagate.com/news/news-details/2025/Seagate-Technology-Reports-Fiscal-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/" target="_blank" rel="noopener" aria-describedby="new-window">Seagate：累計出荷容量<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="global-installed-storage" aria-labelledby="global-installed-storage-title" data-capacity-bits="104000000000000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/global-installed-storage.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="global-installed-storage-title">世界に設置された記憶容量</h2>
+            <p class="chapter-measure">約13 ZB／世界の設備容量</p>
+            <p class="chapter-era">2026年 · IDC Global StorageSphere</p>
+            <p class="intro">家庭や企業、データセンターにある記憶媒体の容量は、世界で合計どれくらいになるのでしょうか。IDCは、使っている領域と空き領域を合わせ、2026年は約13 ZBと推計しています。</p>
+            <ul class="sources"><li><a href="https://www.idc.com/resource-center/blog/beyond-the-prompt-the-hidden-data-and-storage-implications-of-generative-ai/" target="_blank" rel="noopener" aria-describedby="new-window">IDC：2026年の設備容量<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li><li><a href="https://www.idc.com/resource-center/definitions/what-are-the-global-datasphere-and-global-storagesphere/" target="_blank" rel="noopener" aria-describedby="new-window">IDC：StorageSphereの定義<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+      <section class="chapter chapter-capacity" id="global-data-created" aria-labelledby="global-data-created-title" data-capacity-bits="1747464000000000000000000">
+        <div class="chapter-content">
+          <div class="capacity-scale" aria-hidden="true" hidden>
+            <span class="capacity-line"></span></div>
+          <img class="chapter-graphic" src="assets/graphics/global-data-created.svg" width="72" height="72" alt="" loading="lazy">
+          <div class="chapter-copy">
+            <h2 id="global-data-created-title">世界で1年に生まれ、複製されるデータ</h2>
+            <p class="chapter-measure">約218 ZB／1年分の生成・複製など</p>
+            <p class="chapter-era">2025年のデータ量 · IDCの2026年6月版推計</p>
+            <p class="intro">撮影や観測で新しいデータが生まれ、配信やバックアップでコピーが作られます。IDCは、短時間で消えるデータも含め、2025年に世界で生成・取得・複製・消費されたデータを約218 ZBと推計しています。</p>
+            <ul class="sources"><li><a href="https://www.idc.com/resource-center/definitions/what-are-the-global-datasphere-and-global-storagesphere/" target="_blank" rel="noopener" aria-describedby="new-window">IDC：DataSphereの定義と2025年推計<svg width="12" height="12" aria-hidden="true" focusable="false"><use href="#external-link"/></svg></a></li></ul>
           </div>
         </div>
       </section>
@@ -574,7 +874,7 @@
           <dl>
             <div>
               <dt>単位と容量の基準</dt>
-              <dd>1 Bは8 bitです。KB、MB、GB、TB、PBは1,000倍ずつ、KiB、MiB、GiBは1,024倍ずつ増えます。製品の容量は原則としてメーカーや資料の公称値を使い、ST-506の5 MBはフォーマット後の値を採用しています。</dd>
+              <dd>1 Bは8 bitです。KB、MB、GB、TB、PB、EB、ZBは1,000倍ずつ、KiB、MiB、GiBは1,024倍ずつ増えます。製品の容量は原則としてメーカーや資料の公称値を使い、ST-506の5 MBはフォーマット後の値を採用しています。</dd>
             </div>
             <div>
               <dt>パンチカードと初期の記憶装置</dt>
@@ -598,7 +898,15 @@
             </div>
             <div>
               <dt>テープと大容量システム</dt>
-              <dd>IBM 3480とLTOは非圧縮容量を使っています。HPEの432 TBはLTO-9の18 TBを24巻、Quantumの80.64 PBはLTO-10の40 TBを最大2,016巻並べた構成です。Dellの616 TBと9.8304 PBは搭載ドライブの公称値の合計、Seagateの2.5 PBもデータ保護に使う領域を差し引く前の容量です。</dd>
+              <dd>IBM 3480とLTOは非圧縮容量を使っています。HPEの432 TBはLTO-9の18 TBを24巻、Quantumの80.64 PBはLTO-10の40 TBを最大2,016巻並べた構成です。Spectra Logicの最大構成は、メーカーが示す非圧縮2.2 EBを使っています。Dellの616 TBと9.8304 PBは搭載ドライブの公称値の合計、Seagateの2.5 PBもデータ保護に使う領域を差し引く前の容量です。</dd>
+            </div>
+            <div>
+              <dt>公表値の下限を使う項目</dt>
+              <dd>Googleの検索索引、Internet Archiveの保存量、Seagateの累計出荷容量は、各資料で示された下限の100 PB、210 PB、4 ZBで描いています。</dd>
+            </div>
+            <div>
+              <dt>世界の通信量とデータ量</dt>
+              <dd>世界のインターネット通信は、ITUの2026年の固定・モバイル回線の推計を合算し、365日で割って平均1日分に換算しています。閉じた専用サービスやIPTVは集計の対象外です。IDCによる設備容量には空き領域も含まれます。年間の生成・取得・複製・消費量にはデータのコピーや一時的なデータも含まれます。</dd>
             </div>
           </dl>
         </div>

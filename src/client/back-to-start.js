@@ -1,13 +1,16 @@
 export function enableBackToStart(reducedMotion) {
   let returnFrame = 0;
+  let interrupts;
 
   function stopReturn() {
     if (returnFrame) window.cancelAnimationFrame(returnFrame);
     returnFrame = 0;
+    interrupts?.abort();
+    interrupts = undefined;
   }
 
   function finishReturn() {
-    returnFrame = 0;
+    stopReturn();
     window.scrollTo({ top: 0, behavior: "instant" });
     if (window.location.hash !== "#top") window.history.pushState(null, "", "#top");
     document.getElementById("top").focus({ preventScroll: true });
@@ -21,6 +24,11 @@ export function enableBackToStart(reducedMotion) {
     if (reducedMotion.matches || startY <= 0) {
       finishReturn();
       return;
+    }
+
+    interrupts = new AbortController();
+    for (const type of ["wheel", "pointerdown", "keydown", "hashchange"]) {
+      window.addEventListener(type, stopReturn, { passive: true, signal: interrupts.signal });
     }
 
     const duration = Math.min(2000, Math.max(850, 600 + 9 * Math.sqrt(startY)));
@@ -39,8 +47,4 @@ export function enableBackToStart(reducedMotion) {
   }
 
   document.querySelectorAll("[data-back-to-start]").forEach((link) => link.addEventListener("click", returnToTop));
-  window.addEventListener("wheel", stopReturn, { passive: true });
-  window.addEventListener("pointerdown", stopReturn, { passive: true });
-  window.addEventListener("keydown", stopReturn);
-  window.addEventListener("hashchange", stopReturn);
 }

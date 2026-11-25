@@ -1,4 +1,5 @@
 import { escapeHtml as escape } from "../lib/html.mjs";
+import { capacityBoundaries } from "../lib/capacity.mjs";
 
 const lines = (values) => values.map(escape).join("<br>");
 
@@ -7,12 +8,22 @@ function renderSource({ url, label }) {
   return `<li><a href="${escape(url)}" target="_blank" rel="noopener" aria-describedby="new-window">${escape(label)}${icon}</a></li>`;
 }
 
-function renderChapter(item, index) {
+function renderCapacityScale(bits, previousBits) {
+  if (bits === null) return "";
+  const mark = capacityBoundaries(bits, previousBits).findLast(({ crossed }) => crossed);
+  return `
+          <div class="capacity-scale${mark ? " has-capacity-mark" : ""}" aria-hidden="true" hidden>
+            <span class="capacity-line"></span>${mark ? `
+            <span class="capacity-mark${mark.percent > 75 ? " mark-at-end" : ""}" data-position="${mark.percent}" style="--mark-color:var(--capacity-${mark.unit.toLowerCase()})"><span>1 ${mark.unit}</span></span>
+          ` : ""}</div>`;
+}
+
+function renderChapter(item, index, previousBits) {
   const { text } = item;
   const heading = index === 0 ? "h1" : "h2";
   return `      <section class="chapter chapter-${item.kind}" id="${escape(item.id)}" aria-labelledby="${escape(item.id)}-title"${item.capacityBits !== null ? ` data-capacity-bits="${item.capacityBits}"` : ""}>
-        <div class="chapter-content">${item.graphic ? `
-          <img class="chapter-graphic" src="assets/${escape(item.graphic.src)}" width="72" height="72" alt="">` : ""}
+        <div class="chapter-content">${renderCapacityScale(item.capacityBits, previousBits)}${item.graphic ? `
+          <img class="chapter-graphic" src="assets/${escape(item.graphic.src)}" width="72" height="72" alt=""${index >= 2 ? ' loading="lazy"' : ""}>` : ""}
           <div class="chapter-copy">
             <${heading} id="${escape(item.id)}-title">${lines(text.heading)}</${heading}>${text.capacity ? `
             <p class="chapter-measure">${escape(text.capacity)}</p>
@@ -36,6 +47,12 @@ export default class Page {
     const firstId = site.items[0].id;
     const notes = site.capacityNotes;
     const backToStart = `<a href="#top" data-back-to-start>${escape(site.backToStart)}<span aria-hidden="true">↑</span></a>`;
+    let previousBits = 0n;
+    const chapters = site.items.map((item, index) => {
+      const chapter = renderChapter(item, index, previousBits);
+      previousBits = item.capacityBits ?? previousBits;
+      return chapter;
+    });
     return `<!doctype html>
 <!-- Generated from src/index.11ty.mjs and src/data/*.yaml. Do not edit. -->
 <html lang="ja">
@@ -63,7 +80,7 @@ export default class Page {
       <a class="wordmark" href="#${escape(firstId)}">${escape(site.name)}<span class="brand-dot" aria-hidden="true"></span></a>
     </header>
     <main id="main" tabindex="-1">
-${site.items.map(renderChapter).join("\n")}
+${chapters.join("\n")}
     </main>
     <footer class="site-footer">${notes ? `
       <div class="footer-notes" id="capacity-notes">

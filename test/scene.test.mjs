@@ -84,12 +84,30 @@ test("departing chapters recede and fade, then drop out of the visible layers", 
     if (!layer) break;
     assert.ok(layer.top < lastTop && layer.opacity < lastOpacity);
     assert.ok(layer.copyOpacity <= layer.opacity);
-    if (!layer.interactive) sawFadedCopy = true;
+    if (!layer.interactive) {
+      assert.equal(layer.copyOpacity, 0);
+      assert.ok(layer.opacity > 0);
+      sawFadedCopy = true;
+    }
     lastTop = layer.top;
     lastOpacity = layer.opacity;
   }
   assert.ok(sawFadedCopy);
   assert.ok(visibleLayers(layout, capacities, layout.chapters[10].offset).every((layer) => layer.index > 5));
+});
+
+test("departing text fades fastest in the first quarter of the transition", () => {
+  const capacities = [0, 3, 6];
+  const layout = layoutScene([180, 180, 180], 800);
+  const { scrollHeight } = layout.chapters[0];
+  const samples = [0, 0.25, 0.5, 0.75, 1].map((fraction) => {
+    const layer = visibleLayers(layout, capacities, fraction * scrollHeight).find(({ index }) => index === 0);
+    return layer.opacity * layer.copyOpacity;
+  });
+  assert.equal(samples[0], 1);
+  assert.ok(samples[1] < 0.5);
+  const drops = samples.slice(1).map((opacity, index) => samples[index] - opacity);
+  assert.ok(drops.every((drop, index) => drop > 0 && (index === 0 || drop < drops[index - 1])));
 });
 
 test("paint order favors the closest chapter and the later one at a tie", () => {

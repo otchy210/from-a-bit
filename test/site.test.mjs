@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
-import { parseCapacityBits } from "../lib/capacity.mjs";
+import { capacityBoundaries, capacityFill, parseCapacityBits, visibleCapacityBands } from "../lib/capacity.mjs";
 import { loadSite, validateSite, validateGraphics } from "../lib/site.mjs";
 import Page from "../src/index.11ty.mjs";
 
@@ -17,6 +17,30 @@ test("capacity parsing preserves integers beyond Number's range", () => {
   for (const value of [9007199254740992, "1.2", "1e30", "-1", "0", "", " 8", "08"]) {
     assert.throws(() => parseCapacityBits(value), /positive decimal integer string/);
   }
+});
+
+test("decimal capacity marks use exact bit thresholds and proportional positions", () => {
+  assert.deepEqual(capacityBoundaries(7_999n, 1n), []);
+  assert.deepEqual(capacityBoundaries(8_000n, 7_999n), [{ unit: "KB", percent: 100, crossed: true }]);
+  assert.deepEqual(capacityBoundaries(500_000n, 2_048n), [{ unit: "KB", percent: 1.6, crossed: true }]);
+  assert.deepEqual(capacityBoundaries(16_000_000n, 8_000_000n), [
+    { unit: "KB", percent: 0.05, crossed: false },
+    { unit: "MB", percent: 50, crossed: false },
+  ]);
+});
+
+test("capacity bars skip subpixel widths and restore visible bands when enlarged", () => {
+  const boundaries = capacityBoundaries(16_000_000n);
+  assert.equal(visibleCapacityBands(boundaries, 0.99), null);
+  assert.equal(capacityFill(boundaries, visibleCapacityBands(boundaries, 1)), "var(--capacity-mb)");
+  assert.equal(
+    capacityFill(boundaries, visibleCapacityBands(boundaries, 400)),
+    "linear-gradient(to right, var(--capacity-kb) 0%, var(--capacity-kb) 50%, var(--capacity-mb) 50%, var(--capacity-mb) 100%)",
+  );
+  assert.match(capacityFill(boundaries, visibleCapacityBands(boundaries, 2000)), /var\(--capacity-b\)/);
+
+  const justOverKilobyte = capacityBoundaries(8_008n);
+  assert.equal(capacityFill(justOverKilobyte, visibleCapacityBands(justOverKilobyte, 250)), "var(--capacity-b)");
 });
 
 test("invalid metadata fails before it can be rendered", () => {
@@ -112,7 +136,9 @@ test("the checked-in metadata loads exact capacities and SVG references", async 
   assert.equal(site.items[0].capacityBits, 1n);
   assert.equal(site.items[1].capacityBits, 8n);
   assert.equal(site.items[1].graphic.src, "graphics/byte.svg");
-  assert.equal(site.items.at(-1).capacityBits, 645120000000000000n);
+  assert.equal(site.items.find(({ id }) => id === "tape-library").capacityBits, 645120000000000000n);
+  assert.equal(site.items.at(-1).id, "global-data-created");
+  assert.equal(site.items.at(-1).capacityBits, 1747464000000000000000000n);
 });
 
 test("missing SVG files are rejected during the build", async () => {
